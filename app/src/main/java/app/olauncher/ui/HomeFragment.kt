@@ -16,6 +16,7 @@ import android.view.WindowInsets
 import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
@@ -51,6 +52,8 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     private lateinit var viewModel: MainViewModel
     private lateinit var deviceManager: DevicePolicyManager
 
+    private lateinit var drawerBackCallback: OnBackPressedCallback
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -68,6 +71,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
 
         deviceManager = context?.getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
 
+        initAppDrawer()
         initObservers()
         setHomeAlignment(prefs.homeAlignment)
         initSwipeTouchListener()
@@ -78,6 +82,8 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         super.onResume()
         populateHomeScreen(false)
         viewModel.isOlauncherDefault()
+        // Other screens may have loaded the list with hidden apps included
+        viewModel.getAppList()
         if (prefs.showStatusBar) showStatusBar()
         else hideStatusBar()
     }
@@ -186,11 +192,52 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         viewModel.screenTimeValue.observe(viewLifecycleOwner) {
             it?.let { binding.tvScreenTime.text = it }
         }
+        viewModel.closeAppDrawer.observe(viewLifecycleOwner) {
+            binding.drawerHost.close(animate = isResumed)
+        }
         // Home button for recents feature disabled
         // viewModel.showRecentApps.observe(viewLifecycleOwner) {
         //     binding.recents.performClick()
         // }
     }
+
+    private fun initAppDrawer() {
+        if (appDrawer() == null) {
+            childFragmentManager.beginTransaction()
+                .replace(R.id.appDrawerContainer, AppDrawerFragment().apply {
+                    arguments = bundleOf(
+                        Constants.Key.FLAG to Constants.FLAG_LAUNCH_APP,
+                        Constants.Key.EMBEDDED to true
+                    )
+                })
+                .commitNow()
+        }
+
+        drawerBackCallback = object : OnBackPressedCallback(false) {
+            override fun handleOnBackPressed() = binding.drawerHost.close()
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, drawerBackCallback)
+
+        binding.drawerHost.apply {
+            content = binding.mainLayout
+            drawer = binding.appDrawerContainer
+            canDrawerScrollUp = { appDrawer()?.canScrollUp() ?: false }
+            onDragStart = { wasOpen ->
+                drawerBackCallback.isEnabled = true
+                if (wasOpen) appDrawer()?.onDrawerDragStart()
+            }
+            onOpened = {
+                drawerBackCallback.isEnabled = true
+                appDrawer()?.onDrawerOpened()
+            }
+            onClosed = {
+                drawerBackCallback.isEnabled = false
+                appDrawer()?.onDrawerClosed()
+            }
+        }
+    }
+
+    private fun appDrawer() = childFragmentManager.findFragmentById(R.id.appDrawerContainer) as? AppDrawerFragment
 
     private fun initSwipeTouchListener() {
         val context = requireContext()
@@ -617,11 +664,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 openSwipeRightApp()
             }
 
-            override fun onSwipeUp() {
-                super.onSwipeUp()
-                showAppList(Constants.FLAG_LAUNCH_APP)
-            }
-
             override fun onSwipeDown() {
                 super.onSwipeDown()
                 expandNotificationDrawer(requireContext())
@@ -660,11 +702,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 openSwipeRightApp()
             }
 
-            override fun onSwipeUp() {
-                super.onSwipeUp()
-                showAppList(Constants.FLAG_LAUNCH_APP)
-            }
-
             override fun onSwipeDown() {
                 super.onSwipeDown()
                 expandNotificationDrawer(requireContext())
@@ -680,6 +717,12 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 textOnClick(view)
             }
         }
+    }
+
+    override fun onStop() {
+        // Leaving home (e.g. an app was launched): reset the drawer out of sight
+        binding.drawerHost.close(animate = false)
+        super.onStop()
     }
 
     override fun onDestroyView() {
