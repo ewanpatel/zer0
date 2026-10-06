@@ -94,6 +94,9 @@ class Prefs(context: Context) {
     private val SHORTCUT_ID_SWIPE_RIGHT = "SHORTCUT_ID_SWIPE_RIGHT"
     private val IS_SHORTCUT_SWIPE_RIGHT = "IS_SHORTCUT_SWIPE_RIGHT"
 
+    private val FOLDERS = "FOLDERS"
+    private val HOME_FOLDER = "HOME_FOLDER_"
+
     private val prefs: SharedPreferences = context.getSharedPreferences(PREFS_FILENAME, 0)
 
     var firstOpen: Boolean
@@ -544,4 +547,41 @@ class Prefs(context: Context) {
     fun getAppRenameLabel(appPackage: String): String = prefs.getString(appPackage, "").toString()
 
     fun setAppRenameLabel(appPackage: String, renameLabel: String) = prefs.edit { putString(appPackage, renameLabel) }
+
+    // Folders
+
+    var folders: List<Folder>
+        get() = Folder.listFromJson(prefs.getString(FOLDERS, "").toString())
+        set(value) = prefs.edit { putString(FOLDERS, Folder.listToJson(value)) }
+
+    fun getFolder(id: String): Folder? = folders.firstOrNull { it.id == id }
+
+    fun saveFolder(folder: Folder) {
+        val current = folders
+        folders = if (current.any { it.id == folder.id })
+            current.map { if (it.id == folder.id) folder else it }
+        else current + folder
+    }
+
+    fun deleteFolder(id: String) {
+        folders = folders.filterNot { it.id == id }
+        for (i in 1..8) {
+            if (getHomeFolderId(i) == id) setHomeFolderId(i, "")
+        }
+    }
+
+    fun getHomeFolderId(location: Int): String = prefs.getString(HOME_FOLDER + location, "").toString()
+
+    fun setHomeFolderId(location: Int, id: String) = prefs.edit { putString(HOME_FOLDER + location, id) }
+
+    fun getHomeFolder(location: Int): Folder? = getHomeFolderId(location).takeIf { it.isNotEmpty() }?.let { getFolder(it) }
+
+    fun clearHomeApp(location: Int) = prefs.edit {
+        remove("APP_NAME_$location")
+        remove("APP_PACKAGE_$location")
+        remove("APP_ACTIVITY_CLASS_NAME_$location")
+        remove("APP_USER_$location")
+        remove("IS_SHORTCUT_$location")
+        remove("SHORTCUT_ID_$location")
+    }
 }

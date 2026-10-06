@@ -35,6 +35,7 @@ class AppDrawerAdapter(
     private val appRenameListener: (AppModel, String) -> Unit,
     private val privateSpaceToggleListener: () -> Unit = {},
     private val privateSpaceSettingsListener: () -> Unit = {},
+    private val appFolderListener: (AppModel, View) -> Unit = { _, _ -> },
 ) : ListAdapter<AppModel, RecyclerView.ViewHolder>(DIFF_CALLBACK), Filterable {
 
     companion object {
@@ -66,6 +67,9 @@ class AppDrawerAdapter(
     private val separatorsRegex = Regex("[-_+,.`'\\s\\p{Z}]")
     private val appFilter = createAppFilter()
     private val myUserHandle = android.os.Process.myUserHandle()
+
+    // When set (editing a folder), apps it returns false for are shown faded
+    var isChecked: ((AppModel) -> Boolean)? = null
 
     var appsList: MutableList<AppModel> = mutableListOf()
     var appFilteredList: MutableList<AppModel> = mutableListOf()
@@ -119,7 +123,9 @@ class AppDrawerAdapter(
                     appDeleteListener,
                     appInfoListener,
                     appHideListener,
-                    appRenameListener
+                    appRenameListener,
+                    appFolderListener,
+                    isChecked?.invoke(appModel)
                 )
             }
         } catch (e: Exception) {
@@ -233,6 +239,8 @@ class AppDrawerAdapter(
             appInfoListener: (AppModel) -> Unit,
             appHideListener: (AppModel, Int) -> Unit,
             appRenameListener: (AppModel, String) -> Unit,
+            appFolderListener: (AppModel, View) -> Unit,
+            checked: Boolean?,
         ) = with(binding) {
             appHideLayout.visibility = View.GONE
             renameLayout.visibility = View.GONE
@@ -244,11 +252,13 @@ class AppDrawerAdapter(
                 if (appModel.isNew) append(" ✦")
             }
             appTitle.gravity = appLabelGravity
+            appTitle.alpha = if (checked == false) 0.35f else 1f
             otherProfileIndicator.isVisible = appModel.user != myUserHandle
 
             appTitle.setOnClickListener { clickListener(appModel) }
 
             appTitle.setOnLongClickListener {
+                if (flag == Constants.FLAG_EDIT_FOLDER) return@setOnLongClickListener true
                 if (appModel.appPackage.isNotEmpty()) {
                     appDelete.alpha = when (
                         appModel is AppModel.PinnedShortcut || !root.context.isSystemApp(appModel.appPackage, appModel.user)
@@ -268,6 +278,7 @@ class AppDrawerAdapter(
                     appHideLayout.visibility = View.VISIBLE
                     // Only allow renaming non hidden apps
                     appRename.isVisible = flag != Constants.FLAG_HIDDEN_APPS
+                    appFolder.isVisible = flag == Constants.FLAG_LAUNCH_APP && appModel is AppModel.App
                 }
                 true
             }
@@ -329,6 +340,7 @@ class AppDrawerAdapter(
                     renameLayout.visibility = View.GONE
                 }
             }
+            appFolder.setOnClickListener { appFolderListener(appModel, it) }
             appInfo.setOnClickListener { appInfoListener(appModel) }
             appDelete.setOnClickListener { appDeleteListener(appModel) }
             appMenuClose.setOnClickListener {

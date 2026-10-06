@@ -56,6 +56,17 @@
         android:layout_height="0dp"
         android:layout_weight="0.06" />
 
+    <!-- Shown when picking a home app: turns the slot into a folder -->
+    <TextView
+        android:id="@+id/newFolder"
+        style="@style/AppName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="@dimen/app_padding_vertical"
+        android:visibility="gone" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"

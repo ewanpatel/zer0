@@ -13,13 +13,18 @@ import android.content.res.Resources
 import android.os.Build
 import android.os.UserHandle
 import android.provider.Settings
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.telephony.TelephonyManager
 import android.view.View
 import android.view.Window
 import android.view.WindowInsets
 import android.view.WindowManager
 import android.view.inputmethod.InputMethodManager
+import android.widget.TextView
 import androidx.annotation.RequiresApi
+import androidx.core.graphics.ColorUtils
 import app.olauncher.BuildConfig
 import app.olauncher.R
 import app.olauncher.data.Constants
@@ -214,4 +219,12 @@ fun Long.hasBeenMinutes(minutes: Int): Boolean =
 
 fun Int.dpToPx(): Int {
     return (this * Resources.getSystem().displayMetrics.density).toInt()
+}
+
+/** Shows [name] as a folder: lowercase with a faded trailing slash, e.g. "work/". */
+fun TextView.setFolderLabel(name: String) {
+    val label = SpannableString(name.lowercase() + "/")
+    val slashColor = ColorUtils.setAlphaComponent(currentTextColor, 140)
+    label.setSpan(ForegroundColorSpan(slashColor), label.length - 1, label.length, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+    text = label
 }

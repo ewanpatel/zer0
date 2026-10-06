@@ -6,6 +6,7 @@ object Constants {
         const val FLAG = "flag"
         const val RENAME = "rename"
         const val EMBEDDED = "embedded"
+        const val FOLDER_ID = "folderId"
     }
 
     object DateTime {
@@ -58,6 +59,8 @@ object Constants {
     const val FLAG_SET_CLOCK_APP = 13
     const val FLAG_SET_CALENDAR_APP = 14
     const val FLAG_SET_SCREEN_TIME_APP = 15
+
+    const val FLAG_EDIT_FOLDER = 20
 
     const val REQUEST_CODE_ENABLE_ADMIN = 666
     const val REQUEST_CODE_LAUNCHER_SELECTOR = 678

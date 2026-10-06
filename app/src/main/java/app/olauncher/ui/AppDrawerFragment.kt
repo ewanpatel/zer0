@@ -13,7 +13,9 @@ import android.view.inputmethod.BaseInputConnection
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
 import androidx.appcompat.widget.SearchView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -22,8 +24,12 @@ import app.olauncher.MainViewModel
 import app.olauncher.R
 import app.olauncher.data.AppModel
 import app.olauncher.data.Constants
+import app.olauncher.data.Folder
+import app.olauncher.data.FolderApp
 import app.olauncher.data.Prefs
 import app.olauncher.databinding.FragmentAppDrawerBinding
+import app.olauncher.helper.OlDialog
+import app.olauncher.helper.createFolderNameDialog
 import app.olauncher.helper.deletePinnedShortcut
 import app.olauncher.helper.hideKeyboard
 import app.olauncher.helper.isEinkDisplay
@@ -32,6 +38,8 @@ import app.olauncher.helper.isSystemApp
 import app.olauncher.helper.openAppInfo
 import app.olauncher.helper.openSearch
 import app.olauncher.helper.openUrl
+import app.olauncher.helper.setFolderLabel
+import app.olauncher.helper.showPopupMenu
 import app.olauncher.helper.showKeyboard
 import app.olauncher.helper.showToast
 import app.olauncher.helper.uninstall
@@ -50,6 +58,11 @@ class AppDrawerFragment : BaseFragment() {
     // Embedded in the home screen as a slide-up drawer, rather than shown as its own screen
     private var embedded = false
     private var isDrawerOpen = false
+
+    // Editing a folder's apps: its id and the apps currently in it
+    private var folderId: String? = null
+    private val folderMembers = mutableSetOf<String>()
+    private var dialog: OlDialog? = null
     private var currentAppList: List<AppModel>? = null
     private var currentPrivateSpaceApps: List<AppModel>? = null
     private var currentPrivateSpaceLocked: Boolean = true
@@ -75,6 +88,7 @@ class AppDrawerFragment : BaseFragment() {
             flag = it.getInt(Constants.Key.FLAG, Constants.FLAG_LAUNCH_APP)
             canRename = it.getBoolean(Constants.Key.RENAME, false)
             embedded = it.getBoolean(Constants.Key.EMBEDDED, false)
+            folderId = it.getString(Constants.Key.FOLDER_ID)
         }
 
         initViews()
@@ -89,6 +103,15 @@ class AppDrawerFragment : BaseFragment() {
             binding.search.queryHint = getString(R.string.hidden_apps)
         else if (flag in Constants.FLAG_SET_HOME_APP_1..Constants.FLAG_SET_CALENDAR_APP)
             binding.search.queryHint = "Please select an app"
+        else if (flag == Constants.FLAG_EDIT_FOLDER) {
+            val folder = folderId?.let { prefs.getFolder(it) }
+            folder?.apps?.mapTo(folderMembers) { it.key }
+            binding.search.queryHint = getString(R.string.folder_edit_hint, folder?.name?.lowercase().orEmpty())
+        }
+        if (flag in Constants.FLAG_SET_HOME_APP_1..Constants.FLAG_SET_HOME_APP_8) {
+            binding.newFolder.setFolderLabel(getString(R.string.new_folder))
+            binding.newFolder.visibility = View.VISIBLE
+        }
         try {
             searchTextView = binding.search.findViewById(R.id.search_src_text)
             searchTextView?.gravity = prefs.appLabelAlignment
@@ -156,6 +179,10 @@ class AppDrawerFragment : BaseFragment() {
             flag,
             prefs.appLabelAlignment,
             appClickListener = { appModel ->
+                if (flag == Constants.FLAG_EDIT_FOLDER) {
+                    toggleFolderApp(appModel)
+                    return@AppDrawerAdapter
+                }
                 viewModel.selectedApp(appModel, flag)
                 if (embedded) return@AppDrawerAdapter
                 if (flag == Constants.FLAG_LAUNCH_APP || flag == Constants.FLAG_HIDDEN_APPS)
@@ -233,8 +260,11 @@ class AppDrawerFragment : BaseFragment() {
             privateSpaceSettingsListener = {
                 viewModel.openPrivateSpaceSettings()
                 if (!embedded) findNavController().popBackStack(R.id.mainFragment, false)
-            }
+            },
+            appFolderListener = { appModel, anchor -> showFolderPicker(appModel, anchor) }
         )
+        if (flag == Constants.FLAG_EDIT_FOLDER)
+            adapter.isChecked = { FolderApp.keyOf(it) in folderMembers }
 
         linearLayoutManager = object : LinearLayoutManager(requireContext()) {
             override fun scrollVerticallyBy(
@@ -308,6 +338,7 @@ class AppDrawerFragment : BaseFragment() {
     }
 
     private fun initClickListeners() {
+        binding.newFolder.setOnClickListener { showNewFolderDialog() }
         binding.appRename.setOnClickListener {
             val name = binding.search.query.toString().trim()
             if (name.isEmpty()) {
@@ -327,6 +358,67 @@ class AppDrawerFragment : BaseFragment() {
                 Constants.FLAG_SET_HOME_APP_8 -> prefs.appName8 = name
             }
             findNavController().popBackStack()
+        }
+    }
+
+    // Folders
+
+    // Picking a home app: name a new folder for this slot, then choose its apps
+    private fun showNewFolderDialog() {
+        val slot = flag
+        dialog?.dismiss()
+        dialog = requireContext().createFolderNameDialog(
+            title = R.string.new_folder,
+            action = R.string.create,
+        ) { name ->
+            val folder = Folder.create(name)
+            prefs.saveFolder(folder)
+            prefs.clearHomeApp(slot)
+            prefs.setHomeFolderId(slot, folder.id)
+            findNavController().navigate(
+                R.id.appListFragment,
+                bundleOf(
+                    Constants.Key.FLAG to Constants.FLAG_EDIT_FOLDER,
+                    Constants.Key.FOLDER_ID to folder.id
+                ),
+                NavOptions.Builder().setPopUpTo(R.id.appListFragment, true).build()
+            )
+        }.also { it.showRespectingStatusBar() }
+    }
+
+    private fun toggleFolderApp(appModel: AppModel) {
+        if (appModel.appPackage.isEmpty()) return
+        if (appModel !is AppModel.App) {
+            requireContext().showToast(getString(R.string.shortcuts_not_in_folders))
+            return
+        }
+        val folder = folderId?.let { prefs.getFolder(it) } ?: return
+        val updated = folder.toggle(appModel)
+        prefs.saveFolder(updated)
+        folderMembers.clear()
+        updated.apps.mapTo(folderMembers) { it.key }
+        adapter.notifyDataSetChanged()
+    }
+
+    // Long-press strip in the drawer: add the app to a folder or take it out
+    private fun showFolderPicker(appModel: AppModel, anchor: View) {
+        if (appModel !is AppModel.App) return
+        val folders = prefs.folders
+        if (folders.isEmpty()) {
+            requireContext().showToast(getString(R.string.no_folders_yet))
+            return
+        }
+        anchor.showPopupMenu(configure = { menu ->
+            folders.forEachIndexed { i, folder ->
+                val title = folder.name.lowercase() + "/" + if (folder.contains(appModel)) "  ✓" else ""
+                menu.add(0, i, i, title)
+            }
+        }) { item ->
+            val folder = folders[item.itemId].toggle(appModel)
+            prefs.saveFolder(folder)
+            val message = if (folder.contains(appModel)) R.string.added_to_folder else R.string.removed_from_folder
+            requireContext().showToast(getString(message, folder.name.lowercase()))
+            adapter.notifyDataSetChanged()
         }
     }
 
@@ -388,6 +480,8 @@ class AppDrawerFragment : BaseFragment() {
     }
 
     override fun onDestroyView() {
+        dialog?.dismiss()
+        dialog = null
         super.onDestroyView()
         searchTextView = null
         _binding = null
