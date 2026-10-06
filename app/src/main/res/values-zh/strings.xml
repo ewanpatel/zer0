@@ -45,11 +45,6 @@
     <string name="black">黑色</string>
     <string name="white">白色</string>
     <string name="change_default_launcher">更改默认启动器</string>
-    <string name="privacy">隐私</string>
-    <string name="share">分享</string>
-    <string name="share_now">立即分享</string>
-    <string name="rate">评分</string>
-    <string name="rate_now">立即评分</string>
     <string name="follow">关注</string>
     <string name="email">电子邮件</string>
 
@@ -83,17 +78,11 @@
     <string name="system_default">系统</string>
     <string name="dark">深色</string>
     <string name="light">浅色</string>
-    <string name="welcome_to_olauncher_settings">欢迎来到设置！
-        \n\n请记住，如果您有任何问题，我们的“关于”页面有答案。</string>
-    <string name="rate_us_message">您好，您不会再看到此消息。\n\n如果您觉得 zer0 有用，能否留下 5 星评价？这对我们意义重大。谢谢！</string>
-    <string name="share_message">我们需要您的帮助！我们相信每个人都应该了解 zer0 及其好处，但我们无法独自做到。\n\n您能否与您的朋友、家人和关注者分享 zer0？感谢您的支持！ ❤</string>
     <string name="keyboard_message">您好，键盘是在 zer0 中查找和启动应用程序的最快方式。我们能否请您再保持开启几天，然后再做决定？\n\n选择权永远在您手中。</string>
     <string name="digital_wellbeing_message">如果您想为某些应用程序设置时间限制，Android 的数字健康功能可以帮助您做到这一点。
         \n\n请在手机设置中搜索数字健康并启用它。</string>
     <string name="app_usage_message">要在主屏幕上显示/隐藏您的屏幕时间，请允许或拒绝应用程序使用权限。
         \n\n注意：不收集应用程序使用数据。所有数据都在您的设备上处理。</string>
-    <string name="pro_message">zer0 还有一个名为 Pro Launcher 的专业版。它具有额外的功能，如天气、部件、字体、文件夹、AMOLED 壁纸等。
-        \n\n这也是支持 zer0 开发者的最佳方式。快来看看吧！</string>
     <string name="wallpaper_message">zer0每天提供美丽的新壁纸。让你的主屏幕每天焕然一新，免费！
         \n\n想试试吗？</string>
     <string name="accessibility_service_description">需要无障碍权限才能启用双击锁屏手势。zer0 通过此服务获取的任何数据都不会离开您的设备。</string>
@@ -118,17 +107,12 @@
     <string name="swipe_right_app_enabled">右滑应用已启用</string>
     <string name="swipe_left_app_disabled">左滑应用已禁用</string>
     <string name="swipe_right_app_disabled">右滑应用已禁用</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">是你在用手机，还是手机在用你？</string>
-    <string name="about_olauncher">关于与常见问题</string>
     <string name="learn_more">了解更多</string>
     <string name="screen_time">屏幕时间</string>
     <string name="did_you_know">你知道吗？</string>
-    <string name="leave_a_review">留下评价</string>
-    <string name="review_message">zer0 是免费的，并将永远免费。它没有广告，不收集数据，并能减少您的屏幕时间，让生活更健康。\n\n希望您喜欢。告诉我们您的想法。</string>
     <string name="alignment_changed">对齐已更改 ✅</string>
     <string name="home_screen">主屏幕</string>
     <string name="hey">嘿</string>
-    <string name="more_features">更多功能…</string>
     <string name="new_year_wish">愿新的一年胜过以往所有。新年快乐！</string>
     <string name="new_year_wish_1">一月过得如何并不重要。你还有一年的时间做到比以往任何时候都更好。</string>
     <string name="cheers">干杯!</string>

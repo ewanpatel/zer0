@@ -13,11 +13,6 @@
     <string name="black">Μαύρο</string>
     <string name="white">Λευκό</string>
     <string name="change_default_launcher">Αλλαγή προεπιλεγμένου launcher</string>
-    <string name="privacy">Απόρρητο</string>
-    <string name="share">Κοινοποίηση</string>
-    <string name="share_now">Κοινοποίηση τώρα</string>
-    <string name="rate">Αξιολόγηση</string>
-    <string name="rate_now">Αξιολόγηση τώρα</string>
     <string name="follow">Ακολούθηση</string>
     <string name="email">Email</string>
     <string name="donate">Δωρεά</string>
@@ -53,19 +48,11 @@
     <string name="system_default">Σύστημα</string>
     <string name="dark">Σκούρο</string>
     <string name="light">Ανοιχτόχρωμο</string>
-    <string name="welcome_to_olauncher_settings">Καλώς ήρθατε στις ρυθμίσεις!
-        \n\nΘυμηθείτε, αν έχετε οποιεσδήποτε ερωτήσεις, η σελίδα Σχετικά έχει την απάντηση.</string>
-    <string name="rate_us_message">Γεια σας, δεν θα ξαναδείτε αυτό το μήνυμα.
-        \n\nΑν βρίσκετε το zer0 χρήσιμο, θα μπορούσατε να αφήσετε μια αξιολόγηση 5 αστέρων; Θα σημαίνει πολλά για εμάς. Ευχαριστούμε!</string>
-    <string name="share_message">Χρειαζόμαστε τη βοήθειά σας! Πιστεύουμε ότι όλοι πρέπει να γνωρίζουν για το zer0 και τα οφέλη του, αλλά δεν μπορούμε να το κάνουμε μόνοι μας.
-        \n\nΘα μπορούσατε να μοιραστείτε το zer0 με τους φίλους, την οικογένεια και τους ακολούθους σας; Ευχαριστούμε για την υποστήριξή σας! ❤</string>
     <string name="keyboard_message">Γεια σας, το πληκτρολόγιο είναι ο ταχύτερος τρόπος για να βρείτε και να ανοίξετε εφαρμογές στο zer0. Μπορούμε να σας ζητήσουμε να το αφήσετε ενεργό για λίγες ακόμη ημέρες και μετά να αποφασίσετε;
         \n\nΗ επιλογή είναι πάντα δική σας.</string>
     <string name="digital_wellbeing_message">Αν θέλετε να ορίσετε χρονικά όρια για συγκεκριμένες εφαρμογές, η λειτουργία Ψηφιακή Ευεξία του Android μπορεί να σας βοηθήσει. Αναζητήστε το Ψηφιακή Ευεξία στις ρυθμίσεις του τηλεφώνου σας και ενεργοποιήστε το.</string>
     <string name="app_usage_message">Για να εμφανίσετε/αποκρύψετε τον χρόνο οθόνης στην αρχική οθόνη, επιτρέψτε ή απορρίψτε την άδεια χρήσης εφαρμογών.
         \n\nΣημείωση: Δεν συλλέγονται δεδομένα χρήσης εφαρμογών. Όλα επεξεργάζονται στη συσκευή σας.</string>
-    <string name="pro_message">Το zer0 διαθέτει επίσης μια έκδοση pro με το όνομα Pro Launcher. Έχει επιπλέον λειτουργίες όπως καιρός, widgets, γραμματοσειρές, φάκελοι, ταπετσαρίες AMOLED και άλλα.
-        \n\nΕίναι επίσης ο καλύτερος τρόπος να υποστηρίξετε τους προγραμματιστές του zer0. Ρίξτε μια ματιά!</string>
     <string name="wallpaper_message">Το zer0 προσφέρει καθημερινά όμορφες νέες ταπετσαρίες. Δώστε στην αρχική σας οθόνη μια νέα εμφάνιση κάθε μέρα, δωρεάν!
         \n\nΘέλετε να το δοκιμάσετε;</string>
     <string name="accessibility_service_description">Η άδεια προσβασιμότητας απαιτείται για την ενεργοποίηση της χειρονομίας - διπλό πάτημα για κλείδωμα. Κανένα δεδομένο που αποκτάται από το zer0 μέσω αυτής της υπηρεσίας δεν εγκαταλείπει τη συσκευή σας.</string>
@@ -120,18 +107,12 @@
     <string name="hidden_apps">Κρυφές εφαρμογές</string>
     <string name="adapter_show">Εμφάνιση</string>
     <string name="adapter_hide">Απόκρυψη</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Χρησιμοποιείτε το τηλέφωνό σας ή το τηλέφωνο χρησιμοποιεί εσάς;</string>
-    <string name="about_olauncher">Σχετικά και Συχνές Ερωτήσεις</string>
     <string name="screen_time">Χρόνος οθόνης</string>
     <string name="learn_more">Μάθετε περισσότερα</string>
     <string name="did_you_know">Το γνωρίζατε;</string>
-    <string name="leave_a_review">Αφήστε μια αξιολόγηση</string>
-    <string name="review_message">Το zer0 είναι δωρεάν και θα παραμείνει πάντα. Δεν έχει διαφημίσεις, δεν συλλέγει δεδομένα και μειώνει τον χρόνο οθόνης σας, οδηγώντας σε μια πιο υγιή ζωή.
-        \n\nΕλπίζουμε να το απολαύσετε. Πείτε μας τη γνώμη σας.</string>
     <string name="alignment_changed">Η στοίχιση άλλαξε ✅</string>
     <string name="home_screen">Αρχική οθόνη</string>
     <string name="hey">Γεια</string>
-    <string name="more_features">Περισσότερα χαρακτηριστικά…</string>
     <string name="new_year_wish">Σε μια χρονιά καλύτερη από κάθε άλλη. Καλή χρονιά!</string>
     <string name="new_year_wish_1">Δεν έχει σημασία πώς πήγε ο Ιανουάριος. Έχετε ακόμα τον υπόλοιπο χρόνο για να τα πάτε καλύτερα από ποτέ.</string>
     <string name="cheers">Στην υγειά μας!</string>

@@ -13,11 +13,6 @@
     <string name="black">Nero</string>
     <string name="white">Bianco</string>
     <string name="change_default_launcher">Cambia il launcher predefinito</string>
-    <string name="privacy">Privacy</string>
-    <string name="share">Condividi</string>
-    <string name="share_now">Condividi ora</string>
-    <string name="rate">Valuta</string>
-    <string name="rate_now">Valuta ora</string>
     <string name="follow">Segui</string>
     <string name="email">E-mail</string>
 
@@ -54,16 +49,10 @@
     <string name="system_default">Sistema</string>
     <string name="dark">Scuro</string>
     <string name="light">Chiaro</string>
-    <string name="welcome_to_olauncher_settings">Benvenuto nelle impostazioni!
-        \n\nRicorda, se hai domande, la nostra pagina Informazioni ha la risposta.</string>
-    <string name="rate_us_message">Ciao, non vedrai più questo messaggio.\n\nSe trovi utile zer0, potresti lasciare una recensione a 5 stelle? Significherebbe moltissimo per noi. Grazie!</string>
-    <string name="share_message">Abbiamo bisogno del tuo aiuto! Crediamo che tutti dovrebbero conoscere zer0 e i suoi vantaggi, ma non possiamo farcela da soli.\n\nPotresti condividere zer0 con amici, familiari e follower? Grazie per il tuo supporto! ❤</string>
     <string name="keyboard_message">Ciao, la tastiera è il modo più veloce per trovare e avviare le app in zer0. Possiamo chiederti di tenerla attiva ancora per qualche giorno e poi decidere?\n\nLa scelta è sempre tua.</string>
     <string name="digital_wellbeing_message">Se desideri impostare limiti di tempo per determinate app, la funzionalità Benessere digitale di Android può aiutarti a farlo.
         \n\nCerca Benessere digitale nelle impostazioni del telefono e attivalo.</string>
     <string name="app_usage_message">Per mostrare/nascondere il tempo di utilizzo dello schermo nella schermata iniziale, concedi o nega l\'autorizzazione all\'utilizzo delle app.\n\nNota: non vengono raccolti dati sull\'utilizzo delle app. Tutto viene elaborato sul tuo dispositivo.</string>
-    <string name="pro_message">zer0 ha anche una versione pro chiamata Pro Launcher. Ha funzionalità extra come meteo, widget, font, cartelle, sfondi AMOLED, e così via.
-        \n\nÈ anche il modo migliore per supportare gli sviluppatori di zer0. Dai un\'occhiata!</string>
     <string name="wallpaper_message">zer0 offre bellissimi sfondi nuovi ogni giorno. Dai un aspetto fresco alla tua schermata principale ogni giorno, gratuitamente!
         \n\nVuoi provarlo?</string>
     <string name="accessibility_service_description">L\'autorizzazione di accessibilità è necessaria per abilitare il gesto Doppio tocco per bloccare. Qualsiasi dato acquisito da zer0 tramite questo servizio non lascerà il tuo dispositivo.</string>
@@ -117,17 +106,12 @@
     <string name="hidden_apps">App nascoste</string>
     <string name="adapter_show">Mostra</string>
     <string name="adapter_hide">Nascondi</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Stai usando il tuo telefono, o è il tuo telefono che sta usando te?</string>
-    <string name="about_olauncher">Info e FAQ</string>
     <string name="learn_more">Scopri di più</string>
     <string name="screen_time">Tempo di schermo</string>
     <string name="did_you_know">Lo sapevi?</string>
-    <string name="leave_a_review">Lascia una recensione</string>
-    <string name="review_message">zer0 è gratuito e lo sarà sempre. Non ha pubblicità, non raccoglie dati e riduce il tuo tempo davanti allo schermo, per una vita più sana.\n\nSperiamo che ti piaccia. Dicci cosa ne pensi.</string>
     <string name="alignment_changed">Allineamento cambiato ✅</string>
     <string name="home_screen">Schermata principale</string>
     <string name="hey">Ciao</string>
-    <string name="more_features">Altre funzionalità…</string>
     <string name="new_year_wish">A un anno migliore di tutti i precedenti. Buon anno nuovo!</string>
     <string name="new_year_wish_1">Non importa come sia andato gennaio. Hai ancora il resto dell\'anno per fare meglio che mai.</string>
     <string name="cheers">Salute!</string>

@@ -13,11 +13,6 @@
     <string name="black">Fekete</string>
     <string name="white">Fehér</string>
     <string name="change_default_launcher">Alapértelmezett indító módosítása</string>
-    <string name="privacy">Adatvédelem</string>
-    <string name="share">Megosztás</string>
-    <string name="share_now">Megosztás most</string>
-    <string name="rate">Értékelés</string>
-    <string name="rate_now">Értékelés most</string>
     <string name="follow">Követés</string>
     <string name="email">E-mail</string>
     <string name="donate">Adományozás</string>
@@ -53,10 +48,6 @@
     <string name="system_default">Rendszer</string>
     <string name="dark">Sötét</string>
     <string name="light">Világos</string>
-    <string name="welcome_to_olauncher_settings">Üdvözöljük a beállításokban!
-        \n\nNe feledje, ha bármilyen kérdése van, az „Rólunk” oldalunk tartalmazza a választ.</string>
-    <string name="rate_us_message">Üdv, ezt az üzenetet nem fogja újra látni.\n\nHa hasznosnak találja az zer0-t, kérjük, hagyjon nekünk 5 csillagos értékelést! Ez nagyon sokat jelentene nekünk. Köszönjük!</string>
-    <string name="share_message">Szükségünk van a segítségére! Úgy gondoljuk, mindenkinek tudnia kellene az zer0-ről és előnyeiről, de egyedül nem tudjuk elérni.\n\nMegosztaná az zer0-t barátaival, családjával és követőivel? Köszönjük a támogatását! ❤</string>
     <!--        \n\nHa van egy kis ideje, kérjük, ossza meg másokkal is az zer0-t. Az zer0-nek szüksége van emberekre. De ami még fontosabb, az embereknek szüksége van az zer0-re..</string>-->
     <string name="keyboard_message">Üdvözöljük! A billentyűzet a leggyorsabb módja az alkalmazások megtalálásához és elindításához az zer0ben. Megkérhetjük, hogy hagyja bekapcsolva még néhány napig, és utána döntsön?
         \n\nA választás mindig az Öné.</string>
@@ -64,8 +55,6 @@
         \n\nKeresse meg a Digitális jólét elemet a telefon beállításai között, és engedélyezze.</string>
     <string name="app_usage_message">A képernyőidő megjelenítéséhez/elrejtéséhez a kezdőképernyőn engedélyezze vagy tagadja meg az alkalmazás használati engedélyét.
         \n\nMegjegyzés: Nem gyűjtünk alkalmazás-használati adatokat. Minden az Ön eszközén kerül feldolgozásra.</string>
-    <string name="pro_message">Az zer0-nek van egy pro verziója is, amely Pro Launcher néven ismert. További funkciókat kínál, mint például időjárás, widgetek, betűtípusok, mappák, AMOLED háttérképek stb.
-        \n\nEz a legjobb módja annak, hogy támogassa az zer0 fejlesztőit. Tekintse meg őket!</string>
     <string name="wallpaper_message">Az zer0 minden nap gyönyörű, új háttérképeket kínál, amelyekkel frissen tarthatja kezdőképernyőjét, ingyen!
         \n\nSzeretné kipróbálni?</string>
     <string name="accessibility_service_description">A kisegítő lehetőségek engedélye szükséges a dupla koppintás a lezáráshoz mozdulat engedélyezéséhez. Az zer0 által ezen a szolgáltatáson keresztül megszerzett adatok nem hagyják el a készüléket.</string>
@@ -120,17 +109,12 @@
     <string name="hidden_apps">Rejtett alkalmazások</string>
     <string name="adapter_show">Megjelenítés</string>
     <string name="adapter_hide">Elrejtés</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Ön használja a telefonját, vagy a telefonja használja Önt?</string>
-    <string name="about_olauncher">Névjegy és GYIK</string>
     <string name="screen_time">Képernyőidő</string>
     <string name="learn_more">Tudjon meg többet</string>
     <string name="did_you_know">Tudta?</string>
-    <string name="leave_a_review">Hagyjon véleményt</string>
-    <string name="review_message">Az zer0 ingyenes és mindig az is marad. Nincsenek benne hirdetések, nem gyűjt adatokat, és csökkenti a képernyőidőt, ami egészségesebb élethez vezet.\n\nReméljük, tetszeni fog. Mondja el, mit gondol.</string>
     <string name="alignment_changed">Az igazítás megváltozott ✅</string>
     <string name="home_screen">Kezdőképernyő</string>
     <string name="hey">Üdvözöljük!</string>
-    <string name="more_features">További funkciók…</string>
     <string name="new_year_wish">Egy évre, amely jobb lesz minden eddiginél. Boldog új évet!</string>
     <string name="new_year_wish_1">Nem számít, hogyan telt a január. Még mindig van hátra az évből, hogy minden eddiginél jobban teljesíts.</string>
     <string name="cheers">Egészségére!</string>

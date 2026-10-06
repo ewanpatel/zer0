@@ -13,11 +13,6 @@
     <string name="black">สีดำ</string>
     <string name="white">สีขาว</string>
     <string name="change_default_launcher">เปลี่ยนตัวเปิดใช้งานเริ่มต้น</string>
-    <string name="privacy">ความเป็นส่วนตัว</string>
-    <string name="share">แชร์</string>
-    <string name="share_now">แชร์ตอนนี้</string>
-    <string name="rate">ให้คะแนน</string>
-    <string name="rate_now">ให้คะแนนตอนนี้</string>
     <string name="follow">ติดตาม</string>
     <string name="email">อีเมล</string>
     <string name="donate">บริจาค</string>
@@ -53,19 +48,11 @@
     <string name="system_default">ระบบ</string>
     <string name="dark">มืด</string>
     <string name="light">สว่าง</string>
-    <string name="welcome_to_olauncher_settings">ยินดีต้อนรับสู่การตั้งค่า!
-        \n\nโปรดจำไว้ว่าหากคุณมีคำถามใดๆ หน้าเกี่ยวกับเรามีคำตอบให้คุณ</string>
-    <string name="rate_us_message">สวัสดี คุณจะไม่เห็นข้อความนี้อีก
-        \n\nหากคุณพบว่า zer0 มีประโยชน์ คุณช่วยให้คะแนนรีวิว 5 ดาวได้ไหม มันจะมีความหมายมากสำหรับเรา ขอบคุณ!</string>
-    <string name="share_message">เราต้องการความช่วยเหลือจากคุณ! เราเชื่อว่าทุกคนควรรู้จัก zer0 และประโยชน์ของมัน แต่เราทำเพียงลำพังไม่ได้
-        \n\nคุณช่วยแชร์ zer0 ให้เพื่อน ครอบครัว และผู้ติดตามของคุณได้ไหม ขอบคุณสำหรับการสนับสนุนของคุณ! ❤</string>
     <string name="keyboard_message">สวัสดี แป้นพิมพ์เป็นวิธีที่เร็วที่สุดในการค้นหาและเปิดแอปใน zer0 เราขอให้คุณเปิดฟีเจอร์นี้ไว้อีกสองสามวันแล้วค่อยตัดสินใจได้ไหม
         \n\nทางเลือกเป็นของคุณเสมอ</string>
     <string name="digital_wellbeing_message">หากคุณต้องการตั้งเวลาจำกัดสำหรับแอปบางตัว ฟีเจอร์ Digital Wellbeing ของ Android สามารถช่วยคุณได้ โปรดค้นหา Digital Wellbeing ในการตั้งค่าโทรศัพท์ของคุณและเปิดใช้งาน</string>
     <string name="app_usage_message">หากต้องการแสดง/ซ่อนเวลาหน้าจอบนหน้าจอหลัก โปรดอนุญาตหรือปฏิเสธสิทธิ์การใช้งานแอป
         \n\nหมายเหตุ: ไม่มีการเก็บรวบรวมข้อมูลการใช้งานแอป ทุกอย่างได้รับการประมวลผลบนอุปกรณ์ของคุณเอง</string>
-    <string name="pro_message">zer0 ยังมีเวอร์ชันโปรที่ชื่อว่า Pro Launcher ซึ่งมีฟีเจอร์เพิ่มเติม เช่น สภาพอากาศ วิดเจ็ต แบบอักษร โฟลเดอร์ วอลเปเปอร์ AMOLED และอื่นๆ
-        \n\nนี่ยังเป็นวิธีที่ดีที่สุดในการสนับสนุนนักพัฒนา zer0 ด้วย ลองดูสิ!</string>
     <string name="wallpaper_message">zer0 มอบวอลเปเปอร์ใหม่ที่สวยงามให้ทุกวัน ให้หน้าจอหลักของคุณมีลุคใหม่ทุกวันโดยไม่เสียค่าใช้จ่าย!
         \n\nอยากลองไหม</string>
     <string name="accessibility_service_description">จำเป็นต้องมีสิทธิ์การเข้าถึงเพื่อเปิดใช้งานท่าทาง - แตะสองครั้งเพื่อล็อก ข้อมูลใดๆ ที่ zer0 ได้รับผ่านบริการนี้จะไม่ออกจากอุปกรณ์ของคุณ</string>
@@ -120,18 +107,12 @@
     <string name="hidden_apps">แอปที่ซ่อนอยู่</string>
     <string name="adapter_show">แสดง</string>
     <string name="adapter_hide">ซ่อน</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">คุณกำลังใช้โทรศัพท์ของคุณ หรือโทรศัพท์กำลังใช้คุณ?</string>
-    <string name="about_olauncher">เกี่ยวกับเราและคำถามที่พบบ่อย</string>
     <string name="screen_time">เวลาหน้าจอ</string>
     <string name="learn_more">เรียนรู้เพิ่มเติม</string>
     <string name="did_you_know">คุณรู้หรือไม่?</string>
-    <string name="leave_a_review">เขียนรีวิว</string>
-    <string name="review_message">zer0 ฟรีและจะฟรีตลอดไป ไม่มีโฆษณา ไม่เก็บรวบรวมข้อมูลใดๆ และช่วยลดเวลาหน้าจอของคุณ ส่งผลให้มีชีวิตที่มีสุขภาพดีขึ้น
-        \n\nเราหวังว่าคุณจะชอบมัน บอกเราว่าคุณคิดอย่างไร</string>
     <string name="alignment_changed">เปลี่ยนการจัดวางแล้ว ✅</string>
     <string name="home_screen">หน้าจอหลัก</string>
     <string name="hey">สวัสดี</string>
-    <string name="more_features">ฟีเจอร์เพิ่มเติม…</string>
     <string name="new_year_wish">ขอให้ปีนี้ดีกว่าปีที่ผ่านมา สวัสดีปีใหม่!</string>
     <string name="new_year_wish_1">ไม่สำคัญว่าเดือนมกราคมจะเป็นอย่างไร คุณยังมีเวลาที่เหลือของปีเพื่อทำให้ดีกว่าที่เคย</string>
     <string name="cheers">ชนแก้ว!</string>

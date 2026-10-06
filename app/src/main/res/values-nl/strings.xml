@@ -13,11 +13,6 @@
     <string name="black">Zwart</string>
     <string name="white">Wit</string>
     <string name="change_default_launcher">Wijzig standaard launcher</string>
-    <string name="privacy">Privacy</string>
-    <string name="share">Delen</string>
-    <string name="share_now">Nu delen</string>
-    <string name="rate">Beoordeel</string>
-    <string name="rate_now">Nu beoordelen</string>
     <string name="follow">Volgen</string>
     <string name="email">E-mail</string>
     <string name="donate">Doneren</string>
@@ -53,11 +48,6 @@
     <string name="system_default">Systeem</string>
     <string name="dark">Donker</string>
     <string name="light">Licht</string>
-    <string name="welcome_to_olauncher_settings">Welkom bij de instellingen!
-        \n\nOnthoud, als je vragen hebt, heeft onze Over-pagina het antwoord.</string>
-    <string name="rate_us_message">Hoi, je zult dit bericht niet meer zien.
-        \n\nAls je zer0 nuttig vindt, zou je dan een 5-sterren beoordeling willen achterlaten? Het zou veel voor ons betekenen. Dank je!</string>
-    <string name="share_message">We hebben je hulp nodig! We vinden dat iedereen zer0 en de voordelen ervan zou moeten kennen, maar we kunnen het niet alleen.\n\nZou je zer0 willen delen met je vrienden, familie en volgers? Bedankt voor je steun! ❤</string>
     <!--         \n\nIf you have a moment to spare, could you please share zer0 with others? zer0 needs people. More importantly, people need zer0.</string>-->
     <string name="keyboard_message">Hoi, het toetsenbord is de snelste manier om apps te vinden en te starten in zer0. Mag ik je vragen dit nog een paar dagen ingeschakeld te laten en daarna te beslissen?
         \n\nDe keuze is altijd aan jou.</string>
@@ -65,8 +55,6 @@
         \n\nZoek in de instellingen van je telefoon naar Digital Wellbeing en schakel het in.</string>
     <string name="app_usage_message">Om je schermtijd op het startscherm te tonen of te verbergen, geef of weiger de toestemming voor app-gebruik.
         \n\nOpmerking: er worden geen app-gebruiksgegevens verzameld. Alles wordt op je apparaat verwerkt.</string>
-    <string name="pro_message">zer0 heeft ook een pro-versie genaamd Pro Launcher. Deze heeft extra functies zoals weer, widgets, lettertypen, mappen, AMOLED-achtergronden enz.
-        \n\nHet is ook de beste manier om de ontwikkelaars van zer0 te steunen. Bekijk het eens!</string>
     <string name="wallpaper_message">zer0 biedt dagelijks mooie nieuwe achtergronden. Geef je startscherm iedere dag een frisse nieuwe look, gratis!
         \n\nWil je het proberen?</string>
     <string name="accessibility_service_description">De toegankelijkheidstoestemming is vereist om het gebaar dubbel tikken om te vergrendelen mogelijk te maken. Gegevens die zer0 via deze service verkrijgt, verlaten je apparaat niet.</string>
@@ -120,17 +108,12 @@
     <string name="hidden_apps">Verborgen apps</string>
     <string name="adapter_show">Toon</string>
     <string name="adapter_hide">Verbergen</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Gebruik je je telefoon, of gebruikt je telefoon jou?</string>
-    <string name="about_olauncher">Over en veelgestelde vragen</string>
     <string name="screen_time">Schermtijd</string>
     <string name="learn_more">Meer informatie</string>
     <string name="did_you_know">Wist je dat?</string>
-    <string name="leave_a_review">Laat een recensie achter</string>
-    <string name="review_message">zer0 is gratis en zal dat altijd blijven. Het heeft geen advertenties, verzamelt geen gegevens en vermindert je schermtijd, wat leidt tot een gezonder leven.\n\nWe hopen dat je ervan geniet. Vertel ons wat je ervan vindt.</string>
     <string name="alignment_changed">Uitlijning gewijzigd ✅</string>
     <string name="home_screen">Startscherm</string>
     <string name="hey">Hoi</string>
-    <string name="more_features">Meer functies…</string>
     <string name="new_year_wish">Op een jaar beter dan ooit tevoren. Gelukkig nieuwjaar!</string>
     <string name="new_year_wish_1">Het maakt niet uit hoe januari is verlopen. Je hebt nog de rest van het jaar om het beter te doen dan ooit.</string>
     <string name="cheers">Proost!</string>

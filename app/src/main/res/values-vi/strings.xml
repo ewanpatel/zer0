@@ -13,11 +13,6 @@
     <string name="black">Đen</string>
     <string name="white">Trắng</string>
     <string name="change_default_launcher">Đổi trình khởi chạy mặc định</string>
-    <string name="privacy">Quyền riêng tư</string>
-    <string name="share">Chia sẻ</string>
-    <string name="share_now">Chia sẻ ngay</string>
-    <string name="rate">Đánh giá</string>
-    <string name="rate_now">Đánh giá ngay</string>
     <string name="follow">Theo dõi</string>
     <string name="email">Email</string>
     <string name="donate">Ủng hộ</string>
@@ -53,19 +48,11 @@
     <string name="system_default">Hệ thống</string>
     <string name="dark">Tối</string>
     <string name="light">Sáng</string>
-    <string name="welcome_to_olauncher_settings">Chào mừng bạn đến với phần cài đặt!
-        \n\nHãy nhớ rằng, nếu bạn có bất kỳ câu hỏi nào, trang Giới thiệu sẽ có câu trả lời.</string>
-    <string name="rate_us_message">Xin chào, bạn sẽ không thấy lại thông báo này nữa.
-        \n\nNếu bạn thấy zer0 hữu ích, bạn có thể để lại đánh giá 5 sao không? Điều đó thực sự có ý nghĩa rất lớn với chúng tôi. Cảm ơn bạn!</string>
-    <string name="share_message">Chúng tôi cần sự giúp đỡ của bạn! Chúng tôi tin rằng mọi người nên biết về zer0 và những lợi ích của nó, nhưng chúng tôi không thể tự làm một mình.
-        \n\nBạn có thể chia sẻ zer0 với bạn bè, gia đình và người theo dõi của bạn không? Cảm ơn bạn đã ủng hộ! ❤</string>
     <string name="keyboard_message">Xin chào, bàn phím là cách nhanh nhất để tìm và mở ứng dụng trong zer0. Chúng tôi có thể xin bạn giữ tính năng này bật thêm vài ngày rồi quyết định sau không?
         \n\nLựa chọn luôn là của bạn.</string>
     <string name="digital_wellbeing_message">Nếu bạn muốn đặt giới hạn thời gian cho một số ứng dụng nhất định, tính năng Digital Wellbeing của Android có thể giúp bạn. Vui lòng tìm Digital Wellbeing trong cài đặt điện thoại của bạn và bật tính năng này.</string>
     <string name="app_usage_message">Để hiện/ẩn thời gian sử dụng màn hình trên màn hình chính, vui lòng cho phép hoặc từ chối quyền sử dụng ứng dụng.
         \n\nLưu ý: Không có dữ liệu sử dụng ứng dụng nào được thu thập. Mọi thứ đều được xử lý trên thiết bị của bạn.</string>
-    <string name="pro_message">zer0 cũng có phiên bản pro gọi là Pro Launcher. Nó có thêm các tính năng như thời tiết, widget, phông chữ, thư mục, hình nền AMOLED, v.v.
-        \n\nĐây cũng là cách tốt nhất để hỗ trợ các nhà phát triển của zer0. Hãy xem thử!</string>
     <string name="wallpaper_message">zer0 cung cấp những hình nền mới đẹp mắt mỗi ngày, hoàn toàn miễn phí. Hãy cho màn hình chính của bạn một diện mạo mới mỗi ngày, miễn phí!
         \n\nBạn có muốn thử không?</string>
     <string name="accessibility_service_description">Quyền trợ năng là bắt buộc để bật cử chỉ - chạm hai lần để khóa. Không có bất kỳ dữ liệu nào mà zer0 thu được qua dịch vụ này rời khỏi thiết bị của bạn.</string>
@@ -120,18 +107,12 @@
     <string name="hidden_apps">Ứng dụng ẩn</string>
     <string name="adapter_show">Hiện</string>
     <string name="adapter_hide">Ẩn</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Bạn đang sử dụng điện thoại của mình, hay điện thoại đang sử dụng bạn?</string>
-    <string name="about_olauncher">Giới thiệu và câu hỏi thường gặp</string>
     <string name="screen_time">Thời gian sử dụng màn hình</string>
     <string name="learn_more">Tìm hiểu thêm</string>
     <string name="did_you_know">Bạn có biết?</string>
-    <string name="leave_a_review">Để lại đánh giá</string>
-    <string name="review_message">zer0 miễn phí và sẽ luôn miễn phí. Ứng dụng không có quảng cáo, không thu thập dữ liệu và giúp giảm thời gian sử dụng màn hình, mang lại cuộc sống lành mạnh hơn.
-        \n\nChúng tôi hy vọng bạn thích nó. Hãy cho chúng tôi biết bạn nghĩ gì.</string>
     <string name="alignment_changed">Đã thay đổi căn chỉnh ✅</string>
     <string name="home_screen">Màn hình chính</string>
     <string name="hey">Này</string>
-    <string name="more_features">Thêm tính năng…</string>
     <string name="new_year_wish">Chúc một năm tốt đẹp hơn bất kỳ năm nào trước đây. Chúc mừng năm mới!</string>
     <string name="new_year_wish_1">Tháng Một đã trôi qua như thế nào không quan trọng. Bạn vẫn còn cả năm phía trước để làm tốt hơn bao giờ hết.</string>
     <string name="cheers">Cạn ly!</string>

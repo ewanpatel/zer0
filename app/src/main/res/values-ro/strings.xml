@@ -13,11 +13,6 @@
     <string name="black">Negru</string>
     <string name="white">Alb</string>
     <string name="change_default_launcher">Schimbă launcherul implicit</string>
-    <string name="privacy">Confidențialitate</string>
-    <string name="share">Distribuie</string>
-    <string name="share_now">Distribuie acum</string>
-    <string name="rate">Evaluează</string>
-    <string name="rate_now">Evaluează acum</string>
     <string name="follow">Urmărește</string>
     <string name="email">E-mail</string>
     <string name="donate">Donează</string>
@@ -53,19 +48,11 @@
     <string name="system_default">Sistem</string>
     <string name="dark">Întunecat</string>
     <string name="light">Luminos</string>
-    <string name="welcome_to_olauncher_settings">Bine ai venit în setări!
-        \n\nȚine minte, dacă ai întrebări, pagina Despre are răspunsul.</string>
-    <string name="rate_us_message">Salut, nu vei mai vedea acest mesaj din nou.
-        \n\nDacă găsești zer0 util, ai putea să ne lași o recenzie de 5 stele? Ar însemna enorm pentru noi. Mulțumim!</string>
-    <string name="share_message">Avem nevoie de ajutorul tău! Credem că toată lumea ar trebui să știe despre zer0 și beneficiile sale, dar nu putem face asta singuri.
-        \n\nAi putea distribui zer0 prietenilor, familiei și urmăritorilor tăi? Îți mulțumim pentru sprijin! ❤</string>
     <string name="keyboard_message">Salut, tastatura este cea mai rapidă modalitate de a găsi și lansa aplicații în zer0. Te putem ruga să o lași activată câteva zile în plus și apoi să decizi?
         \n\nAlegerea îți aparține întotdeauna.</string>
     <string name="digital_wellbeing_message">Dacă vrei să setezi limite de timp pentru anumite aplicații, funcția Bunăstare digitală din Android te poate ajuta. Caută Bunăstare digitală în setările telefonului și activeaz-o.</string>
     <string name="app_usage_message">Pentru a afișa/ascunde timpul petrecut pe ecran de pe ecranul de start, permite sau refuză permisiunea de utilizare a aplicațiilor.
         \n\nNotă: Nu se colectează date privind utilizarea aplicațiilor. Totul este procesat pe dispozitivul tău.</string>
-    <string name="pro_message">zer0 are și o versiune pro numită Pro Launcher. Aceasta are funcții suplimentare precum vremea, widgeturi, fonturi, foldere, fundaluri AMOLED și altele.
-        \n\nEste, de asemenea, cea mai bună modalitate de a sprijini dezvoltatorii zer0. Aruncă o privire!</string>
     <string name="wallpaper_message">zer0 oferă fundaluri noi și frumoase zilnic, gratuit. Dă ecranului tău de start un aspect nou în fiecare zi, gratis!
         \n\nVrei să încerci?</string>
     <string name="accessibility_service_description">Permisiunea de accesibilitate este necesară pentru a activa gestul - atinge dublu pentru blocare. Niciun fel de date obținute de zer0 prin acest serviciu nu părăsesc dispozitivul tău.</string>
@@ -120,18 +107,12 @@
     <string name="hidden_apps">Aplicații ascunse</string>
     <string name="adapter_show">Afișează</string>
     <string name="adapter_hide">Ascunde</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Îți folosești telefonul sau telefonul te folosește pe tine?</string>
-    <string name="about_olauncher">Despre și întrebări frecvente</string>
     <string name="screen_time">Timp pe ecran</string>
     <string name="learn_more">Află mai multe</string>
     <string name="did_you_know">Știai că?</string>
-    <string name="leave_a_review">Lasă o recenzie</string>
-    <string name="review_message">zer0 este gratuit și va rămâne mereu așa. Nu are reclame, nu colectează date și îți reduce timpul petrecut pe ecran, ducând la o viață mai sănătoasă.
-        \n\nSperăm că îl vei aprecia. Spune-ne ce părere ai.</string>
     <string name="alignment_changed">Aliniere schimbată ✅</string>
     <string name="home_screen">Ecran de start</string>
     <string name="hey">Salut</string>
-    <string name="more_features">Mai multe funcții…</string>
     <string name="new_year_wish">Un an mai bun decât oricare altul. La mulți ani!</string>
     <string name="new_year_wish_1">Nu contează cum a fost ianuarie. Mai ai tot restul anului pentru a face mai bine ca niciodată.</string>
     <string name="cheers">Noroc!</string>

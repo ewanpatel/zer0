@@ -13,11 +13,6 @@
     <string name="black">Черный</string>
     <string name="white">Белый</string>
     <string name="change_default_launcher">Изменить лаунчер по умолчанию</string>
-    <string name="privacy">Конфиденциальность</string>
-    <string name="share">Поделиться</string>
-    <string name="share_now">Поделиться сейчас</string>
-    <string name="rate">Оценить</string>
-    <string name="rate_now">Оценить сейчас</string>
     <string name="follow">Подписаться</string>
     <string name="email">Электронная почта</string>
 
@@ -54,17 +49,12 @@
     <string name="system_default">Системная</string>
     <string name="dark">Темная</string>
     <string name="light">Светлая</string>
-    <string name="welcome_to_olauncher_settings">Добро пожаловать в настройки!\n\nПомните: если у вас есть вопросы, ответ есть на нашей странице «О приложении».</string>
-    <string name="rate_us_message">Здравствуйте, вы больше не увидите это сообщение.\n\nЕсли zer0 вам полезен, не могли бы вы оставить отзыв с 5 звёздами? Для нас это очень много значит. Спасибо!</string>
-    <string name="share_message">Нам нужна ваша помощь! Мы считаем, что каждый должен знать об zer0 и его преимуществах, но в одиночку нам не справиться.\n\nНе могли бы вы поделиться zer0 с друзьями, семьёй и подписчиками? Спасибо за поддержку! ❤</string>
     <string name="keyboard_message">Привет, клавиатура — это самый быстрый способ найти и запустить приложения в zer0. Могли бы вы продолжить использовать Автопоказ клавиатуры еще несколько дней, прежде чем принять окончательное решение?
         \n\nВыбор всегда за вами.</string>
     <string name="digital_wellbeing_message">Если вы хотите установить ограничения по времени для определенных приложений, функция «Цифровое благополучие» Android может помочь вам в этом.
         \n\nНайдите параметр «Цифровое благополучие» в настройках телефона и включите его.</string>
     <string name="app_usage_message">Чтобы показать/скрыть время экрана на домашнем экране, разрешите или запретите разрешение на использование приложения.
         \n\nПримечание: Не собираются данные об использовании приложения. Все обрабатывается на вашем устройстве.</string>
-    <string name="pro_message">У zer0 также есть профессиональная версия под названием Pro Launcher. Она имеет дополнительные функции, такие как погода, виджеты, шрифты, папки, обои AMOLED и так далее.
-        \n\nЭто также лучший способ поддержать разработчиков zer0. Ознакомьтесь!</string>
     <string name="wallpaper_message">zer0 предлагает красивые новые обои каждый день. Обновите свой главный экран каждый день, бесплатно!
         \n\nХотите попробовать?</string>
     <string name="accessibility_service_description">Разрешение специальных возможностей требуется для включения жеста двойного касания для блокировки. Любые данные, полученные zer0 через этот сервис, не покинут ваше устройство.</string>
@@ -118,17 +108,12 @@
     <string name="hidden_apps">Скрытые приложения</string>
     <string name="adapter_show">Показать</string>
     <string name="adapter_hide">Скрыть</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Вы используете свой телефон, или ваш телефон использует вас?</string>
-    <string name="about_olauncher">О приложении и FAQ</string>
     <string name="screen_time">Время на экране</string>
     <string name="learn_more">Узнать больше</string>
     <string name="did_you_know">Вы знали?</string>
-    <string name="leave_a_review">Оставить отзыв</string>
-    <string name="review_message">zer0 бесплатен и всегда будет таким. В нём нет рекламы, он не собирает данные и сокращает ваше экранное время, что ведёт к более здоровой жизни.\n\nНадеемся, вам понравится. Расскажите нам, что вы думаете.</string>
     <string name="alignment_changed">Выравнивание изменено ✅</string>
     <string name="home_screen">Главный экран</string>
     <string name="hey">Привет</string>
-    <string name="more_features">Больше функций…</string>
     <string name="new_year_wish">За год, который будет лучше всех предыдущих. С Новым годом!</string>
     <string name="new_year_wish_1">Неважно, как прошёл январь. У вас ещё есть остаток года, чтобы добиться большего, чем когда-либо.</string>
     <string name="cheers">Ваше здоровье!</string>

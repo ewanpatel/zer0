@@ -13,11 +13,6 @@
     <string name="black">Sort</string>
     <string name="white">Hvid</string>
     <string name="change_default_launcher">Skift standardlauncher</string>
-    <string name="privacy">Privatliv</string>
-    <string name="share">Del</string>
-    <string name="share_now">Del nu</string>
-    <string name="rate">Bedøm</string>
-    <string name="rate_now">Bedøm nu</string>
     <string name="follow">Følg</string>
     <string name="email">E-mail</string>
     <string name="donate">Donér</string>
@@ -53,19 +48,11 @@
     <string name="system_default">System</string>
     <string name="dark">Mørkt</string>
     <string name="light">Lyst</string>
-    <string name="welcome_to_olauncher_settings">Velkommen til indstillingerne!
-        \n\nHusk, hvis du har spørgsmål, kan du finde svar på vores Om-side.</string>
-    <string name="rate_us_message">Hej, du får ikke denne besked igen.
-        \n\nHvis du finder zer0 nyttig, vil du så give os en 5-stjernet anmeldelse? Det vil betyde meget for os. Tak!</string>
-    <string name="share_message">Vi har brug for din hjælp! Vi mener, at alle bør kende til zer0 og dets fordele, men vi kan ikke gøre det alene.
-        \n\nVil du dele zer0 med dine venner, familie og følgere? Tak for din støtte! ❤</string>
     <string name="keyboard_message">Hej, tastaturet er den hurtigste måde at finde og åbne apps på i zer0. Må vi bede dig om at lade det være slået til et par dage endnu og så beslutte dig?
         \n\nValget er altid dit.</string>
     <string name="digital_wellbeing_message">Hvis du vil angive tidsbegrænsninger for bestemte apps, kan Androids funktion Digital velvære hjælpe dig med det. Søg venligst efter Digital velvære i din telefons indstillinger, og aktivér den.</string>
     <string name="app_usage_message">For at vise/skjule din skærmtid på startskærmen skal du give eller fjerne tilladelsen til appforbrug.
         \n\nBemærk: Ingen appforbrugsdata indsamles. Alt behandles på din egen enhed.</string>
-    <string name="pro_message">zer0 har også en pro-udgave kaldet Pro Launcher. Den har ekstra funktioner som vejr, widgets, skrifttyper, mapper, AMOLED-baggrunde og mere.
-        \n\nDet er også den bedste måde at støtte udviklerne bag zer0 på. Tjek den ud!</string>
     <string name="wallpaper_message">zer0 tilbyder smukke nye baggrundsbilleder hver dag. Giv din startskærm et nyt look hver dag, helt gratis!
         \n\nVil du prøve det?</string>
     <string name="accessibility_service_description">Tilgængelighedstilladelsen er nødvendig for at aktivere bevægelsen - dobbelttryk for at låse. Ingen data indhentet af zer0 via denne tjeneste forlader din enhed.</string>
@@ -119,18 +106,12 @@
     <string name="hidden_apps">Skjulte apps</string>
     <string name="adapter_show">Vis</string>
     <string name="adapter_hide">Skjul</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Bruger du din telefon, eller bruger telefonen dig?</string>
-    <string name="about_olauncher">Om og ofte stillede spørgsmål</string>
     <string name="screen_time">Skærmtid</string>
     <string name="learn_more">Læs mere</string>
     <string name="did_you_know">Vidste du det?</string>
-    <string name="leave_a_review">Skriv en anmeldelse</string>
-    <string name="review_message">zer0 er gratis og vil altid være det. Den har ingen reklamer, indsamler ingen data og reducerer din skærmtid, hvilket giver et sundere liv.
-        \n\nVi håber, du nyder den. Fortæl os, hvad du synes.</string>
     <string name="alignment_changed">Justering ændret ✅</string>
     <string name="home_screen">Startskærm</string>
     <string name="hey">Hej</string>
-    <string name="more_features">Flere funktioner…</string>
     <string name="new_year_wish">Her er til et år, der bliver bedre end noget andet. Godt nytår!</string>
     <string name="new_year_wish_1">Det er lige meget, hvordan januar gik. Du har stadig resten af året til at gøre det bedre end nogensinde.</string>
     <string name="cheers">Skål!</string>

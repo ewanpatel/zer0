@@ -54,11 +54,6 @@
     <string name="black">Czarny</string>
     <string name="white">Biały</string>
     <string name="change_default_launcher">Zmień domyślny program uruchamiający</string>
-    <string name="privacy">Prywatność</string>
-    <string name="share">Udostępnij</string>
-    <string name="share_now">Udostępnij teraz</string>
-    <string name="rate">Oceń</string>
-    <string name="rate_now">Oceń teraz</string>
     <string name="follow">Śledź</string>
     <string name="email">E-mail</string>
 
@@ -83,17 +78,11 @@
     <string name="system_default">System</string>
     <string name="dark">Ciemny</string>
     <string name="light">Jasny</string>
-    <string name="welcome_to_olauncher_settings">Witamy w ustawieniach!
-        \n\nPamiętaj, jeśli masz jakiekolwiek pytania, nasza strona „O nas” ma odpowiedź.</string>
-    <string name="rate_us_message">Cześć, nie zobaczysz już tej wiadomości.\n\nJeśli zer0 jest dla Ciebie przydatny, czy możesz zostawić ocenę 5 gwiazdek? Będzie to dla nas bardzo wiele znaczyć. Dziękujemy!</string>
-    <string name="share_message">Potrzebujemy Twojej pomocy! Uważamy, że każdy powinien wiedzieć o zer0 i jego zaletach, ale sami nie damy rady.\n\nCzy możesz udostępnić zer0 swoim znajomym, rodzinie i obserwującym? Dziękujemy za wsparcie! ❤</string>
     <string name="keyboard_message">Cześć, klawiatura to najszybszy sposób znajdowania i uruchamiania aplikacji w zer0. Czy możemy poprosić o pozostawienie tego włączonego jeszcze przez kilka dni, a następnie podjęcie decyzji?\n\nWybór zawsze należy do Ciebie.</string>
     <string name="digital_wellbeing_message">Jeśli chcesz ustawić limity czasowe dla niektórych aplikacji, funkcja Cyfrowa równowaga w systemie Android może Ci w tym pomóc.
         \n\nWyszukaj opcję Cyfrowa równowaga w ustawieniach telefonu i włącz ją.</string>
     <string name="app_usage_message">Aby wyświetlić/ukryć czas ekranu na ekranie głównym, pozwól lub zabroń aplikacji na dostęp do danych o użyciu.
         \n\nUwaga: Nie są gromadzone żadne dane o użyciu aplikacji. Wszystko jest przetwarzane na Twoim urządzeniu.</string>
-    <string name="pro_message">zer0 ma również wersję pro o nazwie Pro Launcher. Posiada dodatkowe funkcje, takie jak pogoda, widgety, czcionki, foldery, tapety AMOLED itp.
-        \n\nTo także najlepszy sposób na wsparcie deweloperów zer0. Sprawdź to!</string>
     <string name="wallpaper_message">zer0 oferuje piękne nowe tapety codziennie. Nadaj swojemu ekranowi głównemu świeży wygląd każdego dnia, za darmo!
         \n\nChcesz spróbować?</string>
     <string name="accessibility_service_description">Uprawnienie ułatwień dostępu jest wymagane, aby włączyć gest podwójnego dotknięcia do zablokowania. Żadne dane pozyskane przez zer0 za pośrednictwem tej usługi nie opuszczą Twojego urządzenia.</string>
@@ -118,17 +107,12 @@
     <string name="swipe_right_app_enabled">Gest Przesuń w prawo jest włączony</string>
     <string name="swipe_left_app_disabled">Gest Przesuń w lewo wyłączony</string>
     <string name="swipe_right_app_disabled">Gest Przesuń w prawo jest wyłączony</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Czy używasz telefonu, czy telefon używa ciebie?</string>
-    <string name="about_olauncher">O aplikacji i FAQ</string>
     <string name="screen_time">Czas ekranowy</string>
     <string name="learn_more">Dowiedz się więcej</string>
     <string name="did_you_know">Czy wiesz?</string>
-    <string name="leave_a_review">Zostaw opinię</string>
-    <string name="review_message">zer0 jest darmowy i zawsze taki będzie. Nie ma reklam, nie zbiera danych i skraca czas spędzany przed ekranem, co przekłada się na zdrowsze życie.\n\nMamy nadzieję, że Ci się spodoba. Powiedz nam, co myślisz.</string>
     <string name="alignment_changed">Wyrównanie zmienione ✅</string>
     <string name="home_screen">Ekran główny</string>
     <string name="hey">Hej</string>
-    <string name="more_features">Więcej funkcji…</string>
     <string name="new_year_wish">Za rok lepszy niż wszystkie poprzednie. Szczęśliwego nowego roku!</string>
     <string name="new_year_wish_1">Nie ma znaczenia, jak minął styczeń. Wciąż masz resztę roku, aby poradzić sobie lepiej niż kiedykolwiek.</string>
     <string name="cheers">Na zdrowie!</string>

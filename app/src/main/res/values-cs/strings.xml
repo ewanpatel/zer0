@@ -13,11 +13,6 @@
     <string name="black">Černá</string>
     <string name="white">Bílá</string>
     <string name="change_default_launcher">Změnit výchozí spouštěč</string>
-    <string name="privacy">Soukromí</string>
-    <string name="share">Sdílet</string>
-    <string name="share_now">Sdílet nyní</string>
-    <string name="rate">Ohodnotit</string>
-    <string name="rate_now">Ohodnotit nyní</string>
     <string name="follow">Sledovat</string>
     <string name="email">E-mail</string>
     <string name="donate">Přispět</string>
@@ -53,19 +48,11 @@
     <string name="system_default">Systémový</string>
     <string name="dark">Tmavý</string>
     <string name="light">Světlý</string>
-    <string name="welcome_to_olauncher_settings">Vítejte v nastavení!
-        \n\nPamatujte, pokud máte jakékoli otázky, na stránce O aplikaci najdete odpovědi.</string>
-    <string name="rate_us_message">Ahoj, tuto zprávu už znovu neuvidíte.
-        \n\nPokud vám zer0 přijde užitečný, mohli byste nám prosím nechat pětihvězdičkové hodnocení? Bude to pro nás moc znamenat. Děkujeme!</string>
-    <string name="share_message">Potřebujeme vaši pomoc! Věříme, že by měl o zer0u a jeho výhodách vědět každý, ale sami to nezvládneme.
-        \n\nMohli byste prosím sdílet zer0 se svými přáteli, rodinou a sledujícími? Děkujeme za vaši podporu! ❤</string>
     <string name="keyboard_message">Ahoj, klávesnice je nejrychlejší způsob, jak v zer0u najít a spustit aplikace. Můžeme vás požádat, abyste ji nechali zapnutou ještě pár dní a pak se rozhodli?
         \n\nVolba je vždy na vás.</string>
     <string name="digital_wellbeing_message">Pokud chcete nastavit časové limity pro určité aplikace, může vám pomoci funkce Digital Wellbeing v Androidu. Vyhledejte prosím Digital Wellbeing v nastavení telefonu a zapněte ji.</string>
     <string name="app_usage_message">Chcete-li zobrazit nebo skrýt dobu používání obrazovky na domovské obrazovce, povolte nebo zakažte prosím oprávnění k používání aplikací.
         \n\nPoznámka: Žádná data o používání aplikací se nesbírají. Vše se zpracovává přímo ve vašem zařízení.</string>
-    <string name="pro_message">zer0 má také verzi Pro s názvem Pro Launcher. Obsahuje další funkce jako počasí, widgety, písma, složky, AMOLED tapety a další.
-        \n\nJe to také nejlepší způsob, jak podpořit vývojáře zer0u. Podívejte se na ni!</string>
     <string name="wallpaper_message">zer0 nabízí denně nové krásné tapety zdarma. Dejte své domovské obrazovce každý den nový vzhled, zdarma!
         \n\nChcete to vyzkoušet?</string>
     <string name="accessibility_service_description">Oprávnění přístupnosti je vyžadováno pro povolení gesta - dvojité klepnutí pro zamknutí. Žádná data získaná zer0em prostřednictvím této služby neopustí vaše zařízení.</string>
@@ -120,18 +107,12 @@
     <string name="hidden_apps">Skryté aplikace</string>
     <string name="adapter_show">Zobrazit</string>
     <string name="adapter_hide">Skrýt</string>
-    <string name="are_you_using_your_phone_or_is_your_phone_using_you">Používáte svůj telefon, nebo telefon používá vás?</string>
-    <string name="about_olauncher">O aplikaci a časté dotazy</string>
     <string name="screen_time">Doba u obrazovky</string>
     <string name="learn_more">Zjistit více</string>
     <string name="did_you_know">Věděli jste?</string>
-    <string name="leave_a_review">Zanechat recenzi</string>
-    <string name="review_message">zer0 je zdarma a vždy bude. Nemá reklamy, nesbírá žádná data a zkracuje dobu strávenou u obrazovky, což vede ke zdravějšímu životu.
-        \n\nDoufáme, že se vám bude líbit. Řekněte nám, co si myslíte.</string>
     <string name="alignment_changed">Zarovnání změněno ✅</string>
     <string name="home_screen">Domovská obrazovka</string>
     <string name="hey">Ahoj</string>
-    <string name="more_features">Další funkce…</string>
     <string name="new_year_wish">Ať je tento rok lepší než kterýkoli předchozí. Šťastný nový rok!</string>
     <string name="new_year_wish_1">Nezáleží na tom, jaký byl leden. Zbytek roku máte pořád před sebou, abyste ho zvládli lépe než kdy dřív.</string>
     <string name="cheers">Na zdraví!</string>
