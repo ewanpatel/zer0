@@ -12,7 +12,6 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">نصيحة: ابدأ في كتابة اسم التطبيق لتشغيله تلقائيًا</string>
     <string name="okay">حسنًا</string>
     <string name="cool">رائع!</string>
@@ -35,7 +34,6 @@
     <string name="not_working"><u>لا يعمل؟</u></string>
     <string name="info">معلومات</string>
     <string name="delete">إلغاء التثبيت</string>
-    <string name="text_size">حجم الخط</string>
     <string name="enabled">ممكّن</string>
     <string name="disabled">مُطفأ</string>
     <string name="please_turn_on_double_tap_to_unlock">يرجى تشغيل النقر المزدوج للقفل</string>
@@ -60,25 +58,13 @@
     <string name="email">البريد الإلكتروني</string>
     <string name="donate">تبرّع</string>
     <string name="swipe_up_for_apps">1. مرر لأعلى لجميع التطبيقات\n2. اضغط مطوّلًا في أي مكان للإعدادات</string>
-    <string name="apps_on_home_screen">التطبيقات على الشاشة الرئيسية</string>
     <string name="daily_wallpaper_update">تحديث الخلفية يوميّا</string>
-    <string name="left">يسار</string>
-    <string name="right">يمين</string>
-    <string name="center">وسط</string>
-    <string name="home_layout_alignment">محاذاة التطبيق</string>
     <string name="swipe_left_app">افتح عند التمرير لليسار</string>
     <string name="swipe_right_app">افتح عند التمرير لليمين</string>
-    <string name="auto_show_keyboard">العرض التلقائي للوحة المفاتيح</string>
     <string name="hide">إخفاء</string>
-    <string name="status_bar">أظهر شريط الحالة</string>
     <string name="rename">إعادة تسمية</string>
-    <string name="show_date_time">إظهار التاريخ والوقت</string>
     <string name="appearance">المظهر</string>
     <string name="gestures">إيماءات</string>
-    <string name="theme_mode">النمط</string>
-    <string name="system_default">نظام</string>
-    <string name="dark">داكن</string>
-    <string name="light">فاتح</string>
     <string name="keyboard_message">مرحبًا، لوحة المفاتيح هي أسرع طريقة للعثور على التطبيقات وتشغيلها في zer0. هل يمكننا أن نطلب منك إبقاء هذا الخيار مفعّلًا لبضعة أيام أخرى ثم اتخاذ القرار؟\n\nالاختيار دائمًا لك.</string>
     <string name="digital_wellbeing_message">إذا كنت تريد تعيين حدود زمنية لتطبيقات معينة، فيمكن أن تساعدك ميزة الرفاهية الرقمية في Android على القيام بذلك.
         \n\nيرجى البحث عن الرفاهية الرقمية في إعدادات هاتفك وتمكينها.</string>
@@ -95,11 +81,6 @@
     <string name="not_now">ليس الآن</string>
     <string name="public_roadmap">خارطة طريق zer0 العامة</string>
     <string name="roadmap">خريطة الطريق</string>
-    <string name="date">تاريخ</string>
-    <string name="date_only">التاريخ فقط</string>
-    <string name="bottom_on">المحاذاة لأسفل</string>
-    <string name="bottom_off">المحاذاة لأعلى</string>
-    <string name="please_set_olauncher_as_default_first">يرجى تعيين zer0 كمشغل افتراضي أولاً</string>
     <string name="affiliate">الشراكة</string>
     <string name="app_not_found">التطبيق غير موجود</string>
     <string name="unable_to_launch_app">تعذر تشغيل التطبيق</string>
@@ -109,13 +90,10 @@
     <string name="learn_more">اعرف المزيد</string>
     <string name="did_you_know">هل كنت تعلم؟</string>
     <string name="screen_time">وقت الشاشة</string>
-    <string name="alignment_changed">تم تغيير المحاذاة ✅</string>
-    <string name="home_screen">الشاشة الرئيسية</string>
     <string name="hey">مرحبا</string>
     <string name="new_year_wish">إليك عامًا أفضل من كل ما سبقه. سنة جديدة سعيدة!</string>
     <string name="new_year_wish_1">لا يهم كيف مضى شهر يناير. لا يزال لديك بقية العام لتقدم أداءً أفضل من أي وقت مضى.</string>
     <string name="cheers">بصحتك!</string>
-    <string name="notification_bar">شريط الإشعارات</string>
     <string name="private_space">المساحة الخاصة</string>
     <string name="invalid_pin_request">طلب تثبيت غير صالح</string>
     <string name="widgets_not_supported">التطبيقات المصغرة غير مدعومة</string>
@@ -126,5 +104,4 @@
     <string name="shortcut_not_found">لم يتم العثور على الاختصار</string>
     <string name="unable_to_open_shortcut">يتعذر فتح الاختصار</string>
     <string name="unable_to_open_app_info">تعذر فتح معلومات التطبيق</string>
-    <string name="bold_font">خط عريض</string>
 </resources>

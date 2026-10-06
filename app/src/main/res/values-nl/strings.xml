@@ -17,12 +17,7 @@
     <string name="email">E-mail</string>
     <string name="donate">Doneren</string>
     <string name="swipe_up_for_apps">1. Veeg omhoog voor alle apps\n2. Ergens lang indrukken voor instellingen</string>
-    <string name="apps_on_home_screen">Apps op startscherm</string>
     <string name="daily_wallpaper_update">Dagelijks nieuwe achtergrond</string>
-    <string name="left">Links</string>
-    <string name="right">Rechts</string>
-    <string name="center">Midden</string>
-    <string name="home_layout_alignment">App uitlijning</string>
     <string name="swipe_left_app">Veeg naar links app</string>
     <string name="swipe_right_app">Veeg naar rechts app</string>
     <string name="_0">0</string>
@@ -33,21 +28,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Tip: Begin met het typen van een app-naam om deze automatisch te starten</string>
     <string name="okay">Oké</string>
     <string name="cool">Cool!</string>
-    <string name="auto_show_keyboard">Auto tonen toetsenbord</string>
     <string name="hide">Verbergen</string>
-    <string name="status_bar">Statusbalk bovenaan</string>
     <string name="rename">Hernoemen</string>
-    <string name="show_date_time">Datum en tijd weergeven</string>
     <string name="appearance">Uiterlijk</string>
     <string name="gestures">Gebaren</string>
-    <string name="theme_mode">Themamodus</string>
-    <string name="system_default">Systeem</string>
-    <string name="dark">Donker</string>
-    <string name="light">Licht</string>
     <!--         \n\nIf you have a moment to spare, could you please share zer0 with others? zer0 needs people. More importantly, people need zer0.</string>-->
     <string name="keyboard_message">Hoi, het toetsenbord is de snelste manier om apps te vinden en te starten in zer0. Mag ik je vragen dit nog een paar dagen ingeschakeld te laten en daarna te beslissen?
         \n\nDe keuze is altijd aan jou.</string>
@@ -66,11 +53,6 @@
     <string name="not_now">Niet nu</string>
     <string name="public_roadmap">Openbare roadmap van zer0</string>
     <string name="roadmap">Routekaart</string>
-    <string name="date">Datum</string>
-    <string name="date_only">Alleen datum</string>
-    <string name="bottom_on">Onder: Aan</string>
-    <string name="bottom_off">Onder: Uit</string>
-    <string name="please_set_olauncher_as_default_first">Stel zer0 eerst in als standaard</string>
     <string name="affiliate">Affiliate</string>
     <string name="tip_start_typing_for_rename">Tip: Begin met typen om een app te hernoemen</string>
     <string name="hidden_apps_message">Opmerking: Tik bovenaan deze instellingenpagina op \'zer0\' om je verborgen apps te vinden.\n\nMeer informatie is beschikbaar op onze Over-pagina.</string>
@@ -84,7 +66,6 @@
     <string name="not_working"><u>Werkt niet?</u></string>
     <string name="info">Info</string>
     <string name="delete">Verwijderen</string>
-    <string name="text_size">Tekstgrootte</string>
     <string name="enabled">Ingeschakeld</string>
     <string name="disabled">Uitgeschakeld</string>
     <string name="please_turn_on_double_tap_to_unlock">Schakel dubbel tik om te vergrendelen in</string>
@@ -111,13 +92,10 @@
     <string name="screen_time">Schermtijd</string>
     <string name="learn_more">Meer informatie</string>
     <string name="did_you_know">Wist je dat?</string>
-    <string name="alignment_changed">Uitlijning gewijzigd ✅</string>
-    <string name="home_screen">Startscherm</string>
     <string name="hey">Hoi</string>
     <string name="new_year_wish">Op een jaar beter dan ooit tevoren. Gelukkig nieuwjaar!</string>
     <string name="new_year_wish_1">Het maakt niet uit hoe januari is verlopen. Je hebt nog de rest van het jaar om het beter te doen dan ooit.</string>
     <string name="cheers">Proost!</string>
-    <string name="notification_bar">Meldingenbalk</string>
     <string name="private_space">Privéruimte</string>
     <string name="invalid_pin_request">Ongeldig vastzetverzoek</string>
     <string name="widgets_not_supported">Widgets worden niet ondersteund</string>
@@ -128,5 +106,4 @@
     <string name="shortcut_not_found">Snelkoppeling niet gevonden</string>
     <string name="unable_to_open_shortcut">Kan snelkoppeling niet openen</string>
     <string name="unable_to_open_app_info">Kan app-info niet openen</string>
-    <string name="bold_font">Vet lettertype</string>
 </resources><!-- Dutch -->

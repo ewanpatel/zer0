@@ -12,7 +12,6 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">ヒント: アプリ名の入力を開始すると、アプリが自動的に起動します</string>
     <string name="okay">OK</string>
     <string name="cool">いいね！</string>
@@ -34,7 +33,6 @@
     <string name="not_working"><u>動作しませんか？</u></string>
     <string name="info">情報</string>
     <string name="delete">アンインストール</string>
-    <string name="text_size">文字サイズ</string>
     <string name="enabled">有効</string>
     <string name="disabled">無効</string>
     <string name="please_turn_on_double_tap_to_unlock">ダブルタップでロックをオンにしてください</string>
@@ -60,25 +58,13 @@
 
     <string name="donate">寄付</string>
     <string name="swipe_up_for_apps">1. 上にスワイプしてすべてのアプリを表示します\n2. 設定を行うには任意の場所を長押しします</string>
-    <string name="apps_on_home_screen">ホーム画面のアプリ</string>
     <string name="daily_wallpaper_update">毎日新しい壁紙</string>
-    <string name="left">左</string>
-    <string name="right">右</string>
-    <string name="center">中心</string>
-    <string name="home_layout_alignment">アプリの配置</string>
     <string name="swipe_left_app">左スワイプで開くアプリ</string>
     <string name="swipe_right_app">右スワイプで開くアプリ</string>
-    <string name="auto_show_keyboard">キーボードの自動表示</string>
     <string name="hide">非表示</string>
-    <string name="status_bar">上部にステータスバー</string>
     <string name="rename">名前の変更</string>
-    <string name="show_date_time">日付時刻を表示する</string>
     <string name="appearance">外観</string>
     <string name="gestures">ジェスチャー</string>
-    <string name="theme_mode">テーマモード</string>
-    <string name="system_default">システム</string>
-    <string name="dark">ダーク</string>
-    <string name="light">ライト</string>
     <string name="keyboard_message">こんにちは、キーボードは zer0 でアプリを見つけて起動する最も速い方法です。あと数日間オンにしたままにして、それから判断していただけませんか？\n\n選択は常にあなた次第です。</string>
     <string name="digital_wellbeing_message">特定のアプリに時間制限を設定したい場合は、Android の Digital Wellbeing 機能を使用すると便利です。
         \n\n携帯電話の設定で Digital Wellbeing を検索し、有効にしてください。</string>
@@ -95,11 +81,6 @@
     <string name="not_now">今はしない</string>
     <string name="public_roadmap">zer0 の公開ロードマップ</string>
     <string name="roadmap">ロードマップ</string>
-    <string name="date">日付</string>
-    <string name="date_only">日付のみ</string>
-    <string name="bottom_on">下: オン</string>
-    <string name="bottom_off">下: オフ</string>
-    <string name="please_set_olauncher_as_default_first">まず zer0 をデフォルトのランチャーとして設定してください</string>
     <string name="affiliate">アフィリエイト</string>
     <string name="app_not_found">アプリが見つかりません</string>
     <string name="unable_to_launch_app">アプリを起動できません</string>
@@ -111,13 +92,10 @@
     <string name="swipe_right_app_disabled">右スワイプアプリを無効にしました</string>
     <string name="learn_more">もっと詳しく知る</string>
     <string name="did_you_know">知っていましたか？</string>
-    <string name="alignment_changed">配置を変更しました ✅</string>
-    <string name="home_screen">ホーム画面</string>
     <string name="hey">やあ</string>
     <string name="new_year_wish">これまでのどの年よりも良い一年になりますように。明けましておめでとうございます！</string>
     <string name="new_year_wish_1">1月がどうだったかは関係ありません。これまで以上に良い結果を出すために、まだ今年の残りの期間があります。</string>
     <string name="cheers">乾杯!</string>
-    <string name="notification_bar">通知バー</string>
     <string name="private_space">プライベート スペース</string>
     <string name="invalid_pin_request">無効な固定リクエストです</string>
     <string name="widgets_not_supported">ウィジェットはサポートされていません</string>
@@ -128,5 +106,4 @@
     <string name="shortcut_not_found">ショートカットが見つかりません</string>
     <string name="unable_to_open_shortcut">ショートカットを開けません</string>
     <string name="unable_to_open_app_info">アプリ情報を開けません</string>
-    <string name="bold_font">太字フォント</string>
 </resources> <!-- Japanese -->

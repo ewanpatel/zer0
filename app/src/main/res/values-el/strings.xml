@@ -17,12 +17,7 @@
     <string name="email">Email</string>
     <string name="donate">Δωρεά</string>
     <string name="swipe_up_for_apps">1. Σύρετε προς τα πάνω για όλες τις εφαρμογές\n2. Παρατεταμένο πάτημα οπουδήποτε για τις ρυθμίσεις</string>
-    <string name="apps_on_home_screen">Εφαρμογές στην αρχική οθόνη</string>
     <string name="daily_wallpaper_update">Καθημερινή νέα ταπετσαρία</string>
-    <string name="left">Αριστερά</string>
-    <string name="right">Δεξιά</string>
-    <string name="center">Κέντρο</string>
-    <string name="home_layout_alignment">Στοίχιση εφαρμογών</string>
     <string name="swipe_left_app">Εφαρμογή σε σύρσιμο αριστερά</string>
     <string name="swipe_right_app">Εφαρμογή σε σύρσιμο δεξιά</string>
     <string name="_0">0</string>
@@ -33,21 +28,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Συμβουλή: Ξεκινήστε να πληκτρολογείτε το όνομα μιας εφαρμογής για αυτόματο άνοιγμα</string>
     <string name="okay">Εντάξει</string>
     <string name="cool">Ωραία!</string>
-    <string name="auto_show_keyboard">Αυτόματη εμφάνιση πληκτρολογίου</string>
     <string name="hide">Απόκρυψη</string>
-    <string name="status_bar">Γραμμή κατάστασης επάνω</string>
     <string name="rename">Μετονομασία</string>
-    <string name="show_date_time">Εμφάνιση ημερομηνίας/ώρας</string>
     <string name="appearance">Εμφάνιση</string>
     <string name="gestures">Χειρονομίες</string>
-    <string name="theme_mode">Λειτουργία θέματος</string>
-    <string name="system_default">Σύστημα</string>
-    <string name="dark">Σκούρο</string>
-    <string name="light">Ανοιχτόχρωμο</string>
     <string name="keyboard_message">Γεια σας, το πληκτρολόγιο είναι ο ταχύτερος τρόπος για να βρείτε και να ανοίξετε εφαρμογές στο zer0. Μπορούμε να σας ζητήσουμε να το αφήσετε ενεργό για λίγες ακόμη ημέρες και μετά να αποφασίσετε;
         \n\nΗ επιλογή είναι πάντα δική σας.</string>
     <string name="digital_wellbeing_message">Αν θέλετε να ορίσετε χρονικά όρια για συγκεκριμένες εφαρμογές, η λειτουργία Ψηφιακή Ευεξία του Android μπορεί να σας βοηθήσει. Αναζητήστε το Ψηφιακή Ευεξία στις ρυθμίσεις του τηλεφώνου σας και ενεργοποιήστε το.</string>
@@ -64,11 +51,6 @@
     <string name="not_now">Όχι τώρα</string>
     <string name="public_roadmap">Δημόσιος οδικός χάρτης zer0</string>
     <string name="roadmap">Οδικός χάρτης</string>
-    <string name="date">Ημερομηνία</string>
-    <string name="date_only">Μόνο ημερομηνία</string>
-    <string name="bottom_on">Κάτω: Ενεργό</string>
-    <string name="bottom_off">Κάτω: Ανενεργό</string>
-    <string name="please_set_olauncher_as_default_first">Ορίστε πρώτα το zer0 ως προεπιλογή</string>
     <string name="affiliate">Συνεργάτης</string>
     <string name="tip_start_typing_for_rename">Συμβουλή: Ξεκινήστε να πληκτρολογείτε για επιλογή ΜΕΤΟΝΟΜΑΣΙΑΣ εφαρμογής</string>
     <string name="hidden_apps_message">Σημείωση: Πατήστε στο \'zer0\' στην κορυφή αυτής της σελίδας Ρυθμίσεων για να βρείτε τις κρυφές εφαρμογές σας.\n\nΠερισσότερες λεπτομέρειες διαθέσιμες στη σελίδα Σχετικά.</string>
@@ -82,7 +64,6 @@
     <string name="not_working"><u>Δεν λειτουργεί;</u></string>
     <string name="info">Πληροφορίες</string>
     <string name="delete">Απεγκατάσταση</string>
-    <string name="text_size">Μέγεθος κειμένου</string>
     <string name="enabled">Ενεργοποιημένο</string>
     <string name="disabled">Απενεργοποιημένο</string>
     <string name="please_turn_on_double_tap_to_unlock">Ενεργοποιήστε το διπλό πάτημα για κλείδωμα</string>
@@ -110,13 +91,10 @@
     <string name="screen_time">Χρόνος οθόνης</string>
     <string name="learn_more">Μάθετε περισσότερα</string>
     <string name="did_you_know">Το γνωρίζατε;</string>
-    <string name="alignment_changed">Η στοίχιση άλλαξε ✅</string>
-    <string name="home_screen">Αρχική οθόνη</string>
     <string name="hey">Γεια</string>
     <string name="new_year_wish">Σε μια χρονιά καλύτερη από κάθε άλλη. Καλή χρονιά!</string>
     <string name="new_year_wish_1">Δεν έχει σημασία πώς πήγε ο Ιανουάριος. Έχετε ακόμα τον υπόλοιπο χρόνο για να τα πάτε καλύτερα από ποτέ.</string>
     <string name="cheers">Στην υγειά μας!</string>
-    <string name="notification_bar">Γραμμή ειδοποιήσεων</string>
     <string name="private_space">Ιδιωτικός χώρος</string>
     <string name="invalid_pin_request">Μη έγκυρο αίτημα καρφιτσώματος</string>
     <string name="widgets_not_supported">Τα widgets δεν υποστηρίζονται</string>
@@ -126,5 +104,4 @@
     <string name="invalid_shortcut">Μη έγκυρη συντόμευση</string>
     <string name="shortcut_not_found">Η συντόμευση δεν βρέθηκε</string>
     <string name="unable_to_open_shortcut">Αδύνατο το άνοιγμα της συντόμευσης</string>
-    <string name="bold_font">Έντονη γραμματοσειρά</string>
 </resources>

@@ -49,7 +49,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     val hiddenApps = MutableLiveData<List<AppModel>?>()
     val isOlauncherDefault = MutableLiveData<Boolean>()
     val launcherResetFailed = MutableLiveData<Boolean>()
-    val homeAppAlignment = MutableLiveData<Int>()
     val screenTimeValue = MutableLiveData<String>()
 
     val privateSpaceApps = MutableLiveData<List<AppModel>?>()
@@ -434,11 +433,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         WorkManager.getInstance(appContext).cancelUniqueWork(Constants.WALLPAPER_WORKER_NAME)
         prefs.dailyWallpaperUrl = ""
         prefs.dailyWallpaper = false
-    }
-
-    fun updateHomeAlignment(gravity: Int) {
-        prefs.homeAlignment = gravity
-        homeAppAlignment.value = prefs.homeAlignment
     }
 
     fun getTodaysScreenTime() {

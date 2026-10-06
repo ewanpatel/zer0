@@ -17,12 +17,7 @@
     <string name="email">E-mail</string>
     <string name="donate">Přispět</string>
     <string name="swipe_up_for_apps">1. Přejetím nahoru zobrazíte všechny aplikace\n2. Dlouhým podržením kdekoli otevřete nastavení</string>
-    <string name="apps_on_home_screen">Aplikace na domovské obrazovce</string>
     <string name="daily_wallpaper_update">Denně nová tapeta</string>
-    <string name="left">Vlevo</string>
-    <string name="right">Vpravo</string>
-    <string name="center">Na střed</string>
-    <string name="home_layout_alignment">Zarovnání aplikací</string>
     <string name="swipe_left_app">Aplikace při přejetí vlevo</string>
     <string name="swipe_right_app">Aplikace při přejetí vpravo</string>
     <string name="_0">0</string>
@@ -33,21 +28,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Tip: Začněte psát název aplikace pro její automatické spuštění</string>
     <string name="okay">Dobře</string>
     <string name="cool">Skvělé!</string>
-    <string name="auto_show_keyboard">Automaticky zobrazit klávesnici</string>
     <string name="hide">Skrýt</string>
-    <string name="status_bar">Stavový řádek nahoře</string>
     <string name="rename">Přejmenovat</string>
-    <string name="show_date_time">Zobrazit datum a čas</string>
     <string name="appearance">Vzhled</string>
     <string name="gestures">Gesta</string>
-    <string name="theme_mode">Motiv</string>
-    <string name="system_default">Systémový</string>
-    <string name="dark">Tmavý</string>
-    <string name="light">Světlý</string>
     <string name="keyboard_message">Ahoj, klávesnice je nejrychlejší způsob, jak v zer0u najít a spustit aplikace. Můžeme vás požádat, abyste ji nechali zapnutou ještě pár dní a pak se rozhodli?
         \n\nVolba je vždy na vás.</string>
     <string name="digital_wellbeing_message">Pokud chcete nastavit časové limity pro určité aplikace, může vám pomoci funkce Digital Wellbeing v Androidu. Vyhledejte prosím Digital Wellbeing v nastavení telefonu a zapněte ji.</string>
@@ -64,11 +51,6 @@
     <string name="not_now">Teď ne</string>
     <string name="public_roadmap">Veřejný plán vývoje zer0</string>
     <string name="roadmap">Plán vývoje</string>
-    <string name="date">Datum</string>
-    <string name="date_only">Pouze datum</string>
-    <string name="bottom_on">Dole: Zapnuto</string>
-    <string name="bottom_off">Dole: Vypnuto</string>
-    <string name="please_set_olauncher_as_default_first">Nejprve prosím nastavte zer0 jako výchozí</string>
     <string name="affiliate">Affiliate</string>
     <string name="tip_start_typing_for_rename">Tip: Začněte psát pro možnost přejmenování aplikace</string>
     <string name="hidden_apps_message">Poznámka: Klepněte na \'zer0\' v horní části stránky Nastavení a najdete své skryté aplikace.\n\nVíce podrobností najdete na stránce O aplikaci.</string>
@@ -82,7 +64,6 @@
     <string name="not_working"><u>Nefunguje to?</u></string>
     <string name="info">Informace</string>
     <string name="delete">Odinstalovat</string>
-    <string name="text_size">Velikost textu</string>
     <string name="enabled">Povoleno</string>
     <string name="disabled">Zakázáno</string>
     <string name="please_turn_on_double_tap_to_unlock">Zapněte prosím dvojité klepnutí pro zamknutí</string>
@@ -110,13 +91,10 @@
     <string name="screen_time">Doba u obrazovky</string>
     <string name="learn_more">Zjistit více</string>
     <string name="did_you_know">Věděli jste?</string>
-    <string name="alignment_changed">Zarovnání změněno ✅</string>
-    <string name="home_screen">Domovská obrazovka</string>
     <string name="hey">Ahoj</string>
     <string name="new_year_wish">Ať je tento rok lepší než kterýkoli předchozí. Šťastný nový rok!</string>
     <string name="new_year_wish_1">Nezáleží na tom, jaký byl leden. Zbytek roku máte pořád před sebou, abyste ho zvládli lépe než kdy dřív.</string>
     <string name="cheers">Na zdraví!</string>
-    <string name="notification_bar">Panel oznámení</string>
     <string name="private_space">Soukromý prostor</string>
     <string name="invalid_pin_request">Neplatný požadavek na připnutí</string>
     <string name="widgets_not_supported">Widgety nejsou podporovány</string>
@@ -126,5 +104,4 @@
     <string name="invalid_shortcut">Neplatný zástupce</string>
     <string name="shortcut_not_found">Zástupce nenalezen</string>
     <string name="unable_to_open_shortcut">Zástupce nelze otevřít</string>
-    <string name="bold_font">Tučné písmo</string>
 </resources>

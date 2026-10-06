@@ -12,7 +12,6 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Wskazówka: zacznij wpisywać nazwę aplikacji, aby uruchomić ją automatycznie</string>
     <string name="okay">OK</string>
     <string name="cool">Super!</string>
@@ -33,7 +32,6 @@
     <string name="not_working"><u>Nie działa?</u></string>
     <string name="info">Informacje</string>
     <string name="delete">Odinstaluj</string>
-    <string name="text_size">Rozmiar czcionki</string>
     <string name="enabled">Włączono</string>
     <string name="disabled">Wyłączono</string>
     <string name="please_turn_on_double_tap_to_unlock">Włącz podwójne dotknięcie, aby zablokować</string>
@@ -59,25 +57,13 @@
 
     <string name="donate">Wspomóż</string>
     <string name="swipe_up_for_apps">1. Przesuń palcem w górę, aby wyświetlić wszystkie aplikacje\n2. Naciśnij i przytrzymaj dowolne miejsce, aby przejść do ustawień</string>
-    <string name="apps_on_home_screen">Aplikacje na ekranie głównym</string>
     <string name="daily_wallpaper_update">Codziennie nowa tapeta</string>
-    <string name="left">Lewo</string>
-    <string name="right">Prawo</string>
-    <string name="center">Środek</string>
-    <string name="home_layout_alignment">Wyrównanie aplikacji</string>
     <string name="swipe_left_app">Aplikacja przy przesunięciu w lewo</string>
     <string name="swipe_right_app">Aplikacja przy przesunięciu w prawo</string>
-    <string name="auto_show_keyboard">Automatyczne wyświetlanie klawiatury</string>
     <string name="hide">Ukryj</string>
-    <string name="status_bar">Pasek stanu u góry</string>
     <string name="rename">Zmień nazwę</string>
-    <string name="show_date_time">Pokaż datę i godzinę</string>
     <string name="appearance">Wygląd</string>
     <string name="gestures">Gesty</string>
-    <string name="theme_mode">Temat</string>
-    <string name="system_default">System</string>
-    <string name="dark">Ciemny</string>
-    <string name="light">Jasny</string>
     <string name="keyboard_message">Cześć, klawiatura to najszybszy sposób znajdowania i uruchamiania aplikacji w zer0. Czy możemy poprosić o pozostawienie tego włączonego jeszcze przez kilka dni, a następnie podjęcie decyzji?\n\nWybór zawsze należy do Ciebie.</string>
     <string name="digital_wellbeing_message">Jeśli chcesz ustawić limity czasowe dla niektórych aplikacji, funkcja Cyfrowa równowaga w systemie Android może Ci w tym pomóc.
         \n\nWyszukaj opcję Cyfrowa równowaga w ustawieniach telefonu i włącz ją.</string>
@@ -94,11 +80,6 @@
     <string name="not_now">Nie teraz</string>
     <string name="public_roadmap">Publiczna mapa drogowa zer0</string>
     <string name="roadmap">Mapa drogowa</string>
-    <string name="date">Data</string>
-    <string name="date_only">Tylko data</string>
-    <string name="bottom_on">Dół: wł.</string>
-    <string name="bottom_off">Dół: wył.</string>
-    <string name="please_set_olauncher_as_default_first">Najpierw ustaw zer0 jako domyślny program uruchamiający</string>
     <string name="affiliate">Partner</string>
     <string name="app_not_found">Nie znaleziono aplikacji</string>
     <string name="unable_to_launch_app">Nie można uruchomić aplikacji</string>
@@ -110,13 +91,10 @@
     <string name="screen_time">Czas ekranowy</string>
     <string name="learn_more">Dowiedz się więcej</string>
     <string name="did_you_know">Czy wiesz?</string>
-    <string name="alignment_changed">Wyrównanie zmienione ✅</string>
-    <string name="home_screen">Ekran główny</string>
     <string name="hey">Hej</string>
     <string name="new_year_wish">Za rok lepszy niż wszystkie poprzednie. Szczęśliwego nowego roku!</string>
     <string name="new_year_wish_1">Nie ma znaczenia, jak minął styczeń. Wciąż masz resztę roku, aby poradzić sobie lepiej niż kiedykolwiek.</string>
     <string name="cheers">Na zdrowie!</string>
-    <string name="notification_bar">Pasek powiadomień</string>
     <string name="private_space">Przestrzeń prywatna</string>
     <string name="invalid_pin_request">Nieprawidłowe żądanie przypięcia</string>
     <string name="widgets_not_supported">Widżety nie są obsługiwane</string>
@@ -127,5 +105,4 @@
     <string name="shortcut_not_found">Nie znaleziono skrótu</string>
     <string name="unable_to_open_shortcut">Nie można otworzyć skrótu</string>
     <string name="unable_to_open_app_info">Nie można otworzyć informacji o aplikacji</string>
-    <string name="bold_font">Pogrubiona czcionka</string>
 </resources><!-- Polish -->

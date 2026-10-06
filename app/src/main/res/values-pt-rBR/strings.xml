@@ -18,12 +18,7 @@
 
     <string name="donate">Doar</string>
     <string name="swipe_up_for_apps">1. Deslize para cima para ver todos os aplicativos\n2. Pressione e segure em qualquer lugar para acessar as configurações</string>
-    <string name="apps_on_home_screen">Aplicativos na tela inicial</string>
     <string name="daily_wallpaper_update">Novo papel de parede diariamente</string>
-    <string name="left">Esquerda</string>
-    <string name="right">Direita</string>
-    <string name="center">Centro</string>
-    <string name="home_layout_alignment">Alinhamento de aplicativos</string>
     <string name="swipe_left_app">Aplicativo ao deslizar para a esquerda</string>
     <string name="swipe_right_app">Aplicativo ao deslizar para a direita</string>
     <string name="_0">0</string>
@@ -34,21 +29,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Dica: comece a digitar um nome de aplicativo para iniciá-lo automaticamente</string>
     <string name="okay">Ok</string>
     <string name="cool">Boa!</string>
-    <string name="auto_show_keyboard">Exibição automática do teclado</string>
     <string name="hide">Ocultar</string>
-    <string name="status_bar">Mostrar barra de status</string>
     <string name="rename">Renomear</string>
-    <string name="show_date_time">Mostrar data e hora</string>
     <string name="appearance">Aparência</string>
     <string name="gestures">Gestos</string>
-    <string name="theme_mode">Modo de tema</string>
-    <string name="system_default">Sistema</string>
-    <string name="dark">Escuro</string>
-    <string name="light">Claro</string>
     <string name="keyboard_message">Olá, o teclado é a maneira mais rápida de encontrar e iniciar aplicativos no zer0. Podemos pedir-lhe que mantenha isto ligado por mais alguns dias para depois decidir?
         \n\nA escolha é sempre sua!</string>
     <string name="digital_wellbeing_message">Se você deseja definir limites de tempo para determinados aplicativos, o recurso Bem-estar digital do Android pode ajudá-lo a fazer isso.
@@ -66,11 +53,6 @@
     <string name="not_now">Agora não</string>
     <string name="public_roadmap">Roteiro público do zer0</string>
     <string name="roadmap">Roteiro</string>
-    <string name="date">Data</string>
-    <string name="date_only">Apenas data</string>
-    <string name="bottom_on">Fundo: Ativado</string>
-    <string name="bottom_off">Fundo: Desligado</string>
-    <string name="please_set_olauncher_as_default_first">Por favor, defina o zer0 como seu launcher padrão primeiro</string>
     <string name="affiliate">Afiliado</string>
     <string name="tip_start_typing_for_rename">Dica: comece a digitar para ver a opção de RENOMEAR o aplicativo</string>
     <string name="hidden_apps_message">Nota: Toque em \'zer0\' na parte superior desta página de Configurações para encontrar seus aplicativos ocultos.\n\nMais detalhes disponíveis em nossa página Sobre.</string>
@@ -84,7 +66,6 @@
     <string name="not_working"><u>Não está funcionando?</u></string>
     <string name="info">Informação</string>
     <string name="delete">Desinstalar</string>
-    <string name="text_size">Tamanho do texto</string>
     <string name="enabled">Ativado</string>
     <string name="disabled">Desativado</string>
     <string name="please_turn_on_double_tap_to_unlock">Ative o toque duplo para bloquear</string>
@@ -111,13 +92,10 @@
     <string name="learn_more">Saber mais</string>
     <string name="screen_time">Tempo de tela</string>
     <string name="did_you_know">Você sabia?</string>
-    <string name="alignment_changed">Alinhamento alterado ✅</string>
-    <string name="home_screen">Tela inicial</string>
     <string name="hey">Oi</string>
     <string name="new_year_wish">A um ano melhor do que qualquer um anterior. Feliz ano novo!</string>
     <string name="new_year_wish_1">Não importa como foi janeiro. Você ainda tem o resto do ano para se sair melhor do que nunca.</string>
     <string name="cheers">Saúde!</string>
-    <string name="notification_bar">Barra de notificações</string>
     <string name="private_space">Espaço privado</string>
     <string name="invalid_pin_request">Solicitação de fixação inválida</string>
     <string name="widgets_not_supported">Widgets não são compatíveis</string>
@@ -128,5 +106,4 @@
     <string name="shortcut_not_found">Atalho não encontrado</string>
     <string name="unable_to_open_shortcut">Não é possível abrir o atalho</string>
     <string name="unable_to_open_app_info">Não é possível abrir as informações do aplicativo</string>
-    <string name="bold_font">Fonte em negrito</string>
 </resources><!-- Portuguese -->

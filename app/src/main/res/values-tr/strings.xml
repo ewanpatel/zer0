@@ -12,7 +12,6 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">İpucu: Otomatik başlatmak için bir uygulama adı yazın</string>
     <string name="okay">Tamam</string>
     <string name="cool">Harika!</string>
@@ -33,7 +32,6 @@
     <string name="not_working"><u>Çalışmıyor mu?</u></string>
     <string name="info">Bilgi</string>
     <string name="delete">Kaldır</string>
-    <string name="text_size">Yazı Boyutu</string>
     <string name="enabled">Etkin</string>
     <string name="disabled">Devre Dışı</string>
     <string name="please_turn_on_double_tap_to_unlock">Lütfen kilitlemek için çift dokunmayı açın</string>
@@ -59,25 +57,13 @@
 
     <string name="donate">Bağış yap</string>
     <string name="swipe_up_for_apps">1. Tüm uygulamalar için yukarı kaydırın\n2. Ayarlar için herhangi bir yere uzun basın</string>
-    <string name="apps_on_home_screen">Ana ekran uygulamaları</string>
     <string name="daily_wallpaper_update">Günlük duvar kağıtları</string>
-    <string name="left">Sol</string>
-    <string name="right">Sağ</string>
-    <string name="center">Merkez</string>
-    <string name="home_layout_alignment">Uygulama hizalaması</string>
     <string name="swipe_left_app">Sola kaydırma uygulaması</string>
     <string name="swipe_right_app">Sağa kaydırma uygulaması</string>
-    <string name="auto_show_keyboard">Klavyeyi otomatik göster</string>
     <string name="hide">Sakla</string>
-    <string name="status_bar">Durum çubuğunu göster</string>
     <string name="rename">Yeniden isimlendir</string>
-    <string name="show_date_time">Tarih ve saati göster</string>
     <string name="appearance">Görünüm</string>
     <string name="gestures">Hareketler</string>
-    <string name="theme_mode">Tema modu</string>
-    <string name="system_default">Sistem</string>
-    <string name="dark">Koyu</string>
-    <string name="light">Açık</string>
     <string name="keyboard_message">Merhaba, klavye, zer0\'da uygulamaları bulmanın ve başlatmanın en hızlı yoludur. Birkaç gün daha kullanıp karar vermenizi rica ederiz.
         \n\nSeçim her zaman sizindir.</string>
     <string name="digital_wellbeing_message">Belirli uygulamalar için zaman sınırları belirlemek istiyorsanız Android\'in Dijital Denge özelliği bunu yapmanıza yardımcı olacaktır.
@@ -95,11 +81,6 @@
     <string name="not_now">Şimdi değil</string>
     <string name="public_roadmap">zer0 Yol Çizelgesi</string>
     <string name="roadmap">Yol Çizelgesi</string>
-    <string name="date">Tarih</string>
-    <string name="date_only">Sadece tarih</string>
-    <string name="bottom_on">Alt: Açık</string>
-    <string name="bottom_off">Alt: Kapalı</string>
-    <string name="please_set_olauncher_as_default_first">Lütfen önce zer0\'ı varsayılan başlatıcınız olarak ayarlayın</string>
     <string name="affiliate">Ortak</string>
     <string name="app_not_found">Uygulama bulunamadı</string>
     <string name="unable_to_launch_app">Uygulama başlatılamadı</string>
@@ -111,13 +92,10 @@
     <string name="learn_more">Daha fazla bilgi</string>
     <string name="screen_time">Ekran süresi</string>
     <string name="did_you_know">Biliyor muydunuz?</string>
-    <string name="alignment_changed">Hizalama değiştirildi ✅</string>
-    <string name="home_screen">Ana ekran</string>
     <string name="hey">Merhaba</string>
     <string name="new_year_wish">Öncekilerin hepsinden daha iyi bir yıl olsun. Mutlu yıllar!</string>
     <string name="new_year_wish_1">Ocak ayının nasıl geçtiği önemli değil. Her zamankinden daha iyisini yapmak için hala yılın geri kalanı var.</string>
     <string name="cheers">Şerefe!</string>
-    <string name="notification_bar">Bildirim çubuğu</string>
     <string name="private_space">Özel alan</string>
     <string name="invalid_pin_request">Geçersiz sabitleme isteği</string>
     <string name="widgets_not_supported">Widget\'lar desteklenmiyor</string>
@@ -128,5 +106,4 @@
     <string name="shortcut_not_found">Kısayol bulunamadı</string>
     <string name="unable_to_open_shortcut">Kısayol açılamıyor</string>
     <string name="unable_to_open_app_info">Uygulama bilgisi açılamıyor</string>
-    <string name="bold_font">Kalın yazı tipi</string>
 </resources><!-- Turkish -->

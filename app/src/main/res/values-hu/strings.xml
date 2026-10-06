@@ -17,12 +17,7 @@
     <string name="email">E-mail</string>
     <string name="donate">Adományozás</string>
     <string name="swipe_up_for_apps">1. Simítson felfelé az összes alkalmazás megjelenítéséhez\n2. Nyomja meg hosszan bármelyik ponton a beállításokhoz</string>
-    <string name="apps_on_home_screen">Alkalmazások a kezdőképernyőn</string>
     <string name="daily_wallpaper_update">Naponta új háttérkép</string>
-    <string name="left">Bal</string>
-    <string name="right">Jobb</string>
-    <string name="center">Közép</string>
-    <string name="home_layout_alignment">Ikonok elhelyezkedése</string>
     <string name="swipe_left_app">Balra simítva indítható alkalmazás</string>
     <string name="swipe_right_app">Jobbra simítva indítható alkalmazás</string>
     <string name="_0">0</string>
@@ -33,21 +28,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Tipp: Kezdje el begépelni egy alkalmazás nevét annak automatikus indításához</string>
     <string name="okay">Rendben</string>
     <string name="cool">Szuper!</string>
-    <string name="auto_show_keyboard">Billentyűzet auto. megjelenítése</string>
     <string name="hide">Elrejtés</string>
-    <string name="status_bar">Állapotsor megjelenítése fent</string>
     <string name="rename">Átnevezés</string>
-    <string name="show_date_time">Dátum és idő megjelenítése</string>
     <string name="appearance">Megjelenés</string>
     <string name="gestures">Mozdulatok</string>
-    <string name="theme_mode">Téma mód</string>
-    <string name="system_default">Rendszer</string>
-    <string name="dark">Sötét</string>
-    <string name="light">Világos</string>
     <!--        \n\nHa van egy kis ideje, kérjük, ossza meg másokkal is az zer0-t. Az zer0-nek szüksége van emberekre. De ami még fontosabb, az embereknek szüksége van az zer0-re..</string>-->
     <string name="keyboard_message">Üdvözöljük! A billentyűzet a leggyorsabb módja az alkalmazások megtalálásához és elindításához az zer0ben. Megkérhetjük, hogy hagyja bekapcsolva még néhány napig, és utána döntsön?
         \n\nA választás mindig az Öné.</string>
@@ -67,11 +54,6 @@
     <string name="not_now">Később</string>
     <string name="public_roadmap">zer0 nyilvános ütemterv</string>
     <string name="roadmap">Ütemterv</string>
-    <string name="date">Dátum</string>
-    <string name="date_only">Csak dátum</string>
-    <string name="bottom_on">Alsó: Be</string>
-    <string name="bottom_off">Alsó: Ki</string>
-    <string name="please_set_olauncher_as_default_first">Kérjük, először állítsa be az zer0-t alapértelmezettként</string>
     <string name="affiliate">Affiliate</string>
     <string name="tip_start_typing_for_rename">Tipp: Kezdjen el gépelni az alkalmazás ÁTNEVEZÉSE opcióhoz</string>
     <string name="hidden_apps_message">Megjegyzés: A rejtett alkalmazások megtalálásához érintse meg az \"zer0\" elemet ennek a beállítás oldalnak a tetején.\n\nTöbb részlet elérhető a Névjegy oldalon.</string>
@@ -85,7 +67,6 @@
     <string name="not_working"><u>Nem működik?</u></string>
     <string name="info">Információ</string>
     <string name="delete">Eltávolítás</string>
-    <string name="text_size">Szövegméret</string>
     <string name="enabled">Engedélyezve</string>
     <string name="disabled">Letiltva</string>
     <string name="please_turn_on_double_tap_to_unlock">Kérjük, kapcsolja be a dupla koppintást a lezáráshoz</string>
@@ -112,13 +93,10 @@
     <string name="screen_time">Képernyőidő</string>
     <string name="learn_more">Tudjon meg többet</string>
     <string name="did_you_know">Tudta?</string>
-    <string name="alignment_changed">Az igazítás megváltozott ✅</string>
-    <string name="home_screen">Kezdőképernyő</string>
     <string name="hey">Üdvözöljük!</string>
     <string name="new_year_wish">Egy évre, amely jobb lesz minden eddiginél. Boldog új évet!</string>
     <string name="new_year_wish_1">Nem számít, hogyan telt a január. Még mindig van hátra az évből, hogy minden eddiginél jobban teljesíts.</string>
     <string name="cheers">Egészségére!</string>
-    <string name="notification_bar">Értesítési sáv</string>
     <string name="private_space">Privát tér</string>
     <string name="invalid_pin_request">Érvénytelen rögzítési kérelem</string>
     <string name="widgets_not_supported">A modulok nem támogatottak</string>
@@ -129,5 +107,4 @@
     <string name="shortcut_not_found">A parancsikon nem található</string>
     <string name="unable_to_open_shortcut">Nem lehet megnyitni a parancsikont</string>
     <string name="unable_to_open_app_info">Nem lehet megnyitni az alkalmazás adatait</string>
-    <string name="bold_font">Félkövér betűtípus</string>
 </resources><!-- Hungarian -->

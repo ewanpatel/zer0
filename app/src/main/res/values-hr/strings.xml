@@ -17,12 +17,7 @@
     <string name="email">E-pošta</string>
     <string name="donate">Doniraj</string>
     <string name="swipe_up_for_apps">1. Povuci prema gore za aplikacije\n2. Dugo pritisnite bilo gdje za postavke</string>
-    <string name="apps_on_home_screen">Aplikacije na početnoj stranici</string>
     <string name="daily_wallpaper_update">Dnevne pozadine</string>
-    <string name="left">Lijevo</string>
-    <string name="right">Desno</string>
-    <string name="center">Sredina</string>
-    <string name="home_layout_alignment">Poravnanje aplikacija</string>
     <string name="swipe_left_app">Aplikacija za lijevi potez</string>
     <string name="swipe_right_app">Aplikacija za desni potez</string>
     <string name="_0">0</string>
@@ -33,21 +28,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Savjet: Počnite tipkati naziv aplikacije da bi se automatski pokrenula</string>
     <string name="okay">U redu</string>
     <string name="cool">Cool!</string>
-    <string name="auto_show_keyboard">Automatski prikaži tipkovnicu</string>
     <string name="hide">Sakrij</string>
-    <string name="status_bar">Statusna traka na vrhu</string>
     <string name="rename">Preimenuj</string>
-    <string name="show_date_time">Prikaži datum i vrijeme</string>
     <string name="appearance">Izgled</string>
     <string name="gestures">Geste</string>
-    <string name="theme_mode">Tema</string>
-    <string name="system_default">Sustav</string>
-    <string name="dark">Tamna</string>
-    <string name="light">Svijetla</string>
     <string name="keyboard_message">Bok, tipkovnica je najbrži način za pronalaženje i pokretanje aplikacija u zer0u. Možemo li vas zamoliti da to zadržite uključeno još nekoliko dana, a zatim odlučite?
         \n\nIzbor je uvijek vaš.</string>
     <string name="digital_wellbeing_message">Ako želite postaviti vremenska ograničenja za određene aplikacije, značajka Digital Wellbeing na Androidu može vam pomoći u tome.
@@ -65,11 +52,6 @@
     <string name="not_now">Ne sad</string>
     <string name="public_roadmap">Javni plan razvoja zer0a</string>
     <string name="roadmap">Plan razvoja</string>
-    <string name="date">Datum</string>
-    <string name="date_only">Samo datum</string>
-    <string name="bottom_on">Dno: uklj.</string>
-    <string name="bottom_off">Dno: isklj.</string>
-    <string name="please_set_olauncher_as_default_first">Prvo postavite zer0 kao zadani pokretač</string>
     <string name="affiliate">Sponzorstvo</string>
     <string name="tip_start_typing_for_rename">Savjet: počni pisati za opciju preimenovanja aplikacija</string>
     <string name="hidden_apps_message">Napomena: Dodirnite \'zer0\' na vrhu ove stranice postavki da biste pronašli svoje skrivene aplikacije.\n\nViše detalja dostupno je na našoj stranici Informacije.</string>
@@ -87,7 +69,6 @@
     <string name="not_working"><u>Ne radi?</u></string>
     <string name="info">Informacije</string>
     <string name="delete">Deinstaliraj</string>
-    <string name="text_size">Veličina teksta</string>
     <string name="enabled">Omogućeno</string>
     <string name="disabled">Onemogućeno</string>
     <string name="please_turn_on_double_tap_to_unlock">Molimo uključite dvostruki dodir za zaključavanje</string>
@@ -111,13 +92,10 @@
     <string name="hidden_apps">Skrivene aplikacije</string>
     <string name="adapter_show">Prikaži</string>
     <string name="adapter_hide">Sakrij</string>
-    <string name="alignment_changed">Poravnanje promijenjeno ✅</string>
-    <string name="home_screen">Početni ekran</string>
     <string name="hey">Bok</string>
     <string name="new_year_wish">Neka je ova godina bolja od svih prije. Sretna nova godina!</string>
     <string name="new_year_wish_1">Nije važno kako je prošao siječanj. Još uvijek imate ostatak godine da budete bolji nego ikad.</string>
     <string name="cheers">Živjeli!</string>
-    <string name="notification_bar">Traka obavijesti</string>
     <string name="private_space">Privatni prostor</string>
     <string name="invalid_pin_request">Nevažeći zahtjev za prikvačivanje</string>
     <string name="widgets_not_supported">Widgeti nisu podržani</string>
@@ -128,5 +106,4 @@
     <string name="shortcut_not_found">Prečac nije pronađen</string>
     <string name="unable_to_open_shortcut">Prečac nije moguće otvoriti</string>
     <string name="unable_to_open_app_info">Nije moguće otvoriti informacije o aplikaciji</string>
-    <string name="bold_font">Podebljani font</string>
 </resources><!-- Croatian -->

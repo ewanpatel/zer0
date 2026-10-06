@@ -17,12 +17,7 @@
     <string name="email">ईमेल</string>
     <string name="donate">डोनेट करें</string>
     <string name="swipe_up_for_apps">1. सभी ऐप्स देखने के लिए ऊपर स्वाइप करें\n2. सेटिंग्स के लिए कहीं भी लॉन्ग प्रेस करें</string>
-    <string name="apps_on_home_screen">होम स्क्रीन पर ऐप्स</string>
     <string name="daily_wallpaper_update">हर रोज़ नया वॉलपेपर</string>
-    <string name="left">बाएँ</string>
-    <string name="right">दाएँ</string>
-    <string name="center">बीच में</string>
-    <string name="home_layout_alignment">ऐप अलाइनमेंट</string>
     <string name="swipe_left_app">बाएँ स्वाइप ऐप</string>
     <string name="swipe_right_app">दाएँ स्वाइप ऐप</string>
     <string name="_0">0</string>
@@ -33,21 +28,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">टिप: ऐप को अपने आप लॉन्च करने के लिए उसका नाम टाइप करना शुरू करें</string>
     <string name="okay">ठीक है</string>
     <string name="cool">बढ़िया!</string>
-    <string name="auto_show_keyboard">कीबोर्ड अपने आप दिखाएं</string>
     <string name="hide">छुपाएं</string>
-    <string name="status_bar">स्टेटस बार ऊपर</string>
     <string name="rename">नाम बदलें</string>
-    <string name="show_date_time">दिनांक और समय दिखाएं</string>
     <string name="appearance">दिखावट</string>
     <string name="gestures">जेस्चर</string>
-    <string name="theme_mode">थीम मोड</string>
-    <string name="system_default">सिस्टम</string>
-    <string name="dark">डार्क</string>
-    <string name="light">लाइट</string>
     <string name="keyboard_message">नमस्ते, zer0 में ऐप्स ढूंढने और खोलने का सबसे तेज़ तरीका कीबोर्ड है। क्या हम आपसे अनुरोध कर सकते हैं कि इसे कुछ और दिनों के लिए ऑन रखें और फिर फ़ैसला करें?
         \n\nचुनाव हमेशा आपका है।</string>
     <string name="digital_wellbeing_message">अगर आप कुछ ऐप्स के लिए समय सीमा तय करना चाहते हैं, तो Android की Digital Wellbeing फ़ीचर आपकी मदद कर सकती है। कृपया अपने फ़ोन की सेटिंग्स में Digital Wellbeing खोजें और उसे चालू करें।</string>
@@ -64,11 +51,6 @@
     <string name="not_now">अभी नहीं</string>
     <string name="public_roadmap">zer0 का सार्वजनिक रोडमैप</string>
     <string name="roadmap">रोडमैप</string>
-    <string name="date">दिनांक</string>
-    <string name="date_only">सिर्फ़ दिनांक</string>
-    <string name="bottom_on">नीचे: चालू</string>
-    <string name="bottom_off">नीचे: बंद</string>
-    <string name="please_set_olauncher_as_default_first">कृपया पहले zer0 को डिफ़ॉल्ट सेट करें</string>
     <string name="affiliate">अफिलिएट</string>
     <string name="tip_start_typing_for_rename">टिप: ऐप का नाम बदलने के विकल्प के लिए टाइप करना शुरू करें</string>
     <string name="hidden_apps_message">नोट: अपनी छिपी हुई ऐप्स ढूंढने के लिए इस Settings पेज के ऊपर \'zer0\' पर टैप करें।\n\nअधिक जानकारी हमारे About पेज पर उपलब्ध है।</string>
@@ -82,7 +64,6 @@
     <string name="not_working"><u>काम नहीं कर रहा?</u></string>
     <string name="info">जानकारी</string>
     <string name="delete">अनइंस्टॉल करें</string>
-    <string name="text_size">टेक्स्ट का आकार</string>
     <string name="enabled">चालू है</string>
     <string name="disabled">बंद है</string>
     <string name="please_turn_on_double_tap_to_unlock">कृपया डबल टैप टू लॉक चालू करें</string>
@@ -110,13 +91,10 @@
     <string name="screen_time">स्क्रीन टाइम</string>
     <string name="learn_more">और जानें</string>
     <string name="did_you_know">क्या आप जानते हैं?</string>
-    <string name="alignment_changed">अलाइनमेंट बदल गया ✅</string>
-    <string name="home_screen">होम स्क्रीन</string>
     <string name="hey">नमस्ते</string>
     <string name="new_year_wish">यह साल पहले से कहीं बेहतर हो। नया साल मुबारक हो!</string>
     <string name="new_year_wish_1">जनवरी कैसा भी गया हो, इससे कोई फ़र्क नहीं पड़ता। पूरा साल अभी बाकी है, इसे पहले से बेहतर बनाने के लिए।</string>
     <string name="cheers">चियर्स!</string>
-    <string name="notification_bar">नोटिफिकेशन बार</string>
     <string name="private_space">प्राइवेट स्पेस</string>
     <string name="invalid_pin_request">अमान्य पिन अनुरोध</string>
     <string name="widgets_not_supported">विजेट समर्थित नहीं हैं</string>
@@ -126,5 +104,4 @@
     <string name="invalid_shortcut">अमान्य शॉर्टकट</string>
     <string name="shortcut_not_found">शॉर्टकट नहीं मिला</string>
     <string name="unable_to_open_shortcut">शॉर्टकट खोलने में असमर्थ</string>
-    <string name="bold_font">बोल्ड फ़ॉन्ट</string>
 </resources>

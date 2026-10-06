@@ -17,12 +17,7 @@
     <string name="email">Email</string>
     <string name="donate">Ủng hộ</string>
     <string name="swipe_up_for_apps">1. Vuốt lên để xem tất cả ứng dụng\n2. Nhấn giữ ở bất kỳ đâu để mở cài đặt</string>
-    <string name="apps_on_home_screen">Ứng dụng trên màn hình chính</string>
     <string name="daily_wallpaper_update">Hình nền mới mỗi ngày</string>
-    <string name="left">Trái</string>
-    <string name="right">Phải</string>
-    <string name="center">Giữa</string>
-    <string name="home_layout_alignment">Căn chỉnh ứng dụng</string>
     <string name="swipe_left_app">Ứng dụng khi vuốt trái</string>
     <string name="swipe_right_app">Ứng dụng khi vuốt phải</string>
     <string name="_0">0</string>
@@ -33,21 +28,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Mẹo: Bắt đầu gõ tên ứng dụng để tự động mở ứng dụng đó</string>
     <string name="okay">Đồng ý</string>
     <string name="cool">Tuyệt!</string>
-    <string name="auto_show_keyboard">Tự động hiện bàn phím</string>
     <string name="hide">Ẩn</string>
-    <string name="status_bar">Thanh trạng thái ở trên</string>
     <string name="rename">Đổi tên</string>
-    <string name="show_date_time">Hiện ngày giờ</string>
     <string name="appearance">Giao diện</string>
     <string name="gestures">Cử chỉ</string>
-    <string name="theme_mode">Chế độ giao diện</string>
-    <string name="system_default">Hệ thống</string>
-    <string name="dark">Tối</string>
-    <string name="light">Sáng</string>
     <string name="keyboard_message">Xin chào, bàn phím là cách nhanh nhất để tìm và mở ứng dụng trong zer0. Chúng tôi có thể xin bạn giữ tính năng này bật thêm vài ngày rồi quyết định sau không?
         \n\nLựa chọn luôn là của bạn.</string>
     <string name="digital_wellbeing_message">Nếu bạn muốn đặt giới hạn thời gian cho một số ứng dụng nhất định, tính năng Digital Wellbeing của Android có thể giúp bạn. Vui lòng tìm Digital Wellbeing trong cài đặt điện thoại của bạn và bật tính năng này.</string>
@@ -64,11 +51,6 @@
     <string name="not_now">Để sau</string>
     <string name="public_roadmap">Lộ trình công khai của zer0</string>
     <string name="roadmap">Lộ trình</string>
-    <string name="date">Ngày</string>
-    <string name="date_only">Chỉ ngày</string>
-    <string name="bottom_on">Dưới cùng: Bật</string>
-    <string name="bottom_off">Dưới cùng: Tắt</string>
-    <string name="please_set_olauncher_as_default_first">Vui lòng đặt zer0 làm mặc định trước</string>
     <string name="affiliate">Tiếp thị liên kết</string>
     <string name="tip_start_typing_for_rename">Mẹo: Bắt đầu gõ để có tùy chọn ĐỔI TÊN ứng dụng</string>
     <string name="hidden_apps_message">Lưu ý: Nhấn vào \'zer0\' ở đầu trang Cài đặt này để tìm các ứng dụng ẩn của bạn.\n\nCó thêm chi tiết trên trang Giới thiệu của chúng tôi.</string>
@@ -82,7 +64,6 @@
     <string name="not_working"><u>Không hoạt động?</u></string>
     <string name="info">Thông tin</string>
     <string name="delete">Gỡ cài đặt</string>
-    <string name="text_size">Cỡ chữ</string>
     <string name="enabled">Đã bật</string>
     <string name="disabled">Đã tắt</string>
     <string name="please_turn_on_double_tap_to_unlock">Vui lòng bật chạm hai lần để khóa</string>
@@ -110,13 +91,10 @@
     <string name="screen_time">Thời gian sử dụng màn hình</string>
     <string name="learn_more">Tìm hiểu thêm</string>
     <string name="did_you_know">Bạn có biết?</string>
-    <string name="alignment_changed">Đã thay đổi căn chỉnh ✅</string>
-    <string name="home_screen">Màn hình chính</string>
     <string name="hey">Này</string>
     <string name="new_year_wish">Chúc một năm tốt đẹp hơn bất kỳ năm nào trước đây. Chúc mừng năm mới!</string>
     <string name="new_year_wish_1">Tháng Một đã trôi qua như thế nào không quan trọng. Bạn vẫn còn cả năm phía trước để làm tốt hơn bao giờ hết.</string>
     <string name="cheers">Cạn ly!</string>
-    <string name="notification_bar">Thanh thông báo</string>
     <string name="private_space">Không gian riêng tư</string>
     <string name="invalid_pin_request">Yêu cầu ghim không hợp lệ</string>
     <string name="widgets_not_supported">Không hỗ trợ widget</string>
@@ -126,5 +104,4 @@
     <string name="invalid_shortcut">Lối tắt không hợp lệ</string>
     <string name="shortcut_not_found">Không tìm thấy lối tắt</string>
     <string name="unable_to_open_shortcut">Không thể mở lối tắt</string>
-    <string name="bold_font">Phông chữ đậm</string>
 </resources>

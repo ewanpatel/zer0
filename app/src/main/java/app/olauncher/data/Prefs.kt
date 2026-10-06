@@ -15,25 +15,15 @@ class Prefs(context: Context) {
     private val FIRST_HIDE = "FIRST_HIDE"
     private val USER_STATE = "USER_STATE"
     private val LOCK_MODE = "LOCK_MODE"
-    private val HOME_APPS_NUM = "HOME_APPS_NUM"
-    private val AUTO_SHOW_KEYBOARD = "AUTO_SHOW_KEYBOARD"
     private val KEYBOARD_MESSAGE = "KEYBOARD_MESSAGE"
     private val DAILY_WALLPAPER = "DAILY_WALLPAPER"
     private val DAILY_WALLPAPER_URL = "DAILY_WALLPAPER_URL"
-    private val HOME_ALIGNMENT = "HOME_ALIGNMENT"
-    private val HOME_BOTTOM_ALIGNMENT = "HOME_BOTTOM_ALIGNMENT"
-    private val APP_LABEL_ALIGNMENT = "APP_LABEL_ALIGNMENT"
-    private val STATUS_BAR = "STATUS_BAR"
-    private val DATE_TIME_VISIBILITY = "DATE_TIME_VISIBILITY"
     private val SWIPE_LEFT_ENABLED = "SWIPE_LEFT_ENABLED"
     private val SWIPE_RIGHT_ENABLED = "SWIPE_RIGHT_ENABLED"
     private val HIDDEN_APPS = "HIDDEN_APPS"
     private val HIDDEN_APPS_UPDATED = "HIDDEN_APPS_UPDATED"
     private val SHOW_HINT_COUNTER = "SHOW_HINT_COUNTER"
-    private val APP_THEME = "APP_THEME"
     private val WALLPAPER_MSG_SHOWN = "WALLPAPER_MSG_SHOWN"
-    private val TEXT_SIZE_SCALE = "TEXT_SIZE_SCALE"
-    private val BOLD_FONT = "BOLD_FONT"
     private val HIDE_SET_DEFAULT_LAUNCHER = "HIDE_SET_DEFAULT_LAUNCHER"
     private val SCREEN_TIME_LAST_UPDATED = "SCREEN_TIME_LAST_UPDATED"
     private val LAUNCHER_RESTART_TIMESTAMP = "LAUNCHER_RECREATE_TIMESTAMP"
@@ -140,9 +130,7 @@ class Prefs(context: Context) {
         get() = prefs.getBoolean(LOCK_MODE, false)
         set(value) = prefs.edit { putBoolean(LOCK_MODE, value).apply() }
 
-    var autoShowKeyboard: Boolean
-        get() = prefs.getBoolean(AUTO_SHOW_KEYBOARD, true)
-        set(value) = prefs.edit { putBoolean(AUTO_SHOW_KEYBOARD, value).apply() }
+    val autoShowKeyboard: Boolean = true
 
     var keyboardMessageShown: Boolean
         get() = prefs.getBoolean(KEYBOARD_MESSAGE, false)
@@ -156,29 +144,17 @@ class Prefs(context: Context) {
         get() = prefs.getString(DAILY_WALLPAPER_URL, "").toString()
         set(value) = prefs.edit { putString(DAILY_WALLPAPER_URL, value).apply() }
 
-    var homeAppsNum: Int
-        get() = prefs.getInt(HOME_APPS_NUM, 4)
-        set(value) = prefs.edit { putInt(HOME_APPS_NUM, value).apply() }
+    val homeAppsNum: Int = 8
 
-    var homeAlignment: Int
-        get() = prefs.getInt(HOME_ALIGNMENT, Gravity.START)
-        set(value) = prefs.edit { putInt(HOME_ALIGNMENT, value).apply() }
+    val homeAlignment: Int = Gravity.END
 
-    var homeBottomAlignment: Boolean
-        get() = prefs.getBoolean(HOME_BOTTOM_ALIGNMENT, false)
-        set(value) = prefs.edit { putBoolean(HOME_BOTTOM_ALIGNMENT, value).apply() }
+    val homeBottomAlignment: Boolean = false
 
-    var appLabelAlignment: Int
-        get() = prefs.getInt(APP_LABEL_ALIGNMENT, Gravity.START)
-        set(value) = prefs.edit { putInt(APP_LABEL_ALIGNMENT, value).apply() }
+    val appLabelAlignment: Int = Gravity.END
 
-    var showStatusBar: Boolean
-        get() = prefs.getBoolean(STATUS_BAR, false)
-        set(value) = prefs.edit { putBoolean(STATUS_BAR, value).apply() }
+    val showStatusBar: Boolean = false
 
-    var dateTimeVisibility: Int
-        get() = prefs.getInt(DATE_TIME_VISIBILITY, Constants.DateTime.ON)
-        set(value) = prefs.edit { putInt(DATE_TIME_VISIBILITY, value).apply() }
+    val dateTimeVisibility: Int = Constants.DateTime.ON
 
     var swipeLeftEnabled: Boolean
         get() = prefs.getBoolean(SWIPE_LEFT_ENABLED, true)
@@ -188,17 +164,11 @@ class Prefs(context: Context) {
         get() = prefs.getBoolean(SWIPE_RIGHT_ENABLED, true)
         set(value) = prefs.edit { putBoolean(SWIPE_RIGHT_ENABLED, value).apply() }
 
-    var appTheme: Int
-        get() = prefs.getInt(APP_THEME, AppCompatDelegate.MODE_NIGHT_YES)
-        set(value) = prefs.edit { putInt(APP_THEME, value).apply() }
+    val appTheme: Int = AppCompatDelegate.MODE_NIGHT_YES
 
-    var textSizeScale: Float
-        get() = prefs.getFloat(TEXT_SIZE_SCALE, 1.0f)
-        set(value) = prefs.edit { putFloat(TEXT_SIZE_SCALE, value).apply() }
+    val textSizeScale: Float = 1.0f
 
-    var boldFont: Boolean
-        get() = prefs.getBoolean(BOLD_FONT, false)
-        set(value) = prefs.edit { putBoolean(BOLD_FONT, value).apply() }
+    val boldFont: Boolean = false
 
     var hideSetDefaultLauncher: Boolean
         get() = prefs.getBoolean(HIDE_SET_DEFAULT_LAUNCHER, false)

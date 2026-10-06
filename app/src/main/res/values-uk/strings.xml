@@ -18,12 +18,7 @@
 
     <string name="donate">Пожертвувати</string>
     <string name="swipe_up_for_apps">1. Проведіть вгору, щоб відкрити всі програми.\n2. Тривалим натисканням будь-де відкриваються налаштування</string>
-    <string name="apps_on_home_screen">Кількість програм на головному екрані</string>
     <string name="daily_wallpaper_update">Щодня нові шпалери</string>
-    <string name="left">Ліворуч</string>
-    <string name="right">Праворуч</string>
-    <string name="center">По центру</string>
-    <string name="home_layout_alignment">Вирівнювання додатків</string>
     <string name="swipe_left_app">Додаток для свайпу вліво</string>
     <string name="swipe_right_app">Додаток для свайпу вправо</string>
     <string name="_0">0</string>
@@ -34,21 +29,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Порада. Почніть вводити назву програми, щоб вона запустилася автоматично.</string>
     <string name="okay">Добре</string>
     <string name="cool">Круто!</string>
-    <string name="auto_show_keyboard">Автопоказ клавіатури</string>
     <string name="hide">Приховати</string>
-    <string name="status_bar">Рядок стану зверху</string>
     <string name="rename">Перейменувати</string>
-    <string name="show_date_time">Показувати дату та час</string>
     <string name="appearance">Вигляд</string>
     <string name="gestures">Жести</string>
-    <string name="theme_mode">Тема</string>
-    <string name="system_default">Системна</string>
-    <string name="dark">Темна</string>
-    <string name="light">Світла</string>
     <string name="keyboard_message">Привіт, клавіатура - це найшвидший спосіб знайти та запустити програми в zer0. Чи можемо ми попросити вас залишити це увімкненим ще на кілька днів, а потім прийняти рішення?
         \n\nВибір завжди за вами.</string>
     <string name="digital_wellbeing_message">Якщо ви хочете встановити часові обмеження для певних програм, функція цифрового добробуту Android може допомогти вам це зробити.
@@ -66,11 +53,6 @@
     <string name="not_now">Не зараз</string>
     <string name="public_roadmap">Публічна дорожня карта zer0</string>
     <string name="roadmap">Дорожня карта</string>
-    <string name="date">Дата</string>
-    <string name="date_only">Тільки дата</string>
-    <string name="bottom_on">Внизу: Увімк.</string>
-    <string name="bottom_off">Внизу: Вимк.</string>
-    <string name="please_set_olauncher_as_default_first">Спочатку встановіть zer0 як стандартний лаунчер.</string>
     <string name="affiliate">Партнер</string>
     <string name="tip_start_typing_for_rename">Порада: почніть вводити текст, щоб перейменувати програму.</string>
     <string name="hidden_apps_message">Примітка: натисніть «zer0» у верхній частині сторінки налаштувань, щоб знайти приховані додатки.\n\nДокладніша інформація доступна на нашій сторінці «Про додаток».</string>
@@ -84,7 +66,6 @@
     <string name="not_working"><u>Не працює?</u></string>
     <string name="info">Інформація</string>
     <string name="delete">Видалити</string>
-    <string name="text_size">Розмір тексту</string>
     <string name="enabled">Увімкнено</string>
     <string name="disabled">Вимкнено</string>
     <string name="please_turn_on_double_tap_to_unlock">Будь ласка, увімкніть подвійний дотик для блокування</string>
@@ -111,13 +92,10 @@
     <string name="learn_more">Дізнатися більше</string>
     <string name="screen_time">Час екрану</string>
     <string name="did_you_know">Чи знали ви?</string>
-    <string name="alignment_changed">Вирівнювання змінено ✅</string>
-    <string name="home_screen">Головний екран</string>
     <string name="hey">Привіт</string>
     <string name="new_year_wish">За рік, кращий за всі попередні. З новим роком!</string>
     <string name="new_year_wish_1">Неважливо, як пройшов січень. У вас ще є решта року, щоб досягти успіху, як ніколи раніше.</string>
     <string name="cheers">Будьмо!</string>
-    <string name="notification_bar">Панель сповіщень</string>
     <string name="private_space">Приватний простір</string>
     <string name="invalid_pin_request">Недійсний запит на закріплення</string>
     <string name="widgets_not_supported">Віджети не підтримуються</string>
@@ -128,5 +106,4 @@
     <string name="shortcut_not_found">Ярлик не знайдено</string>
     <string name="unable_to_open_shortcut">Не вдалося відкрити ярлик</string>
     <string name="unable_to_open_app_info">Неможливо відкрити інформацію про додаток</string>
-    <string name="bold_font">Жирний шрифт</string>
 </resources><!-- Ukrainian -->

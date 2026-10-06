@@ -16,12 +16,7 @@
     <string name="email">דואר אלקטרוני</string>
     <string name="donate">תרומה</string>
     <string name="swipe_up_for_apps">1. החלקה כלפי מעלה תפתח את הרשימה של כל היישומים\n2. לפתיחת הגדרות מסך הבית יש ללחוץ לחיצה ארוכה מכל מקום על גבי המסך.</string>
-    <string name="apps_on_home_screen">יישומים במסך הבית</string>
     <string name="daily_wallpaper_update">רקע חדש בכל יום</string>
-    <string name="left">ימין</string>
-    <string name="right">שמאל</string>
-    <string name="center">מרכז</string>
-    <string name="home_layout_alignment">יישור היישומים</string>
     <string name="swipe_left_app">יישום לפתיחה בהחלקה שמאלה</string>
     <string name="swipe_right_app">יישום לפתיחה בהחלקה ימינה</string>
     <string name="_0">0</string>
@@ -32,21 +27,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">עצה: אפשר להתחיל להקליד שם של יישום מסוים ואז הוא ייפתח אוטומטית</string>
     <string name="okay">אישור</string>
     <string name="cool">מגניב!</string>
-    <string name="auto_show_keyboard">הצגת המקלדת באופן אוטומטי</string>
     <string name="hide">הסתרה</string>
-    <string name="status_bar">הצגת שורת המצב</string>
     <string name="rename">שינוי שם</string>
-    <string name="show_date_time">הצגת תאריך ושעה</string>
     <string name="appearance">מראה</string>
     <string name="gestures">מחוות</string>
-    <string name="theme_mode">ערכת נושא</string>
-    <string name="system_default">מערכת</string>
-    <string name="dark">כהה</string>
-    <string name="light">בהירה</string>
     <string name="keyboard_message">היי, המקלדת היא הדרך המהירה ביותר למצוא ולפתוח יישומים ב־zer0. האם נוכל לבקש מכם להשאיר את ההגדרה הזאת פעילה עוד כמה ימים ואז להחליט?\n\nהבחירה תמיד שלכם.</string>
     <string name="wallpaper_message">zer0 מציע טפטים חדשים ויפים מדי יום. תנו למסך הבית שלכם מראה חדש ורענן בכל יום, בחינם!\n\nרוצים לנסות?</string>
     <string name="accessibility_service_description">הרשאת הנגישות נחוצה להפעלת המחווה של נעילה בהקשה כפולה. כל הנתונים שייאספו על ידי zer0 דרך שירות זה לא יעזבו את המכשיר שלכם.</string>
@@ -58,11 +45,6 @@
     <string name="not_now">לא כעת</string>
     <string name="public_roadmap">מפת הדרכים הציבורית של zer0</string>
     <string name="roadmap">מפת דרכים</string>
-    <string name="date">תאריך</string>
-    <string name="date_only">תאריך בלבד</string>
-    <string name="bottom_on">הצגה למטה: מופעל</string>
-    <string name="bottom_off">הצגה למטה: כבוי</string>
-    <string name="please_set_olauncher_as_default_first">ראשית, נא להגדיר את zer0 בתור ברירת המחדל למסך בית.</string>
     <string name="affiliate">שותפים</string>
     <string name="tip_start_typing_for_rename">עצה: אפשר להתחיל להקליד בשביל להגיע לאפשרות לשינוי שם של יישומים</string>
     <string name="hidden_apps_message">הערה: כדי להגיע ליישומים המוסתרים, יש ללחוץ על הכיתוב \'zer0\' שנמצא בראש עמוד ההגדרות.\n\nפרטים נוספים אפשר למצוא בעמוד \"מידע כללי\" שלנו.</string>
@@ -76,7 +58,6 @@
     <string name="not_working"><u>לא עובד?</u></string>
     <string name="info">מידע</string>
     <string name="delete">הסרת התקנה</string>
-    <string name="text_size">גודל הטקסט</string>
     <string name="enabled">מופעל</string>
     <string name="disabled">מושבת</string>
     <string name="please_turn_on_double_tap_to_unlock">נא להפעיל את מחוות ההקשה הכפולה לנעילה</string>
@@ -107,11 +88,8 @@
     <string name="screen_time">זמן מסך</string>
     <string name="learn_more">למדו עוד</string>
     <string name="did_you_know">האם ידעת?</string>
-    <string name="alignment_changed">היישור השתנה ✅</string>
-    <string name="home_screen">מסך הבית</string>
     <string name="digital_wellbeing_message">אם ברצונכם להגדיר מגבלות זמן ליישומים מסוימים, תכונת Digital Wellbeing של אנדרואיד יכולה לעזור בכך. חפשו את Digital Wellbeing בהגדרות הטלפון והפעילו אותה.</string>
     <string name="app_usage_message">כדי להציג/להסתיר את זמן המסך במסך הבית, נא לאפשר או לבטל את הרשאת השימוש ביישומים.\n\nהערה: לא נאספים נתוני שימוש ביישומים. הכל מעובד במכשיר שלכם.</string>
-    <string name="notification_bar">שורת ההתראות</string>
     <string name="private_space">מרחב פרטי</string>
     <string name="invalid_pin_request">בקשת הצמדה לא חוקית</string>
     <string name="widgets_not_supported">אין תמיכה בווידג\'טים</string>
@@ -122,5 +100,4 @@
     <string name="shortcut_not_found">קיצור הדרך לא נמצא</string>
     <string name="unable_to_open_shortcut">לא ניתן לפתוח את קיצור הדרך</string>
     <string name="unable_to_open_app_info">אין אפשרות לפתוח את המידע על היישום</string>
-    <string name="bold_font">גופן מודגש</string>
 </resources>

@@ -18,12 +18,7 @@
 
     <string name="donate">Пожертвовать</string>
     <string name="swipe_up_for_apps">1. Проведите вверх чтобы открыть все приложения.\n2. Длительным нажатием в любом месте открываются настройки</string>
-    <string name="apps_on_home_screen">Количество приложений на главном экране</string>
     <string name="daily_wallpaper_update">Ежедневно новые обои</string>
-    <string name="left">Слева</string>
-    <string name="right">Справа</string>
-    <string name="center">Центр</string>
-    <string name="home_layout_alignment">Расположение приложений</string>
     <string name="swipe_left_app">Приложение для свайпа влево</string>
     <string name="swipe_right_app">Приложение для свайпа вправо</string>
     <string name="_0">0</string>
@@ -34,21 +29,13 @@
     <string name="_5">5</string>
     <string name="_6">6</string>
     <string name="_7">7</string>
-    <string name="_8">8</string>
     <string name="app_drawer_tips">Совет: начните вводить название приложения, чтобы запустить его автоматически.</string>
     <string name="okay">Хорошо</string>
     <string name="cool">Круто!</string>
-    <string name="auto_show_keyboard">Автопоказ клавиатуры</string>
     <string name="hide">Скрыть</string>
-    <string name="status_bar">Строка состояния сверху</string>
     <string name="rename">Переименовать</string>
-    <string name="show_date_time">Показывать дату и время</string>
     <string name="appearance">Оформление</string>
     <string name="gestures">Жесты</string>
-    <string name="theme_mode">Тема</string>
-    <string name="system_default">Системная</string>
-    <string name="dark">Темная</string>
-    <string name="light">Светлая</string>
     <string name="keyboard_message">Привет, клавиатура — это самый быстрый способ найти и запустить приложения в zer0. Могли бы вы продолжить использовать Автопоказ клавиатуры еще несколько дней, прежде чем принять окончательное решение?
         \n\nВыбор всегда за вами.</string>
     <string name="digital_wellbeing_message">Если вы хотите установить ограничения по времени для определенных приложений, функция «Цифровое благополучие» Android может помочь вам в этом.
@@ -66,11 +53,6 @@
     <string name="not_now">Не сейчас</string>
     <string name="public_roadmap">Публичная дорожная карта zer0</string>
     <string name="roadmap">Дорожная карта</string>
-    <string name="date">Дата</string>
-    <string name="date_only">Только дата</string>
-    <string name="bottom_on">Внизу: Вкл</string>
-    <string name="bottom_off">Внизу: Выкл</string>
-    <string name="please_set_olauncher_as_default_first">Сначала установите zer0 в качестве лаунчера по умолчанию.</string>
     <string name="affiliate">Партнер</string>
     <string name="tip_start_typing_for_rename">Совет: начните вводить текст чтобы ПЕРЕИМЕНОВАТЬ приложение.</string>
     <string name="hidden_apps_message">Примечание: для доступа к скрытым приложениям нажмите «zer0» в верхней части страницы настроек.\n\nБолее подробная информация доступна на нашей странице «О приложении».</string>
@@ -84,7 +66,6 @@
     <string name="not_working"><u>Не работает?</u></string>
     <string name="info">Информация</string>
     <string name="delete">Удалить</string>
-    <string name="text_size">Размер текста</string>
     <string name="enabled">Включено</string>
     <string name="disabled">Выключено</string>
     <string name="please_turn_on_double_tap_to_unlock">Пожалуйста, включите двойное касание для блокировки</string>
@@ -111,13 +92,10 @@
     <string name="screen_time">Время на экране</string>
     <string name="learn_more">Узнать больше</string>
     <string name="did_you_know">Вы знали?</string>
-    <string name="alignment_changed">Выравнивание изменено ✅</string>
-    <string name="home_screen">Главный экран</string>
     <string name="hey">Привет</string>
     <string name="new_year_wish">За год, который будет лучше всех предыдущих. С Новым годом!</string>
     <string name="new_year_wish_1">Неважно, как прошёл январь. У вас ещё есть остаток года, чтобы добиться большего, чем когда-либо.</string>
     <string name="cheers">Ваше здоровье!</string>
-    <string name="notification_bar">Панель уведомлений</string>
     <string name="private_space">Личное пространство</string>
     <string name="invalid_pin_request">Недопустимый запрос на закрепление</string>
     <string name="widgets_not_supported">Виджеты не поддерживаются</string>
@@ -128,5 +106,4 @@
     <string name="shortcut_not_found">Ярлык не найден</string>
     <string name="unable_to_open_shortcut">Не удалось открыть ярлык</string>
     <string name="unable_to_open_app_info">Не удалось открыть информацию о приложении</string>
-    <string name="bold_font">Жирный шрифт</string>
 </resources><!-- Russian -->
