@@ -51,7 +51,6 @@
         android:textColor="?attr/primaryColor"
         android:visibility="gone"
         tools:ignore="RtlSymmetry"
-        tools:text="@string/rate_us_message"
         tools:visibility="visible" />
 
     <!-- Custom content supplies its own margins, see dialog_text_size.xml -->
@@ -79,7 +78,6 @@
             android:paddingEnd="8dp"
             android:visibility="gone"
             tools:ignore="RtlSymmetry"
-            tools:text="@string/not_working"
             tools:visibility="visible" />
 
         <Space

@@ -240,7 +240,7 @@ class AppDrawerAdapter(
 
             // Show indicators in title based on app type and state
             appTitle.text = buildString {
-                append(appModel.appLabel)
+                append(appModel.appLabel.lowercase())
                 if (appModel.isNew) append(" ✦")
             }
             appTitle.gravity = appLabelGravity

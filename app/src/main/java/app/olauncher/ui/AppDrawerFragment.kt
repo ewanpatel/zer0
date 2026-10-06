@@ -46,6 +46,10 @@ class AppDrawerFragment : BaseFragment() {
 
     private var flag = Constants.FLAG_LAUNCH_APP
     private var canRename = false
+
+    // Embedded in the home screen as a slide-up drawer, rather than shown as its own screen
+    private var embedded = false
+    private var isDrawerOpen = false
     private var currentAppList: List<AppModel>? = null
     private var currentPrivateSpaceApps: List<AppModel>? = null
     private var currentPrivateSpaceLocked: Boolean = true
@@ -70,6 +74,7 @@ class AppDrawerFragment : BaseFragment() {
         arguments?.let {
             flag = it.getInt(Constants.Key.FLAG, Constants.FLAG_LAUNCH_APP)
             canRename = it.getBoolean(Constants.Key.RENAME, false)
+            embedded = it.getBoolean(Constants.Key.EMBEDDED, false)
         }
 
         initViews()
@@ -152,6 +157,7 @@ class AppDrawerFragment : BaseFragment() {
             prefs.appLabelAlignment,
             appClickListener = { appModel ->
                 viewModel.selectedApp(appModel, flag)
+                if (embedded) return@AppDrawerAdapter
                 if (flag == Constants.FLAG_LAUNCH_APP || flag == Constants.FLAG_HIDDEN_APPS)
                     findNavController().popBackStack(R.id.mainFragment, false)
                 else
@@ -163,7 +169,7 @@ class AppDrawerFragment : BaseFragment() {
                     it.user,
                     it.appPackage
                 )
-                findNavController().popBackStack(R.id.mainFragment, false)
+                if (!embedded) findNavController().popBackStack(R.id.mainFragment, false)
             },
             appDeleteListener = { appModel ->
                 when (appModel) {
@@ -207,14 +213,8 @@ class AppDrawerFragment : BaseFragment() {
                     newSet.add(appModel.appPackage + "|" + appModel.user.toString())
 
                 prefs.hiddenApps = newSet
-                if (newSet.isEmpty())
+                if (newSet.isEmpty() && !embedded)
                     findNavController().popBackStack()
-                if (prefs.firstHide) {
-                    binding.search.hideKeyboard()
-                    prefs.firstHide = false
-                    viewModel.showDialog.postValue(Constants.Dialog.HIDDEN)
-                    findNavController().navigate(R.id.action_appListFragment_to_settingsFragment2)
-                }
                 viewModel.getAppList()
                 viewModel.getHiddenApps()
             },
@@ -232,7 +232,7 @@ class AppDrawerFragment : BaseFragment() {
             },
             privateSpaceSettingsListener = {
                 viewModel.openPrivateSpaceSettings()
-                findNavController().popBackStack(R.id.mainFragment, false)
+                if (!embedded) findNavController().popBackStack(R.id.mainFragment, false)
             }
         )
 
@@ -244,8 +244,8 @@ class AppDrawerFragment : BaseFragment() {
             ): Int {
                 val scrollRange = super.scrollVerticallyBy(dx, recycler, state)
                 val overScroll = dx - scrollRange
-                if (overScroll < -10 && binding.recyclerView.scrollState == RecyclerView.SCROLL_STATE_DRAGGING)
-                    checkMessageAndExit()
+                if (!embedded && overScroll < -10 && binding.recyclerView.scrollState == RecyclerView.SCROLL_STATE_DRAGGING)
+                    findNavController().popBackStack()
                 return scrollRange
             }
         }
@@ -256,7 +256,7 @@ class AppDrawerFragment : BaseFragment() {
         binding.recyclerView.itemAnimator = null
         if (requireContext().isEinkDisplay())
             binding.recyclerView.overScrollMode = View.OVER_SCROLL_NEVER
-        else if (requireContext().isSystemAnimationsDisabled().not())
+        else if (!embedded && requireContext().isSystemAnimationsDisabled().not())
             binding.recyclerView.layoutAnimation =
                 AnimationUtils.loadLayoutAnimation(requireContext(), R.anim.layout_anim_from_bottom)
     }
@@ -349,7 +349,7 @@ class AppDrawerFragment : BaseFragment() {
                         if (!recyclerView.canScrollVertically(1))
                             binding.search.hideKeyboard()
                         else if (!recyclerView.canScrollVertically(-1))
-                            if (!onTop && isRemoving.not())
+                            if (!onTop && isRemoving.not() && (!embedded || isDrawerOpen))
                                 binding.search.showKeyboard(prefs.autoShowKeyboard)
                     }
                 }
@@ -357,16 +357,29 @@ class AppDrawerFragment : BaseFragment() {
         }
     }
 
-    private fun checkMessageAndExit() {
-        findNavController().popBackStack()
-        if (flag == Constants.FLAG_LAUNCH_APP)
-            viewModel.checkForMessages.call()
-    }
-
     override fun onStart() {
         super.onStart()
         cachedIsCjkKeyboard = null
-        binding.search.showKeyboard(prefs.autoShowKeyboard)
+        if (!embedded) binding.search.showKeyboard(prefs.autoShowKeyboard)
+    }
+
+    fun canScrollUp(): Boolean = _binding?.recyclerView?.canScrollVertically(-1) ?: false
+
+    fun onDrawerDragStart() {
+        _binding?.search?.hideKeyboard()
+    }
+
+    fun onDrawerOpened() {
+        isDrawerOpen = true
+        _binding?.search?.showKeyboard(prefs.autoShowKeyboard)
+    }
+
+    fun onDrawerClosed() {
+        isDrawerOpen = false
+        val binding = _binding ?: return
+        binding.search.hideKeyboard()
+        binding.search.setQuery("", false)
+        binding.recyclerView.scrollToPosition(0)
     }
 
     override fun onStop() {

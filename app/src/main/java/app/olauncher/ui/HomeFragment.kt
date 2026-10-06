@@ -16,8 +16,8 @@ import android.view.WindowInsets
 import android.widget.FrameLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.annotation.RequiresApi
-import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
 import androidx.core.view.setPadding
@@ -33,14 +33,12 @@ import app.olauncher.databinding.FragmentHomeBinding
 import app.olauncher.helper.appUsagePermissionGranted
 import app.olauncher.helper.dpToPx
 import app.olauncher.helper.expandNotificationDrawer
-import app.olauncher.helper.getChangedAppTheme
 import app.olauncher.helper.getUserHandleFromString
 import app.olauncher.helper.isPackageInstalled
 import app.olauncher.helper.openAlarmApp
 import app.olauncher.helper.openCalendar
 import app.olauncher.helper.openCameraApp
 import app.olauncher.helper.openDialerApp
-import app.olauncher.helper.setPlainWallpaperByTheme
 import app.olauncher.helper.showToast
 import app.olauncher.listener.OnSwipeTouchListener
 import app.olauncher.listener.ViewSwipeTouchListener
@@ -53,6 +51,8 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     private lateinit var prefs: Prefs
     private lateinit var viewModel: MainViewModel
     private lateinit var deviceManager: DevicePolicyManager
+
+    private lateinit var drawerBackCallback: OnBackPressedCallback
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -71,6 +71,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
 
         deviceManager = context?.getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
 
+        initAppDrawer()
         initObservers()
         setHomeAlignment(prefs.homeAlignment)
         initSwipeTouchListener()
@@ -81,6 +82,8 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         super.onResume()
         populateHomeScreen(false)
         viewModel.isOlauncherDefault()
+        // Other screens may have loaded the list with hidden apps included
+        viewModel.getAppList()
         if (prefs.showStatusBar) showStatusBar()
         else hideStatusBar()
     }
@@ -174,40 +177,67 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     }
 
     private fun initObservers() {
-        if (prefs.firstSettingsOpen) {
-            binding.firstRunTips.visibility = View.VISIBLE
-            binding.setDefaultLauncher.visibility = View.GONE
-        } else binding.firstRunTips.visibility = View.GONE
-
         viewModel.refreshHome.observe(viewLifecycleOwner) {
             populateHomeScreen(it)
         }
         viewModel.isOlauncherDefault.observe(viewLifecycleOwner, Observer {
             if (it != true) {
-                if (prefs.dailyWallpaper && prefs.appTheme == AppCompatDelegate.MODE_NIGHT_YES) {
-                    prefs.dailyWallpaper = false
-                    viewModel.cancelWallpaperWorker()
-                }
-                prefs.homeBottomAlignment = false
                 setHomeAlignment()
             }
-            if (binding.firstRunTips.isVisible) return@Observer
             binding.setDefaultLauncher.isVisible = it.not() && prefs.hideSetDefaultLauncher.not()
         })
-        viewModel.homeAppAlignment.observe(viewLifecycleOwner) {
-            setHomeAlignment(it)
-        }
         viewModel.toggleDateTime.observe(viewLifecycleOwner) {
             populateDateTime()
         }
         viewModel.screenTimeValue.observe(viewLifecycleOwner) {
             it?.let { binding.tvScreenTime.text = it }
         }
+        viewModel.closeAppDrawer.observe(viewLifecycleOwner) {
+            binding.drawerHost.close(animate = isResumed)
+        }
         // Home button for recents feature disabled
         // viewModel.showRecentApps.observe(viewLifecycleOwner) {
         //     binding.recents.performClick()
         // }
     }
+
+    private fun initAppDrawer() {
+        if (appDrawer() == null) {
+            childFragmentManager.beginTransaction()
+                .replace(R.id.appDrawerContainer, AppDrawerFragment().apply {
+                    arguments = bundleOf(
+                        Constants.Key.FLAG to Constants.FLAG_LAUNCH_APP,
+                        Constants.Key.EMBEDDED to true
+                    )
+                })
+                .commitNow()
+        }
+
+        drawerBackCallback = object : OnBackPressedCallback(false) {
+            override fun handleOnBackPressed() = binding.drawerHost.close()
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, drawerBackCallback)
+
+        binding.drawerHost.apply {
+            content = binding.mainLayout
+            drawer = binding.appDrawerContainer
+            canDrawerScrollUp = { appDrawer()?.canScrollUp() ?: false }
+            onDragStart = { wasOpen ->
+                drawerBackCallback.isEnabled = true
+                if (wasOpen) appDrawer()?.onDrawerDragStart()
+            }
+            onOpened = {
+                drawerBackCallback.isEnabled = true
+                appDrawer()?.onDrawerOpened()
+            }
+            onClosed = {
+                drawerBackCallback.isEnabled = false
+                appDrawer()?.onDrawerClosed()
+            }
+        }
+    }
+
+    private fun appDrawer() = childFragmentManager.findFragmentById(R.id.appDrawerContainer) as? AppDrawerFragment
 
     private fun initSwipeTouchListener() {
         val context = requireContext()
@@ -404,7 +434,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 val shortcuts = launcherApps.getShortcuts(query, userHandle)
                 // Check if our shortcut still exists
                 if (shortcuts?.any { it.id == shortcutId } == true) {
-                    textView.text = appName
+                    textView.text = appName.lowercase()
                     return true
                 }
                 textView.text = ""
@@ -418,7 +448,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
 
         // Regular app check
         if (isPackageInstalled(requireContext(), packageName, userString)) {
-            textView.text = appName
+            textView.text = appName.lowercase()
             return true
         }
         textView.text = ""
@@ -445,10 +475,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         userString: String,
         fallback: (() -> Unit)? = null,
     ) {
-        if (appName.isEmpty()) {
-            showLongPressToast()
-            return
-        }
+        if (appName.isEmpty()) return
         if (isShortcut && !shortcutId.isNullOrEmpty()) {
             launchShortcut(
                 packageName = packageName,
@@ -590,17 +617,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         }
     }
 
-    private fun changeAppTheme() {
-        if (prefs.dailyWallpaper.not()) return
-        val changedAppTheme = getChangedAppTheme(requireContext(), prefs.appTheme)
-        prefs.appTheme = changedAppTheme
-        if (prefs.dailyWallpaper) {
-            setPlainWallpaperByTheme(requireContext(), changedAppTheme)
-            viewModel.setWallpaperWorker()
-        }
-        requireActivity().recreate()
-    }
-
     private fun openScreenTimeDigitalWellbeing() {
         if (prefs.screenTimeAppPackage.isNotBlank()) {
             launchApp(
@@ -632,8 +648,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         }
     }
 
-    private fun showLongPressToast() = requireContext().showToast(getString(R.string.long_press_to_select_app))
-
     private fun textOnClick(view: View) = onClick(view)
 
     private fun textOnLongClick(view: View) = onLongClick(view)
@@ -648,11 +662,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
             override fun onSwipeRight() {
                 super.onSwipeRight()
                 openSwipeRightApp()
-            }
-
-            override fun onSwipeUp() {
-                super.onSwipeUp()
-                showAppList(Constants.FLAG_LAUNCH_APP)
             }
 
             override fun onSwipeDown() {
@@ -678,11 +687,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 else
                     lockPhone()
             }
-
-            override fun onClick() {
-                super.onClick()
-                viewModel.checkForMessages.call()
-            }
         }
     }
 
@@ -696,11 +700,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
             override fun onSwipeRight() {
                 super.onSwipeRight()
                 openSwipeRightApp()
-            }
-
-            override fun onSwipeUp() {
-                super.onSwipeUp()
-                showAppList(Constants.FLAG_LAUNCH_APP)
             }
 
             override fun onSwipeDown() {
@@ -718,6 +717,12 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 textOnClick(view)
             }
         }
+    }
+
+    override fun onStop() {
+        // Leaving home (e.g. an app was launched): reset the drawer out of sight
+        binding.drawerHost.close(animate = false)
+        super.onStop()
     }
 
     override fun onDestroyView() {

@@ -23,6 +23,10 @@ internal open class ViewSwipeTouchListener(c: Context?, v: View) : OnTouchListen
         when (motionEvent.action) {
             MotionEvent.ACTION_DOWN -> view.isPressed = true
             MotionEvent.ACTION_UP -> view.isPressed = false
+            MotionEvent.ACTION_CANCEL -> {
+                view.isPressed = false
+                longPressOn = false
+            }
         }
         return gestureDetector.onTouchEvent(motionEvent)
     }
