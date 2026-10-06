@@ -108,13 +108,3 @@ fun Context.createDialog(
 }
 
 /** Title with a close icon, a message and a single action. */
-fun Context.showMessageDialog(
-    @StringRes title: Int,
-    @StringRes message: Int,
-    @StringRes action: Int,
-    onAction: () -> Unit,
-): OlDialog {
-    val dialog = createDialog(title, action, message = message, onAction = onAction)
-    dialog.showRespectingStatusBar()
-    return dialog
-}

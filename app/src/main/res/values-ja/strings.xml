@@ -3,7 +3,6 @@
     <string name="app">アプリ</string>
     <string name="set_as_default_launcher">デフォルトのランチャーとして設定</string>
     <string name="set_as_default_launcher_u"><u>デフォルトのランチャーとして設定</u></string>
-    <string name="set_as_default_launcher_first">まず zer0 をデフォルトに設定してください</string>
     <string name="_0">0</string>
     <string name="_1">1</string>
     <string name="_2">2</string>
@@ -17,27 +16,20 @@
     <string name="cool">いいね！</string>
 
     <string name="tip_start_typing_for_rename">ヒント: 入力を開始するとアプリの名前変更オプションが表示されます</string>
-    <string name="your_wallpaper_will_update_shortly">壁紙は間もなく更新されます</string>
-    <string name="olauncher_is_not_default_launcher">zer0 はデフォルトのランチャーではありません。壁紙の更新は失敗します。</string>
-    <string name="long_press_to_enable">長押しして有効にします</string>
     <string name="no_hidden_apps">非表示のアプリはありません</string>
     <string name="hidden_apps">非表示のアプリ</string>
-    <string name="hidden_apps_message">注: この設定ページの上部にある「zer0」をタップすると、非表示のアプリを確認できます。\n\n詳細については「アプリについて」ページをご覧ください。</string>
     <string name="accessibility_disclosure">ダブルタップでロックのジェスチャーを有効にするには、デバイスの設定で zer0 のユーザー補助サービスをオンにしてください。\n\nこのサービスはこの機能にのみ使用されます。当社のユーザー補助サービスはデータを収集したり共有したりすることはありません。</string>
     <string name="accept">同意する</string>
-    <string name="permission">許可</string>
     <string name="double_tap_lock">ダブルタップでロック</string>
     <string name="home_button_show_recents">ホームボタンで最近のアプリ</string>
     <string name="enable">有効にする</string>
     <string name="disable">無効にする</string>
-    <string name="not_working"><u>動作しませんか？</u></string>
     <string name="info">情報</string>
     <string name="delete">アンインストール</string>
     <string name="enabled">有効</string>
     <string name="disabled">無効</string>
     <string name="please_turn_on_double_tap_to_unlock">ダブルタップでロックをオンにしてください</string>
     <string name="launcher_failed_to_lock_device">zer0 がデバイスをロックできませんでした。\nアプリの設定を確認してください。</string>
-    <string name="long_press_to_select_app">長押ししてアプリを選択します</string>
     <string name="unable_to_open_app">アプリを開けません</string>
     <string name="copied">コピーされました</string>
     <string name="system_app_cannot_delete">システムアプリはアンインストールできません</string>
@@ -57,21 +49,13 @@
     <string name="email">Eメール</string>
 
     <string name="donate">寄付</string>
-    <string name="swipe_up_for_apps">1. 上にスワイプしてすべてのアプリを表示します\n2. 設定を行うには任意の場所を長押しします</string>
-    <string name="daily_wallpaper_update">毎日新しい壁紙</string>
     <string name="swipe_left_app">左スワイプで開くアプリ</string>
     <string name="swipe_right_app">右スワイプで開くアプリ</string>
     <string name="hide">非表示</string>
     <string name="rename">名前の変更</string>
-    <string name="appearance">外観</string>
     <string name="gestures">ジェスチャー</string>
-    <string name="keyboard_message">こんにちは、キーボードは zer0 でアプリを見つけて起動する最も速い方法です。あと数日間オンにしたままにして、それから判断していただけませんか？\n\n選択は常にあなた次第です。</string>
     <string name="digital_wellbeing_message">特定のアプリに時間制限を設定したい場合は、Android の Digital Wellbeing 機能を使用すると便利です。
         \n\n携帯電話の設定で Digital Wellbeing を検索し、有効にしてください。</string>
-    <string name="app_usage_message">ホーム画面で画面時間を表示/非表示するには、アプリの使用権限を許可または拒否してください。
-        \n\n注意: アプリの使用データは収集されません。すべての処理はあなたのデバイスで行われます。</string>
-    <string name="wallpaper_message">zer0は毎日美しい新しい壁紙を提供します。毎日ホーム画面に新しい外観を無料で提供！
-        \n\n試してみますか？</string>
     <string name="accessibility_service_description">ダブルタップでロックのジェスチャーを有効にするには、ユーザー補助の権限が必要です。このサービスを通じて zer0 が取得したデータがデバイスの外に出ることはありません。</string>
     <string name="support_olauncher_for_free">Amazon アフィリエイト リンクを使用して、zer0 を無料でサポートしてください。</string>
     <string name="support_olauncher_message">リンクを使って何かを購入していただくたびに、私たちは少額の手数料を受け取ります。リンクを保存して、オンラインショッピングの際にご利用ください。\nありがとうございます！</string>
@@ -88,14 +72,8 @@
     <string name="swipe_left_app_enabled">左スワイプアプリを有効にしました</string>
     <string name="swipe_right_app_enabled">右スワイプアプリを有効にしました</string>
     <string name="swipe_left_app_disabled">左スワイプアプリを無効にしました</string>
-    <string name="screen_time">スクリーンタイム</string>
     <string name="swipe_right_app_disabled">右スワイプアプリを無効にしました</string>
     <string name="learn_more">もっと詳しく知る</string>
-    <string name="did_you_know">知っていましたか？</string>
-    <string name="hey">やあ</string>
-    <string name="new_year_wish">これまでのどの年よりも良い一年になりますように。明けましておめでとうございます！</string>
-    <string name="new_year_wish_1">1月がどうだったかは関係ありません。これまで以上に良い結果を出すために、まだ今年の残りの期間があります。</string>
-    <string name="cheers">乾杯!</string>
     <string name="private_space">プライベート スペース</string>
     <string name="invalid_pin_request">無効な固定リクエストです</string>
     <string name="widgets_not_supported">ウィジェットはサポートされていません</string>

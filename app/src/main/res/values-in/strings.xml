@@ -3,7 +3,6 @@
     <string name="app">Aplikasi</string>
     <string name="set_as_default_launcher">Tetapkan sebagai peluncur default</string>
     <string name="set_as_default_launcher_u"><u>Tetapkan sebagai peluncur default</u></string>
-    <string name="set_as_default_launcher_first">Tetapkan zer0 sebagai default terlebih dahulu</string>
     <string name="app_text_color">Warna teks</string>
     <string name="double_tap_to_lock_screen">Ketuk dua kali untuk mengunci</string>
     <string name="admin_permission_message">zer0 berjanji untuk menggunakan izin aksesibilitas secara bertanggung jawab. zer0 tidak mengumpulkan atau membagikan data apa pun.</string>
@@ -17,8 +16,6 @@
     <string name="email">Surel</string>
 
     <string name="donate">Donasi</string>
-    <string name="swipe_up_for_apps">1. Geser ke atas untuk semua aplikasi\n2. Tekan lama di mana saja untuk pengaturan</string>
-    <string name="daily_wallpaper_update">Wallpaper baru setiap hari</string>
     <string name="swipe_left_app">Aplikasi geser ke kiri</string>
     <string name="swipe_right_app">Aplikasi geser ke kanan</string>
     <string name="_0">0</string>
@@ -34,15 +31,9 @@
     <string name="cool">Keren!</string>
     <string name="hide">Sembunyikan</string>
     <string name="rename">Ganti nama</string>
-    <string name="appearance">Tampilan</string>
     <string name="gestures">Gerakan</string>
-    <string name="keyboard_message">Hai, keyboard adalah cara tercepat untuk menemukan dan membuka aplikasi di zer0. Bisakah kami meminta Anda untuk tetap mengaktifkannya selama beberapa hari lagi lalu memutuskan?\n\nPilihan selalu ada di tangan Anda.</string>
     <string name="digital_wellbeing_message">Jika Anda ingin menetapkan batas waktu untuk aplikasi tertentu, fitur Digital Wellbeing Android dapat membantu Anda melakukannya.
         \n\nSilakan cari Digital Wellbeing di pengaturan ponsel Anda dan aktifkan.</string>
-    <string name="app_usage_message">Untuk menampilkan/menyembunyikan waktu layar di layar utama, izinkan atau tolak izin penggunaan aplikasi.
-        \n\nCatatan: Tidak ada data penggunaan aplikasi yang dikumpulkan. Semua diproses di perangkat Anda.</string>
-    <string name="wallpaper_message">zer0 menawarkan wallpaper baru yang indah setiap hari. Berikan tampilan baru pada layar utama Anda setiap hari, secara gratis!
-        \n\nIngin mencobanya?</string>
     <string name="accessibility_service_description">Izin aksesibilitas diperlukan untuk mengaktifkan gerakan ketuk dua kali untuk mengunci. Data apa pun yang diperoleh zer0 melalui layanan ini tidak akan meninggalkan perangkat Anda.</string>
     <string name="support_olauncher_for_free">Dukung zer0 secara gratis dengan menggunakan tautan afiliasi Amazon kami.</string>
     <string name="support_olauncher_message">Setiap kali Anda membeli sesuatu menggunakan tautan kami, kami mendapat komisi kecil. Harap simpan tautan dan gunakan setiap kali Anda berbelanja online.\nTerima kasih!</string>
@@ -54,22 +45,18 @@
     <string name="roadmap">Peta jalan</string>
     <string name="affiliate">Afiliasi</string>
     <string name="tip_start_typing_for_rename">Tip: Mulailah mengetik untuk opsi RENAME aplikasi</string>
-    <string name="hidden_apps_message">Catatan: Ketuk \'zer0\' di bagian atas halaman Pengaturan ini untuk menemukan aplikasi tersembunyi Anda.\n\nRincian lebih lanjut tersedia di halaman Tentang kami.</string>
     <string name="accessibility_disclosure">Harap aktifkan layanan aksesibilitas zer0 di pengaturan perangkat Anda untuk mengaktifkan gerakan ketuk dua kali untuk mengunci.\n\nHarap perhatikan bahwa layanan ini hanya digunakan untuk fitur ini saja. Layanan aksesibilitas kami tidak mengumpulkan atau membagikan data apa pun.</string>
     <string name="accept">Terima</string>
-    <string name="permission">Izin</string>
     <string name="double_tap_lock">Ketuk dua kali untuk mengunci</string>
     <string name="home_button_show_recents">Tombol beranda untuk terbaru</string>
     <string name="enable">Aktifkan</string>
     <string name="disable">Nonaktifkan</string>
-    <string name="not_working"><u>Tidak bekerja?</u></string>
     <string name="info">Info</string>
     <string name="delete">Uninstal</string>
     <string name="enabled">Diaktifkan</string>
     <string name="disabled">Dinonaktifkan</string>
     <string name="please_turn_on_double_tap_to_unlock">Harap aktifkan ketuk dua kali untuk mengunci</string>
     <string name="launcher_failed_to_lock_device">zer0 gagal mengunci perangkat.\nSilakan periksa pengaturan aplikasi Anda.</string>
-    <string name="long_press_to_select_app">Tekan lama untuk memilih aplikasi</string>
     <string name="unable_to_open_app">Tidak dapat membuka aplikasi</string>
     <string name="copied">Disalin</string>
     <string name="system_app_cannot_delete">Aplikasi sistem, tidak dapat di-uninstal</string>
@@ -81,20 +68,11 @@
     <string name="swipe_right_app_enabled">Aplikasi geser ke kanan diaktifkan</string>
     <string name="swipe_left_app_disabled">Aplikasi geser ke kiri dinonaktifkan</string>
     <string name="swipe_right_app_disabled">Aplikasi geser ke kanan dinonaktifkan</string>
-    <string name="your_wallpaper_will_update_shortly">Wallpaper Anda akan segera diperbarui</string>
-    <string name="olauncher_is_not_default_launcher">zer0 bukan peluncur default.\nPembaruan wallpaper harian mungkin gagal.</string>
-    <string name="long_press_to_enable">Tekan lama untuk mengaktifkan</string>
     <string name="no_hidden_apps">Aplikasi tersembunyi tidak ada</string>
     <string name="hidden_apps">Aplikasi tersembunyi</string>
     <string name="adapter_show">Tampilkan</string>
     <string name="adapter_hide">Sembunyikan</string>
     <string name="learn_more">Pelajari lebih lanjut</string>
-    <string name="screen_time">Waktu layar</string>
-    <string name="did_you_know">Tahukah Anda?</string>
-    <string name="hey">Hai</string>
-    <string name="new_year_wish">Untuk tahun yang lebih baik dari sebelumnya. Selamat tahun baru!</string>
-    <string name="new_year_wish_1">Tidak peduli bagaimana bulan Januari berlalu. Anda masih punya sisa tahun untuk melakukan yang lebih baik dari sebelumnya.</string>
-    <string name="cheers">Bersulang!</string>
     <string name="private_space">Ruang pribadi</string>
     <string name="invalid_pin_request">Permintaan penyematan tidak valid</string>
     <string name="widgets_not_supported">Widget tidak didukung</string>
