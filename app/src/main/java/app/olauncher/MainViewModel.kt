@@ -110,6 +110,9 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     }
 
     private fun saveHomeApp(appModel: AppModel, position: Int) {
+        if (appModel is AppModel.PrivateSpaceHeader) return
+        // An app replacing a folder takes the folder with it
+        prefs.getHomeFolderId(position).takeIf { it.isNotEmpty() }?.let { prefs.deleteFolder(it) }
         when (appModel) {
             is AppModel.PrivateSpaceHeader -> return
             is AppModel.App -> {

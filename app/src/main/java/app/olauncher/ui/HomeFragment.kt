@@ -8,12 +8,16 @@ import android.content.res.Configuration
 import android.os.BatteryManager
 import android.os.Build
 import android.os.Bundle
+import android.transition.AutoTransition
+import android.transition.TransitionManager
+import android.util.TypedValue
 import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowInsets
 import android.widget.FrameLayout
+import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
@@ -28,17 +32,24 @@ import app.olauncher.MainViewModel
 import app.olauncher.R
 import app.olauncher.data.AppModel
 import app.olauncher.data.Constants
+import app.olauncher.data.Folder
+import app.olauncher.data.FolderApp
 import app.olauncher.data.Prefs
 import app.olauncher.databinding.FragmentHomeBinding
+import app.olauncher.helper.OlDialog
 import app.olauncher.helper.appUsagePermissionGranted
+import app.olauncher.helper.createFolderNameDialog
 import app.olauncher.helper.dpToPx
 import app.olauncher.helper.expandNotificationDrawer
+import app.olauncher.helper.getColorFromAttr
 import app.olauncher.helper.getUserHandleFromString
 import app.olauncher.helper.isPackageInstalled
 import app.olauncher.helper.openAlarmApp
 import app.olauncher.helper.openCalendar
 import app.olauncher.helper.openCameraApp
 import app.olauncher.helper.openDialerApp
+import app.olauncher.helper.setFolderLabel
+import app.olauncher.helper.showPopupMenu
 import app.olauncher.helper.showToast
 import app.olauncher.listener.OnSwipeTouchListener
 import app.olauncher.listener.ViewSwipeTouchListener
@@ -53,6 +64,12 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     private lateinit var deviceManager: DevicePolicyManager
 
     private lateinit var drawerBackCallback: OnBackPressedCallback
+    private lateinit var folderBackCallback: OnBackPressedCallback
+
+    // The open folder's home slot (0 when none) and the view listing its apps
+    private var openFolderSlot = 0
+    private var openFolderView: View? = null
+    private var dialog: OlDialog? = null
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -72,6 +89,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         deviceManager = context?.getSystemService(Context.DEVICE_POLICY_SERVICE) as DevicePolicyManager
 
         initAppDrawer()
+        initFolders()
         initObservers()
         setHomeAlignment(prefs.homeAlignment)
         initSwipeTouchListener()
@@ -134,15 +152,14 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     }
 
     override fun onLongClick(view: View): Boolean {
+        val slot = homeAppViews().indexOfFirst { it === view } + 1
+        if (slot > 0) {
+            val folder = prefs.getHomeFolder(slot)
+            if (folder != null) showFolderMenu(folder, view)
+            else showAppList(Constants.FLAG_SET_HOME_APP_1 + slot - 1, prefs.getAppName(slot).isNotEmpty(), true)
+            return true
+        }
         when (view.id) {
-            R.id.homeApp1 -> showAppList(Constants.FLAG_SET_HOME_APP_1, prefs.appName1.isNotEmpty(), true)
-            R.id.homeApp2 -> showAppList(Constants.FLAG_SET_HOME_APP_2, prefs.appName2.isNotEmpty(), true)
-            R.id.homeApp3 -> showAppList(Constants.FLAG_SET_HOME_APP_3, prefs.appName3.isNotEmpty(), true)
-            R.id.homeApp4 -> showAppList(Constants.FLAG_SET_HOME_APP_4, prefs.appName4.isNotEmpty(), true)
-            R.id.homeApp5 -> showAppList(Constants.FLAG_SET_HOME_APP_5, prefs.appName5.isNotEmpty(), true)
-            R.id.homeApp6 -> showAppList(Constants.FLAG_SET_HOME_APP_6, prefs.appName6.isNotEmpty(), true)
-            R.id.homeApp7 -> showAppList(Constants.FLAG_SET_HOME_APP_7, prefs.appName7.isNotEmpty(), true)
-            R.id.homeApp8 -> showAppList(Constants.FLAG_SET_HOME_APP_8, prefs.appName8.isNotEmpty(), true)
             R.id.clock -> {
                 showAppList(Constants.FLAG_SET_CLOCK_APP)
                 prefs.clockAppPackage = ""
@@ -223,6 +240,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
             drawer = binding.appDrawerContainer
             canDrawerScrollUp = { appDrawer()?.canScrollUp() ?: false }
             onDragStart = { wasOpen ->
+                closeFolder(animate = false)
                 drawerBackCallback.isEnabled = true
                 if (wasOpen) appDrawer()?.onDrawerDragStart()
             }
@@ -350,62 +368,24 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q)
             populateScreenTime()
 
-        val homeAppsNum = prefs.homeAppsNum
-        if (homeAppsNum == 0) return
-
-        binding.homeApp1.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp1, prefs.appName1, prefs.appPackage1, prefs.appUser1, prefs.isShortcut1, prefs.shortcutId1)) {
-            prefs.appName1 = ""
-            prefs.appPackage1 = ""
-        }
-        if (homeAppsNum == 1) return
-
-        binding.homeApp2.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp2, prefs.appName2, prefs.appPackage2, prefs.appUser2, prefs.isShortcut2, prefs.shortcutId2)) {
-            prefs.appName2 = ""
-            prefs.appPackage2 = ""
-        }
-        if (homeAppsNum == 2) return
-
-        binding.homeApp3.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp3, prefs.appName3, prefs.appPackage3, prefs.appUser3, prefs.isShortcut3, prefs.shortcutId3)) {
-            prefs.appName3 = ""
-            prefs.appPackage3 = ""
-        }
-        if (homeAppsNum == 3) return
-
-        binding.homeApp4.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp4, prefs.appName4, prefs.appPackage4, prefs.appUser4, prefs.isShortcut4, prefs.shortcutId4)) {
-            prefs.appName4 = ""
-            prefs.appPackage4 = ""
-        }
-        if (homeAppsNum == 4) return
-
-        binding.homeApp5.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp5, prefs.appName5, prefs.appPackage5, prefs.appUser5, prefs.isShortcut5, prefs.shortcutId5)) {
-            prefs.appName5 = ""
-            prefs.appPackage5 = ""
-        }
-        if (homeAppsNum == 5) return
-
-        binding.homeApp6.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp6, prefs.appName6, prefs.appPackage6, prefs.appUser6, prefs.isShortcut6, prefs.shortcutId6)) {
-            prefs.appName6 = ""
-            prefs.appPackage6 = ""
-        }
-        if (homeAppsNum == 6) return
-
-        binding.homeApp7.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp7, prefs.appName7, prefs.appPackage7, prefs.appUser7, prefs.isShortcut7, prefs.shortcutId7)) {
-            prefs.appName7 = ""
-            prefs.appPackage7 = ""
-        }
-        if (homeAppsNum == 7) return
-
-        binding.homeApp8.visibility = View.VISIBLE
-        if (!setHomeAppText(binding.homeApp8, prefs.appName8, prefs.appPackage8, prefs.appUser8, prefs.isShortcut8, prefs.shortcutId8)) {
-            prefs.appName8 = ""
-            prefs.appPackage8 = ""
+        closeFolder(animate = false)
+        homeAppViews().take(prefs.homeAppsNum).forEachIndexed { i, textView ->
+            val location = i + 1
+            textView.visibility = View.VISIBLE
+            val folder = prefs.getHomeFolder(location)
+            if (folder != null) {
+                textView.setFolderLabel(folder.name)
+            } else if (!setHomeAppText(
+                    textView,
+                    prefs.getAppName(location),
+                    prefs.getAppPackage(location),
+                    prefs.getAppUser(location),
+                    prefs.getIsShortcut(location),
+                    prefs.getShortcutId(location)
+                )
+            ) {
+                prefs.clearHomeApp(location)
+            }
         }
     }
 
@@ -456,15 +436,19 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     }
 
     private fun hideHomeApps() {
-        binding.homeApp1.visibility = View.GONE
-        binding.homeApp2.visibility = View.GONE
-        binding.homeApp3.visibility = View.GONE
-        binding.homeApp4.visibility = View.GONE
-        binding.homeApp5.visibility = View.GONE
-        binding.homeApp6.visibility = View.GONE
-        binding.homeApp7.visibility = View.GONE
-        binding.homeApp8.visibility = View.GONE
+        homeAppViews().forEach { it.visibility = View.GONE }
     }
+
+    private fun homeAppViews(): List<TextView> = listOf(
+        binding.homeApp1,
+        binding.homeApp2,
+        binding.homeApp3,
+        binding.homeApp4,
+        binding.homeApp5,
+        binding.homeApp6,
+        binding.homeApp7,
+        binding.homeApp8,
+    )
 
     private fun launchAppOrShortcut(
         appName: String,
@@ -524,6 +508,10 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     }
 
     private fun homeAppClicked(location: Int) {
+        prefs.getHomeFolder(location)?.let {
+            toggleFolder(location, it)
+            return
+        }
         launchAppOrShortcut(
             appName = prefs.getAppName(location),
             packageName = prefs.getAppPackage(location),
@@ -560,24 +548,22 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         )
     }
 
-    private fun showAppList(flag: Int, rename: Boolean = false, includeHiddenApps: Boolean = false) {
+    private fun showAppList(
+        flag: Int,
+        rename: Boolean = false,
+        includeHiddenApps: Boolean = false,
+        folderId: String? = null,
+    ) {
         viewModel.getAppList(includeHiddenApps)
+        val args = bundleOf(
+            Constants.Key.FLAG to flag,
+            Constants.Key.RENAME to rename,
+            Constants.Key.FOLDER_ID to folderId
+        )
         try {
-            findNavController().navigate(
-                R.id.action_mainFragment_to_appListFragment,
-                bundleOf(
-                    Constants.Key.FLAG to flag,
-                    Constants.Key.RENAME to rename
-                )
-            )
+            findNavController().navigate(R.id.action_mainFragment_to_appListFragment, args)
         } catch (e: Exception) {
-            findNavController().navigate(
-                R.id.appListFragment,
-                bundleOf(
-                    Constants.Key.FLAG to flag,
-                    Constants.Key.RENAME to rename
-                )
-            )
+            findNavController().navigate(R.id.appListFragment, args)
             e.printStackTrace()
         }
     }
@@ -648,6 +634,128 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         }
     }
 
+    // Folders
+
+    private fun initFolders() {
+        folderBackCallback = object : OnBackPressedCallback(false) {
+            override fun handleOnBackPressed() = closeFolder()
+        }
+        requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, folderBackCallback)
+    }
+
+    private fun toggleFolder(location: Int, folder: Folder) {
+        if (openFolderSlot == location) {
+            closeFolder()
+            return
+        }
+        val apps = folder.apps
+            .filter { isPackageInstalled(requireContext(), it.packageName, it.user) }
+            .sortedBy { folderAppLabel(it).lowercase() }
+        if (apps.isEmpty()) {
+            showAppList(Constants.FLAG_EDIT_FOLDER, includeHiddenApps = true, folderId = folder.id)
+            return
+        }
+
+        TransitionManager.beginDelayedTransition(binding.homeAppsLayout, AutoTransition().setDuration(FOLDER_ANIM_MS))
+        closeFolder(animate = false)
+        val slotView = homeAppViews()[location - 1]
+        val folderView = createFolderView(apps)
+        binding.homeAppsLayout.addView(folderView, binding.homeAppsLayout.indexOfChild(slotView) + 1)
+        homeAppViews().forEach { it.alpha = if (it === slotView) 1f else FOLDER_DIM_ALPHA }
+        openFolderSlot = location
+        openFolderView = folderView
+        folderBackCallback.isEnabled = true
+    }
+
+    private fun closeFolder(animate: Boolean = true) {
+        val folderView = openFolderView ?: return
+        val binding = _binding ?: return
+        if (animate)
+            TransitionManager.beginDelayedTransition(binding.homeAppsLayout, AutoTransition().setDuration(FOLDER_ANIM_MS))
+        binding.homeAppsLayout.removeView(folderView)
+        homeAppViews().forEach { it.alpha = 1f }
+        openFolderSlot = 0
+        openFolderView = null
+        folderBackCallback.isEnabled = false
+    }
+
+    // The folder's apps in smaller, softer text, with a faint line down the end edge
+    private fun createFolderView(apps: List<FolderApp>): View {
+        val context = requireContext()
+        val textSize = resources.getDimension(R.dimen.text_large) * 0.82f
+        val padding = resources.getDimensionPixelSize(R.dimen.home_app_padding_vertical) * 2 / 3
+
+        val column = LinearLayout(context).apply {
+            orientation = LinearLayout.VERTICAL
+            gravity = prefs.homeAlignment
+        }
+        apps.forEach { app ->
+            column.addView(TextView(context, null, 0, R.style.AppName).apply {
+                text = folderAppLabel(app).lowercase()
+                setTextSize(TypedValue.COMPLEX_UNIT_PX, textSize)
+                setPadding(0, padding, 0, padding)
+                gravity = prefs.homeAlignment
+                alpha = 0.7f
+                setOnClickListener {
+                    launchApp(folderAppLabel(app), app.packageName, app.activityClassName, app.user)
+                }
+            })
+        }
+
+        val line = View(context).apply {
+            setBackgroundColor(context.getColorFromAttr(R.attr.primaryColor))
+            alpha = 0.2f
+        }
+
+        return LinearLayout(context).apply {
+            orientation = LinearLayout.HORIZONTAL
+            layoutParams = LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply {
+                topMargin = 2.dpToPx()
+                bottomMargin = 6.dpToPx()
+            }
+            addView(column, LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.WRAP_CONTENT,
+                LinearLayout.LayoutParams.WRAP_CONTENT
+            ).apply { marginEnd = 14.dpToPx() })
+            addView(line, LinearLayout.LayoutParams(1.dpToPx(), LinearLayout.LayoutParams.MATCH_PARENT))
+        }
+    }
+
+    private fun folderAppLabel(app: FolderApp): String = prefs.getAppRenameLabel(app.packageName).ifBlank { app.label }
+
+    private fun showFolderMenu(folder: Folder, anchor: View) {
+        anchor.showPopupMenu(configure = { menu ->
+            menu.add(0, R.string.edit_apps, 0, R.string.edit_apps)
+            menu.add(0, R.string.rename, 1, R.string.rename)
+            menu.add(0, R.string.delete_folder, 2, R.string.delete_folder)
+        }) { item ->
+            when (item.itemId) {
+                R.string.edit_apps ->
+                    showAppList(Constants.FLAG_EDIT_FOLDER, includeHiddenApps = true, folderId = folder.id)
+
+                R.string.rename -> {
+                    dialog?.dismiss()
+                    dialog = requireContext().createFolderNameDialog(
+                        title = R.string.rename,
+                        action = R.string.rename,
+                        initial = folder.name,
+                    ) { name ->
+                        prefs.getFolder(folder.id)?.let { prefs.saveFolder(it.copy(name = name)) }
+                        populateHomeScreen(false)
+                    }.also { it.showRespectingStatusBar() }
+                }
+
+                R.string.delete_folder -> {
+                    prefs.deleteFolder(folder.id)
+                    populateHomeScreen(false)
+                }
+            }
+        }
+    }
+
     private fun textOnClick(view: View) = onClick(view)
 
     private fun textOnLongClick(view: View) = onLongClick(view)
@@ -677,6 +785,11 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 } catch (e: Exception) {
                     e.printStackTrace()
                 }
+            }
+
+            override fun onClick() {
+                super.onClick()
+                closeFolder()
             }
 
             override fun onDoubleClick() {
@@ -722,11 +835,21 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     override fun onStop() {
         // Leaving home (e.g. an app was launched): reset the drawer out of sight
         binding.drawerHost.close(animate = false)
+        closeFolder(animate = false)
         super.onStop()
     }
 
     override fun onDestroyView() {
+        dialog?.dismiss()
+        dialog = null
+        openFolderView = null
+        openFolderSlot = 0
         super.onDestroyView()
         _binding = null
+    }
+
+    companion object {
+        private const val FOLDER_ANIM_MS = 180L
+        private const val FOLDER_DIM_ALPHA = 0.28f
     }
 }

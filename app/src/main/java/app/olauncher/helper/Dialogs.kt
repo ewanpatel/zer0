@@ -8,6 +8,8 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.view.WindowManager
+import android.view.inputmethod.EditorInfo
+import android.widget.EditText
 import androidx.annotation.MenuRes
 import androidx.annotation.StringRes
 import androidx.appcompat.app.AlertDialog
@@ -15,6 +17,7 @@ import androidx.appcompat.widget.PopupMenu
 import androidx.core.view.isVisible
 import app.olauncher.data.Prefs
 import app.olauncher.databinding.DialogBaseBinding
+import app.olauncher.databinding.DialogFolderNameBinding
 
 /**
  * Shows a popup menu hanging off the end edge of this view.
@@ -107,4 +110,33 @@ fun Context.createDialog(
     return dialog
 }
 
-/** Title with a close icon, a message and a single action. */
+/** Asks for a folder name, prefilled with [initial], and passes on a non-blank result. */
+fun Context.createFolderNameDialog(
+    @StringRes title: Int,
+    @StringRes action: Int,
+    initial: String = "",
+    onName: (String) -> Unit,
+): OlDialog {
+    var input: EditText? = null
+    val submit = { input?.text?.toString()?.trim()?.takeIf { it.isNotEmpty() }?.let(onName) }
+    val dialog = createDialog(
+        title = title,
+        action = action,
+        onAction = { submit() },
+        content = { parent ->
+            DialogFolderNameBinding.inflate(LayoutInflater.from(parent.context), parent, false).etFolderName.also {
+                input = it
+                it.setText(initial)
+                it.setSelection(initial.length)
+            }
+        },
+    )
+    input?.setOnEditorActionListener { _, actionId, _ ->
+        if (actionId != EditorInfo.IME_ACTION_DONE) return@setOnEditorActionListener false
+        submit()
+        dialog.dismiss()
+        true
+    }
+    dialog.setOnShowListener { input?.post { input?.showKeyboard() } }
+    return dialog
+}
