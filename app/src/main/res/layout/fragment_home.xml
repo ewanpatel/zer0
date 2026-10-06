@@ -59,6 +59,23 @@
                 android:paddingHorizontal="3dp"
                 android:textSize="@dimen/date_size"
                 tools:text="Thu, 30 Dec" />
+
+            <!-- Next calendar event in the coming 24 hours -->
+            <TextView
+                android:id="@+id/nextEvent"
+                style="@style/TextDefault"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.7"
+                android:ellipsize="end"
+                android:maxWidth="260dp"
+                android:maxLines="1"
+                android:paddingHorizontal="3dp"
+                android:paddingTop="2dp"
+                android:textSize="@dimen/date_size"
+                android:visibility="gone"
+                tools:text="10:30 standup"
+                tools:visibility="visible" />
         </LinearLayout>
 
         <!-- Screen time-->
@@ -78,7 +95,7 @@
             tools:visibility="visible" />
 
         <!-- Home apps-->
-        <LinearLayout
+        <app.olauncher.ui.HomeAppsLayout
             android:id="@+id/homeAppsLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -184,7 +201,7 @@
                 android:visibility="gone"
                 tools:visibility="visible" />
 
-        </LinearLayout>
+        </app.olauncher.ui.HomeAppsLayout>
 
         <!-- Set default launcher -->
         <TextView

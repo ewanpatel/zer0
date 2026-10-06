@@ -5,9 +5,12 @@ import android.content.Context
 import android.content.Intent
 import android.content.pm.LauncherApps
 import android.content.res.Configuration
+import android.Manifest
 import android.os.BatteryManager
 import android.os.Build
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.transition.AutoTransition
 import android.transition.TransitionManager
 import android.util.TypedValue
@@ -21,6 +24,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.annotation.RequiresApi
 import androidx.core.os.bundleOf
 import androidx.core.view.isVisible
@@ -36,18 +40,24 @@ import app.olauncher.data.Folder
 import app.olauncher.data.FolderApp
 import app.olauncher.data.Prefs
 import app.olauncher.databinding.FragmentHomeBinding
+import app.olauncher.helper.NextEvent
 import app.olauncher.helper.OlDialog
 import app.olauncher.helper.appUsagePermissionGranted
+import app.olauncher.helper.canReadCalendar
 import app.olauncher.helper.createFolderNameDialog
 import app.olauncher.helper.dpToPx
 import app.olauncher.helper.expandNotificationDrawer
+import app.olauncher.helper.formatNextEvent
 import app.olauncher.helper.getColorFromAttr
 import app.olauncher.helper.getUserHandleFromString
 import app.olauncher.helper.isPackageInstalled
+import app.olauncher.helper.millisToNextMinute
 import app.olauncher.helper.openAlarmApp
 import app.olauncher.helper.openCalendar
+import app.olauncher.helper.openCalendarEvent
 import app.olauncher.helper.openCameraApp
 import app.olauncher.helper.openDialerApp
+import app.olauncher.helper.queryNextEvent
 import app.olauncher.helper.setFolderLabel
 import app.olauncher.helper.showPopupMenu
 import app.olauncher.helper.showToast
@@ -71,6 +81,19 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     private var openFolderView: View? = null
     private var dialog: OlDialog? = null
 
+    // Next calendar event under the date, refreshed each minute while home is showing
+    private var nextEvent: NextEvent? = null
+    private val nextEventHandler = Handler(Looper.getMainLooper())
+    private val nextEventTick = object : Runnable {
+        override fun run() {
+            populateNextEvent()
+            nextEventHandler.postDelayed(this, millisToNextMinute())
+        }
+    }
+    private val calendarPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+        if (_binding != null) populateNextEvent()
+    }
+
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
@@ -90,6 +113,10 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
 
         initAppDrawer()
         initFolders()
+        // Home apps never draw over the clock, date and next event
+        binding.dateTimeLayout.addOnLayoutChangeListener { v, _, _, _, _, _, _, _, _ ->
+            binding.homeAppsLayout.clipTop = if (v.isVisible) v.bottom + 8.dpToPx() else 0
+        }
         initObservers()
         setHomeAlignment(prefs.homeAlignment)
         initSwipeTouchListener()
@@ -104,6 +131,12 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         viewModel.getAppList()
         if (prefs.showStatusBar) showStatusBar()
         else hideStatusBar()
+        startNextEvent()
+    }
+
+    override fun onPause() {
+        nextEventHandler.removeCallbacks(nextEventTick)
+        super.onPause()
     }
 
     override fun onClick(view: View) {
@@ -113,6 +146,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
             // R.id.recents -> {}
             R.id.clock -> openClockApp()
             R.id.date -> openCalendarApp()
+            R.id.nextEvent -> nextEvent?.let { openCalendarEvent(requireContext(), it) } ?: openCalendarApp()
             R.id.setDefaultLauncher -> viewModel.resetLauncherLiveData.call()
             R.id.tvScreenTime -> openScreenTimeDigitalWellbeing()
 
@@ -276,6 +310,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         // binding.recents.setOnClickListener(this)
         binding.clock.setOnClickListener(this)
         binding.date.setOnClickListener(this)
+        binding.nextEvent.setOnClickListener(this)
         binding.clock.setOnLongClickListener(this)
         binding.date.setOnLongClickListener(this)
         binding.setDefaultLauncher.setOnClickListener(this)
@@ -332,6 +367,22 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
                 dateText = getString(R.string.day_battery, dateText, battery)
         }
         binding.date.text = dateText.replace(".,", ",")
+    }
+
+    private fun startNextEvent() {
+        if (!requireContext().canReadCalendar() && !prefs.calendarPermissionAsked) {
+            prefs.calendarPermissionAsked = true
+            calendarPermission.launch(Manifest.permission.READ_CALENDAR)
+        }
+        nextEventHandler.removeCallbacks(nextEventTick)
+        nextEventTick.run()
+    }
+
+    private fun populateNextEvent() {
+        val event = if (binding.date.isVisible) queryNextEvent(requireContext()) else null
+        nextEvent = event
+        binding.nextEvent.isVisible = event != null
+        if (event != null) binding.nextEvent.text = formatNextEvent(requireContext(), event)
     }
 
     @RequiresApi(Build.VERSION_CODES.Q)
@@ -662,6 +713,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         val folderView = createFolderView(apps)
         binding.homeAppsLayout.addView(folderView, binding.homeAppsLayout.indexOfChild(slotView) + 1)
         homeAppViews().forEach { it.alpha = if (it === slotView) 1f else FOLDER_DIM_ALPHA }
+        binding.homeAppsLayout.keepInView(slotView, folderView)
         openFolderSlot = location
         openFolderView = folderView
         folderBackCallback.isEnabled = true
@@ -670,8 +722,10 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     private fun closeFolder(animate: Boolean = true) {
         val folderView = openFolderView ?: return
         val binding = _binding ?: return
-        if (animate)
+        if (animate) {
             TransitionManager.beginDelayedTransition(binding.homeAppsLayout, AutoTransition().setDuration(FOLDER_ANIM_MS))
+            binding.homeAppsLayout.keepInView(null, null)
+        } else binding.homeAppsLayout.resetScroll()
         binding.homeAppsLayout.removeView(folderView)
         homeAppViews().forEach { it.alpha = 1f }
         openFolderSlot = 0

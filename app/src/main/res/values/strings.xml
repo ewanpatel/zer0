@@ -116,6 +116,7 @@
     <string name="no_folders_yet">No folders yet. Long-press a home app to make one.</string>
     <string name="added_to_folder">Added to %1$s/</string>
     <string name="removed_from_folder">Removed from %1$s/</string>
+    <string name="folder_full">Folders hold up to %1$d apps</string>
     <string name="shortcuts_not_in_folders">Shortcuts can\'t go in folders</string>
 
     <!-- Search commands -->

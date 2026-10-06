@@ -14,6 +14,8 @@ data class Folder(
     val name: String,
     val apps: List<FolderApp>,
 ) {
+    val isFull get() = apps.size >= MAX_APPS
+
     fun contains(app: AppModel) = apps.any { it.key == FolderApp.keyOf(app) }
 
     fun toggle(app: AppModel.App): Folder =
@@ -21,6 +23,8 @@ data class Folder(
         else copy(apps = apps + FolderApp.from(app))
 
     companion object {
+        const val MAX_APPS = 8
+
         fun create(name: String) = Folder(UUID.randomUUID().toString(), name, emptyList())
 
         fun listFromJson(json: String): List<Folder> {

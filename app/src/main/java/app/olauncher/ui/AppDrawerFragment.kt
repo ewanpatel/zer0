@@ -468,6 +468,10 @@ class AppDrawerFragment : BaseFragment() {
             return
         }
         val folder = folderId?.let { prefs.getFolder(it) } ?: return
+        if (!folder.contains(appModel) && folder.isFull) {
+            requireContext().showToast(getString(R.string.folder_full, Folder.MAX_APPS))
+            return
+        }
         val updated = folder.toggle(appModel)
         prefs.saveFolder(updated)
         folderMembers.clear()
@@ -489,7 +493,12 @@ class AppDrawerFragment : BaseFragment() {
                 menu.add(0, i, i, title)
             }
         }) { item ->
-            val folder = folders[item.itemId].toggle(appModel)
+            val chosen = folders[item.itemId]
+            if (!chosen.contains(appModel) && chosen.isFull) {
+                requireContext().showToast(getString(R.string.folder_full, Folder.MAX_APPS))
+                return@showPopupMenu
+            }
+            val folder = chosen.toggle(appModel)
             prefs.saveFolder(folder)
             val message = if (folder.contains(appModel)) R.string.added_to_folder else R.string.removed_from_folder
             requireContext().showToast(getString(message, folder.name.lowercase()))
