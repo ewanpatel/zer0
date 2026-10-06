@@ -68,6 +68,9 @@ class AppDrawerAdapter(
     private val appFilter = createAppFilter()
     private val myUserHandle = android.os.Process.myUserHandle()
 
+    // The launcher drawer shows nothing until you type (apart from the private space header)
+    var searchOnly = false
+
     // When set (editing a folder), apps it returns false for are shown faded
     var isChecked: ((AppModel) -> Boolean)? = null
 
@@ -141,7 +144,7 @@ class AppDrawerAdapter(
                 isBangSearch = charSearch?.startsWith("!") ?: false
                 autoLaunch = allowAutoLaunch && (charSearch?.startsWith(" ")?.not() ?: true)
 
-                val appFilteredList = (if (charSearch.isNullOrBlank()) appsList
+                val appFilteredList = (if (charSearch.isNullOrBlank()) blankList()
                 else appsList.filter { app ->
                     app !is AppModel.PrivateSpaceHeader && appLabelMatches(app.appLabel, charSearch)
                 } as MutableList<AppModel>)
@@ -202,9 +205,13 @@ class AppDrawerAdapter(
             )
         )
         this.appsList = appsList
-        this.appFilteredList = appsList
-        submitList(appsList)
+        this.appFilteredList = blankList()
+        submitList(appFilteredList)
     }
+
+    private fun blankList(): MutableList<AppModel> =
+        if (searchOnly) appsList.filter { it is AppModel.PrivateSpaceHeader }.toMutableList()
+        else appsList
 
     fun launchFirstInList() {
         val first = appFilteredList.firstOrNull { it !is AppModel.PrivateSpaceHeader }
