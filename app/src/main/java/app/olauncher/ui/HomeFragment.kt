@@ -756,6 +756,16 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         }
     }
 
+    // Holding empty space dims the home screen while settings is about to open
+    private fun dimHome(dim: Boolean, animate: Boolean = true) {
+        val alpha = if (dim) HOLD_DIM_ALPHA else 1f
+        listOf(binding.dateTimeLayout, binding.tvScreenTime, binding.homeAppsLayout, binding.setDefaultLauncher).forEach {
+            it.animate().cancel()
+            if (animate) it.animate().alpha(alpha).setDuration(if (dim) Constants.LONG_PRESS_DELAY_MS else 150L).start()
+            else it.alpha = alpha
+        }
+    }
+
     private fun textOnClick(view: View) = onClick(view)
 
     private fun textOnLongClick(view: View) = onLongClick(view)
@@ -775,6 +785,16 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
             override fun onSwipeDown() {
                 super.onSwipeDown()
                 expandNotificationDrawer(requireContext())
+            }
+
+            override fun onLongPressStart() {
+                super.onLongPressStart()
+                dimHome(true)
+            }
+
+            override fun onLongPressCancel() {
+                super.onLongPressCancel()
+                dimHome(false)
             }
 
             override fun onLongClick() {
@@ -836,6 +856,7 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
         // Leaving home (e.g. an app was launched): reset the drawer out of sight
         binding.drawerHost.close(animate = false)
         closeFolder(animate = false)
+        dimHome(false, animate = false)
         super.onStop()
     }
 
@@ -851,5 +872,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener, View.OnLongClickListe
     companion object {
         private const val FOLDER_ANIM_MS = 180L
         private const val FOLDER_DIM_ALPHA = 0.28f
+        private const val HOLD_DIM_ALPHA = 0.4f
     }
 }

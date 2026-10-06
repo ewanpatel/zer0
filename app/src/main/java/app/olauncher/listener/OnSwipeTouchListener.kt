@@ -22,13 +22,16 @@ Source: https://www.tutorialspoint.com/how-to-handle-swipe-gestures-in-kotlin
 
 internal open class OnSwipeTouchListener(c: Context?) : OnTouchListener {
     private var longPressOn = false
+    private var longClickFired = false
 
     //    private var doubleTapOn = false
     private val gestureDetector: GestureDetector
 
     override fun onTouch(view: View, motionEvent: MotionEvent): Boolean {
-        if (motionEvent.action == MotionEvent.ACTION_UP || motionEvent.action == MotionEvent.ACTION_CANCEL)
+        if (motionEvent.action == MotionEvent.ACTION_UP || motionEvent.action == MotionEvent.ACTION_CANCEL) {
+            if (longPressOn && !longClickFired) onLongPressCancel()
             longPressOn = false
+        }
         return gestureDetector.onTouchEvent(motionEvent)
     }
 
@@ -63,11 +66,15 @@ internal open class OnSwipeTouchListener(c: Context?) : OnTouchListener {
 
         override fun onLongPress(e: MotionEvent) {
             longPressOn = true
+            longClickFired = false
+            onLongPressStart()
             GlobalScope.launch {
                 delay(Constants.LONG_PRESS_DELAY_MS)
                 withContext(Dispatchers.Main) {
-                    if (isActive && longPressOn)
+                    if (isActive && longPressOn) {
+                        longClickFired = true
                         onLongClick()
+                    }
                 }
             }
             super.onLongPress(e)
@@ -103,6 +110,10 @@ internal open class OnSwipeTouchListener(c: Context?) : OnTouchListener {
     open fun onSwipeUp() {}
     open fun onSwipeDown() {}
     open fun onLongClick() {}
+
+    // A hold has begun; onLongClick follows after LONG_PRESS_DELAY_MS unless the finger lifts first
+    open fun onLongPressStart() {}
+    open fun onLongPressCancel() {}
     open fun onDoubleClick() {}
     open fun onTripleClick() {}
     open fun onClick() {}
