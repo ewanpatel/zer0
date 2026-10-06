@@ -85,6 +85,7 @@
 
     <style name="AppName" parent="TextLarge">
         <item name="android:letterSpacing">-0.02</item>
+        <item name="android:textColor">@drawable/text_colors_app</item>
     </style>
 
     <style name="TextMedium" parent="TextDefault">

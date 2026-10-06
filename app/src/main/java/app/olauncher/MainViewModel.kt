@@ -24,7 +24,7 @@ import app.olauncher.helper.isOlauncherDefault
 import app.olauncher.helper.isPackageInstalled
 import app.olauncher.helper.isPrivateSpaceLocked
 import app.olauncher.helper.showToast
-import app.olauncher.helper.usageStats.EventLogWrapper
+import app.olauncher.helper.unlockedScreenTime
 import kotlinx.coroutines.launch
 import java.util.Calendar
 
@@ -408,9 +408,6 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun getTodaysScreenTime() {
         if (prefs.screenTimeLastUpdated.hasBeenMinutes(1).not()) return
 
-        val eventLogWrapper = EventLogWrapper(
-            appContext
-        )
         // Start of today in millis
         val calendar = Calendar.getInstance().apply {
             set(Calendar.HOUR_OF_DAY, 0)
@@ -421,11 +418,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val startTime = calendar.timeInMillis
         val endTime = System.currentTimeMillis()
 
-        val timeSpent = eventLogWrapper.aggregateSimpleUsageStats(
-            eventLogWrapper.aggregateForegroundStats(
-                eventLogWrapper.getForegroundStatsByTimestamps(startTime, endTime)
-            )
-        )
+        // Time the phone has been unlocked with the screen on since midnight
+        val timeSpent = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P)
+            unlockedScreenTime(appContext, startTime, endTime)
+        else 0L
         val viewTimeSpent = appContext.formattedTimeSpent(timeSpent)
         screenTimeValue.postValue(viewTimeSpent)
         prefs.screenTimeLastUpdated = endTime

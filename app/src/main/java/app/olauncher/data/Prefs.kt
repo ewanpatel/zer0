@@ -94,6 +94,7 @@ class Prefs(context: Context) {
     private val SHORTCUT_ID_SWIPE_RIGHT = "SHORTCUT_ID_SWIPE_RIGHT"
     private val IS_SHORTCUT_SWIPE_RIGHT = "IS_SHORTCUT_SWIPE_RIGHT"
 
+    private val CALENDAR_PERMISSION_ASKED = "CALENDAR_PERMISSION_ASKED"
     private val FOLDERS = "FOLDERS"
     private val HOME_FOLDER = "HOME_FOLDER_"
 
@@ -547,6 +548,11 @@ class Prefs(context: Context) {
     fun getAppRenameLabel(appPackage: String): String = prefs.getString(appPackage, "").toString()
 
     fun setAppRenameLabel(appPackage: String, renameLabel: String) = prefs.edit { putString(appPackage, renameLabel) }
+
+    // Asked once for the next event line; after that it's granted in Android settings
+    var calendarPermissionAsked: Boolean
+        get() = prefs.getBoolean(CALENDAR_PERMISSION_ASKED, false)
+        set(value) = prefs.edit { putBoolean(CALENDAR_PERMISSION_ASKED, value) }
 
     // Folders
 
