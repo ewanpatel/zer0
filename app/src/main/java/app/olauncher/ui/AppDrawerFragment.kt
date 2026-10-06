@@ -1,10 +1,15 @@
 package app.olauncher.ui
 
+import android.Manifest
 import android.content.Context
+import android.content.pm.PackageManager
 import android.os.Build
 import android.os.Bundle
 import android.os.Process
 import android.text.Spannable
+import android.text.SpannableStringBuilder
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +17,10 @@ import android.view.animation.AnimationUtils
 import android.view.inputmethod.BaseInputConnection
 import android.view.inputmethod.InputMethodManager
 import android.widget.TextView
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.SearchView
+import androidx.core.content.ContextCompat
+import androidx.core.graphics.ColorUtils
 import androidx.core.os.bundleOf
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavOptions
@@ -29,8 +37,11 @@ import app.olauncher.data.FolderApp
 import app.olauncher.data.Prefs
 import app.olauncher.databinding.FragmentAppDrawerBinding
 import app.olauncher.helper.OlDialog
+import app.olauncher.helper.SearchCommand
+import app.olauncher.helper.VERB_ALLOW_CONTACTS
 import app.olauncher.helper.createFolderNameDialog
 import app.olauncher.helper.deletePinnedShortcut
+import app.olauncher.helper.dpToPx
 import app.olauncher.helper.hideKeyboard
 import app.olauncher.helper.isEinkDisplay
 import app.olauncher.helper.isSystemAnimationsDisabled
@@ -38,6 +49,7 @@ import app.olauncher.helper.isSystemApp
 import app.olauncher.helper.openAppInfo
 import app.olauncher.helper.openSearch
 import app.olauncher.helper.openUrl
+import app.olauncher.helper.parseSearchCommands
 import app.olauncher.helper.setFolderLabel
 import app.olauncher.helper.showPopupMenu
 import app.olauncher.helper.showKeyboard
@@ -63,6 +75,12 @@ class AppDrawerFragment : BaseFragment() {
     private var folderId: String? = null
     private val folderMembers = mutableSetOf<String>()
     private var dialog: OlDialog? = null
+
+    // Search commands for the current query (launcher drawer only)
+    private var commands: List<SearchCommand> = emptyList()
+    private val contactsPermission = registerForActivityResult(ActivityResultContracts.RequestPermission()) {
+        _binding?.let { binding -> updateCommands(binding.search.query.toString()) }
+    }
     private var currentAppList: List<AppModel>? = null
     private var currentPrivateSpaceApps: List<AppModel>? = null
     private var currentPrivateSpaceLocked: Boolean = true
@@ -123,7 +141,9 @@ class AppDrawerFragment : BaseFragment() {
     private fun initSearch() {
         binding.search.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
-                if (query?.startsWith("!") == true)
+                if (commands.isNotEmpty())
+                    runCommand(commands.first())
+                else if (query?.startsWith("!") == true)
                     requireContext().openUrl(Constants.URL_DUCK_SEARCH + query.replace(" ", "%20"))
                 else if (adapter.itemCount == 0)
                     requireContext().openSearch(query?.trim())
@@ -134,7 +154,8 @@ class AppDrawerFragment : BaseFragment() {
 
             override fun onQueryTextChange(newText: String): Boolean {
                 try {
-                    adapter.allowAutoLaunch = !isSearchComposing()
+                    updateCommands(newText)
+                    adapter.allowAutoLaunch = !isSearchComposing() && commands.isEmpty()
                     adapter.filter.filter(newText)
                     binding.appRename.visibility =
                         if (canRename && newText.isNotBlank()) View.VISIBLE else View.GONE
@@ -263,6 +284,7 @@ class AppDrawerFragment : BaseFragment() {
             },
             appFolderListener = { appModel, anchor -> showFolderPicker(appModel, anchor) }
         )
+        adapter.searchOnly = flag == Constants.FLAG_LAUNCH_APP
         if (flag == Constants.FLAG_EDIT_FOLDER)
             adapter.isChecked = { FolderApp.keyOf(it) in folderMembers }
 
@@ -358,6 +380,59 @@ class AppDrawerFragment : BaseFragment() {
                 Constants.FLAG_SET_HOME_APP_8 -> prefs.appName8 = name
             }
             findNavController().popBackStack()
+        }
+    }
+
+    // Search commands
+
+    private fun updateCommands(query: String) {
+        if (flag != Constants.FLAG_LAUNCH_APP) return
+        val canReadContacts = ContextCompat.checkSelfPermission(
+            requireContext(),
+            Manifest.permission.READ_CONTACTS
+        ) == PackageManager.PERMISSION_GRANTED
+        commands = parseSearchCommands(requireContext(), query, canReadContacts)
+
+        // Reuse rows so typing within a command only changes text, not layout
+        val layout = binding.commandsLayout
+        while (layout.childCount > commands.size) layout.removeViewAt(layout.childCount - 1)
+        while (layout.childCount < commands.size) layout.addView(createCommandRow())
+        layout.visibility = if (commands.isEmpty()) View.GONE else View.VISIBLE
+        commands.forEachIndexed { i, command ->
+            (layout.getChildAt(i) as TextView).apply {
+                text = commandLabel(command, isFirst = i == 0, color = currentTextColor)
+                setOnClickListener { runCommand(command) }
+            }
+        }
+    }
+
+    private fun createCommandRow() = TextView(requireContext(), null, 0, R.style.AppName).apply {
+        gravity = prefs.appLabelAlignment
+        maxLines = 1
+        val padding = resources.getDimensionPixelSize(R.dimen.app_padding_vertical)
+        setPadding(24.dpToPx(), padding, 24.dpToPx(), padding)
+    }
+
+    // Verb in a softer tone, then the target; the top row gets a faint ↵ since enter runs it
+    private fun commandLabel(command: SearchCommand, isFirst: Boolean, color: Int): CharSequence {
+        val soft = ColorUtils.setAlphaComponent(color, 150)
+        val faint = ColorUtils.setAlphaComponent(color, 90)
+        val label = SpannableStringBuilder()
+        label.append(command.verb, ForegroundColorSpan(soft), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        if (command.target.isNotEmpty()) label.append(" ").append(command.target)
+        if (isFirst) label.append("  ↵", ForegroundColorSpan(faint), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        return label
+    }
+
+    private fun runCommand(command: SearchCommand) {
+        if (command.verb == VERB_ALLOW_CONTACTS) {
+            contactsPermission.launch(Manifest.permission.READ_CONTACTS)
+            return
+        }
+        command.run(requireContext())
+        if (command.closesDrawer) {
+            if (embedded) viewModel.closeAppDrawer.call()
+            else findNavController().popBackStack(R.id.mainFragment, false)
         }
     }
 

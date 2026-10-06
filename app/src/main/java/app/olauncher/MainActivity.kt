@@ -78,7 +78,10 @@ class MainActivity : AppCompatActivity() {
                     navController.popBackStack()
             }
         }
-        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+        // Added without a lifecycle owner so it stays at the bottom of the stack. With an owner it is
+        // re-added on every start, landing above the home screen's drawer and folder callbacks and
+        // swallowing back for them after you've left and returned to the launcher.
+        onBackPressedDispatcher.addCallback(onBackPressedCallback)
 
         if (prefs.firstOpen) {
             viewModel.firstOpen(true)
